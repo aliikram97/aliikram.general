@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ali Ikram - AI Specialist & Tech Lead</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0066ff;
+            --secondary: #00d9ff;
+            --dark: #0a0e27;
+            --darker: #050813;
+            --light: #ffffff;
+            --gray: #8892b0;
+            --accent: #64ffda;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--darker);
+            color: var(--gray);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-subtitle {
+            color: var(--accent);
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            color: var(--light);
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        /* Video Placeholder */
+        .video-placeholder {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.1), rgba(100, 255, 218, 0.1));
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid rgba(100, 255, 218, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .video-placeholder:hover {
+            transform: scale(1.02);
+            border-color: var(--accent);
+        }
+
+        .video-placeholder-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .play-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(100, 255, 218, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            border: 2px solid var(--accent);
+        }
+
+        .play-icon::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 20px solid var(--accent);
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            margin-left: 5px;
+        }
+
+        .video-label {
+            color: var(--accent);
+            font-size: 16px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s;
+            margin-right: 15px;
+        }
+
+        .btn:hover {
+            background: rgba(100, 255, 218, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 42px;
+            color: var(--light);
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), transparent);
+        }
+
+        /* Experience */
+        .experience-item {
+            margin-bottom: 50px;
+            padding: 30px;
+            background: rgba(100, 255, 218, 0.03);
+            border-left: 3px solid var(--accent);
+            border-radius: 5px;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .experience-item:hover {
+            transform: translateX(10px);
+            background: rgba(100, 255, 218, 0.05);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .experience-title {
+            color: var(--light);
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .experience-company {
+            color: var(--accent);
+            font-size: 18px;
+        }
+
+        .experience-date {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        .experience-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .experience-item li {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .experience-item li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .project-card {
+            background: rgba(100, 255, 218, 0.03);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .project-card h3 {
+            color: var(--light);
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .project-video {
+            margin: 20px 0;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category {
+            background: rgba(100, 255, 218, 0.03);
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        .skill-category h3 {
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 5px 0;
+            color: var(--gray);
+        }
+
+        /* Contact */
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-content h2 {
+            color: var(--light);
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .contact-content p {
+            margin-bottom: 40px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero h2 {
+                font-size: 32px;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .experience-header {
+                flex-direction: column;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">AI</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <p class="hero-subtitle">Hi, my name is</p>
+                <h1>Ali Ikram</h1>
+                <h2>AI Specialist & Tech Lead</h2>
+                <p>I specialize in designing and deploying AI-driven automation, computer vision, and large language model solutions. With 4+ years of experience, I bridge cutting-edge research with real-world business value across autonomous driving, OCR, multilingual NLP, and edge AI deployment.</p>
+                <div style="margin-bottom: 40px;">
+                    <a href="#contact" class="btn">Get In Touch</a>
+                    <a href="#projects" class="btn">View Projects</a>
+                </div>
+                
+                <!-- Introduction Video Placeholder -->
+                <div class="video-placeholder">
+                    <div class="video-placeholder-content">
+                        <div class="play-icon"></div>
+                        <p class="video-label">Introduction Video - Add Your Video Here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <p style="max-width: 800px; font-size: 18px; margin-bottom: 30px;">
+                AI Specialist with 4+ years of experience designing, deploying, and scaling AI-driven automation, computer vision, and large language model (LLM) solutions. Proven expertise in leading cross-functional teams, optimizing algorithms for real-time systems, and deploying production-ready AI pipelines across cloud and edge platforms.
+            </p>
+            <p style="max-width: 800px; font-size: 18px;">
+                I've delivered high-impact projects in autonomous driving, OCR, multilingual NLP, and anomaly detection. I'm adept at bridging research and business value by consulting startups and enterprises to integrate cutting-edge AI into their workflows.
+            </p>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Sr. AI Engineer</div>
+                        <div class="experience-company">Intelligent Learning Machines (ILM)</div>
+                    </div>
+                    <div class="experience-date">2024 – Present</div>
+                </div>
+                <ul>
+                    <li>Spearheaded simulator-based validation for autonomous driving algorithms, potentially reducing scenario testing costs by 30%</li>
+                    <li>Built digital twins for anomaly detection, achieving 75% detection precision in abnormal driving behaviors</li>
+                    <li>Developed a safe city algorithm that generates alerts based on gun-based events</li>
+                    <li>Developed a multilingual document parsing pipeline using PyTorch + TensorRT, enabling 3× faster edge deployment</li>
+                    <li>Integrated LLM-based contextual understanding for enterprise documents</li>
+                    <li>Deployed real-time AI on edge (NVIDIA Jetson) with inference latency under 100ms for safety-critical systems</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">AI Algorithm Tech Lead</div>
+                        <div class="experience-company">99Technologies</div>
+                    </div>
+                    <div class="experience-date">2023 – 2024</div>
+                </div>
+                <ul>
+                    <li>Led a 3-member AI team delivering OCR pipelines with 95% accuracy, reducing manual BIOS configuration by 85% across clients</li>
+                    <li>Mentored junior engineers in AI lifecycle management, boosting team productivity and code quality</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Consultant AI Engineer</div>
+                        <div class="experience-company">ILM (Part-Time)</div>
+                    </div>
+                    <div class="experience-date">2023 – 2024</div>
+                </div>
+                <ul>
+                    <li>Advised on video localization & simulation algorithms for scenario-based testing in autonomous driving</li>
+                    <li>Provided AI consulting for startups, helping design MVPs in traffic analytics, OCR, and chatbot systems</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Machine Learning Engineer</div>
+                        <div class="experience-company">ILM</div>
+                    </div>
+                    <div class="experience-date">2022 – 2023</div>
+                </div>
+                <ul>
+                    <li>Designed lane detection and centering algorithms, ensuring robustness in adverse conditions, aligned with ISO 21448 safety requirements</li>
+                    <li>Implemented mitigation algorithms for failure case detection, improving system resilience by 20%</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Computer Vision Engineer</div>
+                        <div class="experience-company">TeReSol</div>
+                    </div>
+                    <div class="experience-date">2021 – 2022</div>
+                </div>
+                <ul>
+                    <li>Developed thermal tracking system up to 3km, deployed on NVIDIA TK1-based embedded hardware</li>
+                    <li>Optimized vision pipeline to achieve real-time detection at 15 FPS on limited compute resources</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Autonomous Driving Systems</h3>
+                    <p>Simulator-based validation and lane detection algorithms for autonomous vehicles with ISO 21448 safety compliance.</p>
+                    <div class="project-video">
+                        <div class="video-placeholder" style="padding-bottom: 75%;">
+                            <div class="video-placeholder-content">
+                                <div class="play-icon"></div>
+                                <p class="video-label">Project Demo Video</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Stereo Vision & Depth Estimation</h3>
+                    <p>Real-time object detection with depth estimation using stereo vision technology for 3D perception.</p>
+                    <div class="project-video">
+                        <div class="video-placeholder" style="padding-bottom: 75%;">
+                            <div class="video-placeholder-content">
+                                <div class="play-icon"></div>
+                                <p class="video-label">Project Demo Video</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Multilingual OCR System</h3>
+                    <p>OCR-based Urdu transcriber with multilingual translation capabilities, deployed on edge devices with TensorRT optimization.</p>
+                    <div class="project-video">
+                        <div class="video-placeholder" style="padding-bottom: 75%;">
+                            <div class="video-placeholder-content">
+                                <div class="play-icon"></div>
+                                <p class="video-label">Project Demo Video</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Thermal Object Tracking</h3>
+                    <p>Infrared object tracking system with 3km range, optimized for real-time detection on embedded hardware.</p>
+                    <div class="project-video">
+                        <div class="video-placeholder" style="padding-bottom: 75%;">
+                            <div class="video-placeholder-content">
+                                <div class="play-icon"></div>
+                                <p class="video-label">Project Demo Video</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Safe City Alert System</h3>
+                    <p>Real-time gun detection and alert generation system for urban safety monitoring using computer vision.</p>
+                    <div class="project-video">
+                        <div class="video-placeholder" style="padding-bottom: 75%;">
+                            <div class="video-placeholder-content">
+                                <div class="play-icon"></div>
+                                <p class="video-label">Project Demo Video</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Adaptive Cruise Control</h3>
+                    <p>Traffic sign recognition and adaptive cruise control system for autonomous vehicles.</p>
+                    <div class="project-video">
+                        <div class="video-placeholder" style="padding-bottom: 75%;">
+                            <div class="video-placeholder-content">
+                                <div class="play-icon"></div>
+                                <p class="video-label">Project Demo Video</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>AI & Machine Learning</h3>
+                    <ul>
+                        <li>Deep Learning (CNNs, GANs, RL)</li>
+                        <li>Large Language Models (LLMs)</li>
+                        <li>RAG Systems</li>
+                        <li>OCR & Document Processing</li>
+                        <li>SLAM & Autonomous Systems</li>
+                        <li>Object Detection & Segmentation</li>
+                        <li>Stereo Vision & Depth Estimation</li>
+                        <li>Tracking & Camera Calibration</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Frameworks & Libraries</h3>
+                    <ul>
+                        <li>PyTorch</li>
+                        <li>TensorFlow</li>
+                        <li>OpenCV</li>
+                        <li>Hugging Face</li>
+                        <li>Flask & Flask-SocketIO</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Edge Deployment</h3>
+                    <ul>
+                        <li>TensorRT</li>
+                        <li>ONNX</li>
+                        <li>OpenVINO</li>
+                        <li>NVIDIA Jetson</li>
+                        <li>Docker</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Cloud & DevOps</h3>
+                    <ul>
+                        <li>AWS (EC2, S3, SageMaker)</li>
+                        <li>AWS Lambda & Bedrock</li>
+                        <li>Azure</li>
+                        <li>Git</li>
+                        <li>n8n Automation</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Simulation & Robotics</h3>
+                    <ul>
+                        <li>ROS (Robot Operating System)</li>
+                        <li>CARLA Simulator</li>
+                        <li>Unreal Engine</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>C++</li>
+                        <li>MATLAB</li>
+                        <li>Verilog</li>
+                        <li>TypeScript</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title" style="display: block; text-align: center;">Get In Touch</h2>
+                <p>I'm currently open to new opportunities and collaborations. Whether you have a question or just want to say hi, feel free to reach out!</p>
+                
+                <div class="contact-links">
+                    <a href="mailto:aliikram97@gmail.com" class="btn">Email Me</a>
+                    <a href="https://linkedin.com/in/ali-i-5306b597" class="btn" target="_blank">LinkedIn</a>
+                </div>
+
+                <div style="margin-top: 40px;">
+                    <p style="color: var(--gray); margin-bottom: 10px;">📍 Islamabad, Pakistan</p>
+                    <p style="color: var(--gray);">📞 +92-335-5093011 | +92-303-0595669</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Ali Ikram. Built with passion for AI and innovation.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.experience-item, .project-card, .skill-category').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
