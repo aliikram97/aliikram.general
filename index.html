@@ -267,7 +267,7 @@
         /* Projects Grid */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
             margin-top: 50px;
         }
@@ -278,6 +278,9 @@
             border-radius: 10px;
             border: 1px solid rgba(100, 255, 218, 0.1);
             transition: transform 0.3s, border-color 0.3s;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .project-card:hover {
@@ -289,10 +292,53 @@
             color: var(--light);
             font-size: 20px;
             margin-bottom: 15px;
+            min-height: 60px;
+        }
+
+        .project-card p {
+            flex-grow: 1;
+            margin-bottom: 20px;
         }
 
         .project-video {
             margin: 20px 0;
+            aspect-ratio: 16/9;
+        }
+
+        .project-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(100, 255, 218, 0.1);
+            color: var(--accent);
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: all 0.3s;
+            border: 1px solid rgba(100, 255, 218, 0.2);
+        }
+
+        .project-link:hover {
+            background: rgba(100, 255, 218, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .github-icon {
+            width: 16px;
+            height: 16px;
         }
 
         /* Skills */
@@ -531,24 +577,42 @@
             
             <div class="projects-grid">
                 <div class="project-card">
-                    <h3>Autonomous Driving Systems</h3>
-                    <p>Simulator-based validation and lane detection algorithms for autonomous vehicles with ISO 21448 safety compliance.</p>
+                    <h3>Integration of robot dimensions into path-planning algorithms</h3>
+                    <p>A hybrid apporach which uses initial binary map to integrate robot dimensions and alter available trajectories allowing any 
+                    path-planning algorithm to automatically consider robot dimensions during navigation as current algorithms do not consider robot dimensions to be 
+                    a unit point in the cardesian coordinate system. we proposed the algorithm to handle this challenge without altering the path planning algorithms or 
+                    requiring any additional sensors to the robot.>
+                    </p>
                     <div class="project-video">
                         <video controls width="100%" style="border-radius: 8px;">
-                            <source src="project_demo/autonomous_driving.mp4" type="video/mp4">
+                            <source src="project_demo/Real-world Experiment of Dimension aware path planning.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/aliikram97/Integrating-Robot-Physical-Dimensions-into-Path-Planning" class="project-link" target="_blank">
+                            <svg class="github-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            GitHub
+                        </a>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <h3>Stereo Vision & Depth Estimation</h3>
-                    <p>Real-time object detection with depth estimation using stereo vision technology for 3D perception.</p>
+                    <h3>TalToTextTranslate a translation and transcription pipeline</h3>
+                    <p>This pipeline allows the user to transcribe and translate long audio files. it uses google speecrecognition service hence it supports all 
+                        languages supported by google speech recognition. it also uses googletrans library to translate the transcribed text into any desired language.
+                    </p>
                     <div class="project-video">
                         <video controls width="100%" style="border-radius: 8px;">
-                            <source src="project_demo/stereo_vision.mp4" type="video/mp4">
+                            <source src="project_demo/speech to text and translation _Talk2TextTranslate_ introductory video.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/aliikram97/Talk2TextTranslate" class="project-link" target="_blank">
+                            <svg class="github-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            GitHub
+                        </a>
                     </div>
                 </div>
 
@@ -561,6 +625,12 @@
                             Your browser does not support the video tag.
                         </video>
                     </div>
+                    <div class="project-links">
+                        <a href="https://github.com/yourusername/ocr-system" class="project-link" target="_blank">
+                            <svg class="github-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            GitHub
+                        </a>
+                    </div>
                 </div>
 
                 <div class="project-card">
@@ -571,6 +641,12 @@
                             <source src="project_demo/thermal_tracking.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/aliikram97/tracking_pipeline" class="project-link" target="_blank">
+                            <svg class="github-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            GitHub
+                        </a>
                     </div>
                 </div>
 
@@ -583,6 +659,12 @@
                             Your browser does not support the video tag.
                         </video>
                     </div>
+                    <div class="project-links">
+                        <a href="https://github.com/yourusername/safe-city" class="project-link" target="_blank">
+                            <svg class="github-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            GitHub
+                        </a>
+                    </div>
                 </div>
 
                 <div class="project-card">
@@ -593,6 +675,12 @@
                             <source src="project_demo/adaptive_cruise.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/yourusername/adaptive-cruise" class="project-link" target="_blank">
+                            <svg class="github-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            GitHub
+                        </a>
                     </div>
                 </div>
             </div>
