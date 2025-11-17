@@ -541,6 +541,158 @@
             
             <div class="projects-grid">
                 <div class="project-card">
+                    <h3>Adaptive Cruise Control</h3>
+                    <p>Traffic Sign Recognition and Adaptive Cruise Control System is an intelligent driver-assistance framework designed to enhance autonomous vehicle safety and decision-making. The system employs computer vision techniques and deep learning models to detect, classify, and interpret traffic signs in real time under varying weather and lighting conditions. Detected signs are then used to dynamically adjust the vehicle's speed and behavior through an adaptive cruise control module, ensuring compliance with road regulations and maintaining safe distances from surrounding vehicles. This integrated approach improves situational awareness, reduces human error, and contributes to the development of fully autonomous driving technologies with enhanced responsiveness and reliability on modern roads.</p>
+                    <div class="project-video">
+                        <video controls width="100%" style="border-radius: 8px;">
+                            <source src="project_demo/SSD mobilenet v2 performance.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>AI & Machine Learning</h3>
+                    <ul>
+                        <li>Deep Learning (CNNs, GANs, RL)</li>
+                        <li>Large Language Models (LLMs)</li>
+                        <li>RAG Systems</li>
+                        <li>OCR & Document Processing</li>
+                        <li>SLAM & Autonomous Systems</li>
+                        <li>Object Detection & Segmentation</li>
+                        <li>Stereo Vision & Depth Estimation</li>
+                        <li>Tracking & Camera Calibration</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Frameworks & Libraries</h3>
+                    <ul>
+                        <li>PyTorch</li>
+                        <li>TensorFlow</li>
+                        <li>OpenCV</li>
+                        <li>Hugging Face</li>
+                        <li>Flask & Flask-SocketIO</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Edge Deployment</h3>
+                    <ul>
+                        <li>TensorRT</li>
+                        <li>ONNX</li>
+                        <li>OpenVINO</li>
+                        <li>NVIDIA Jetson</li>
+                        <li>Docker</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Cloud & DevOps</h3>
+                    <ul>
+                        <li>AWS (EC2, S3, SageMaker)</li>
+                        <li>AWS Lambda & Bedrock</li>
+                        <li>Azure</li>
+                        <li>Git</li>
+                        <li>n8n Automation</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Simulation & Robotics</h3>
+                    <ul>
+                        <li>ROS (Robot Operating System)</li>
+                        <li>CARLA Simulator</li>
+                        <li>Unreal Engine</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>C++</li>
+                        <li>MATLAB</li>
+                        <li>Verilog</li>
+                        <li>TypeScript</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title" style="display: block; text-align: center;">Get In Touch</h2>
+                <p>I'm currently open to new opportunities and collaborations. Whether you have a question or just want to say hi, feel free to reach out!</p>
+                
+                <div class="contact-links">
+                    <a href="mailto:aliikram97@gmail.com" class="btn">Email Me</a>
+                    <a href="https://linkedin.com/in/ali-i-5306b597" class="btn" target="_blank">LinkedIn</a>
+                </div>
+
+                <div style="margin-top: 40px;">
+                    <p style="color: var(--gray); margin-bottom: 10px;">📍 Islamabad, Pakistan</p>
+                    <p style="color: var(--gray);">📞 +92-335-5093011 | +92-303-0595669</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Ali Ikram. Built with passion for AI and innovation.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.experience-item, .project-card, .skill-category').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>-card">
                     <h3>Integrating Robot Physical Dimensions into Path Planning</h3>
                     <p>Hybrid Robot-Aware Path Planning System introduces an innovative approach that integrates robot dimensions 
                         directly into the navigation process using an initial binary map. Traditional path-planning algorithms 
