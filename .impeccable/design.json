@@ -1,41 +1,71 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-08-25T00:00:00Z",
+  "generatedAt": "2026-08-25T23:45:00Z",
   "title": "Design System: Ali Ikram — AI Specialist & Founder",
   "extensions": {
     "colorMeta": {
-      "phosphor": { "role": "primary", "displayName": "Phosphor", "canonical": "#4ce096", "tonalRamp": ["#0a1f14", "#123a24", "#1c5636", "#2c7d4f", "#4ce096", "#7ceab5", "#a8ffce", "#d6ffe8"] },
-      "phosphor-bright": { "role": "primary", "displayName": "Phosphor Bright", "canonical": "#a8ffce", "tonalRamp": ["#123a24", "#1c5636", "#2c7d4f", "#4ce096", "#7ceab5", "#a8ffce", "#c9ffe0", "#eafff2"] },
-      "amber": { "role": "secondary", "displayName": "Amber", "canonical": "#ffb020", "tonalRamp": ["#3a2400", "#5c3900", "#8a5700", "#c07d00", "#ffb020", "#ffc65c", "#ffdb96", "#ffedc9"] },
-      "cyan": { "role": "secondary", "displayName": "Cyan", "canonical": "#6fd6ff", "tonalRamp": ["#00303f", "#00495c", "#02688a", "#1c93bd", "#6fd6ff", "#96e2ff", "#c0eeff", "#e5f9ff"] },
-      "scope-ground": { "role": "neutral", "displayName": "Scope Ground", "canonical": "#05080a", "tonalRamp": ["#020304", "#05080a", "#080f12", "#0a1215", "#101c1f", "#1a2a2e", "#2c3f42", "#8f9c9a"] },
-      "panel-surface": { "role": "neutral", "displayName": "Panel Surface", "canonical": "#0a1215", "tonalRamp": ["#05080a", "#080f12", "#0a1215", "#101c1f", "#1a2a2e", "#2c3f42", "#4a5c5c", "#8f9c9a"] },
-      "ink-bright": { "role": "neutral", "displayName": "Ink Bright", "canonical": "#eafaf1", "tonalRamp": ["#5c6e68", "#93a8a0", "#b7c9c2", "#cfe0d9", "#eafaf1", "#f2fbf6", "#f8fdfb", "#ffffff"] },
-      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#93a8a0", "tonalRamp": ["#3a4642", "#5c6e68", "#748680", "#93a8a0", "#aebdb7", "#c8d3ce", "#e0e8e5", "#f4f7f6"] },
-      "ink-dim": { "role": "neutral", "displayName": "Ink Dim", "canonical": "#5c6e68", "tonalRamp": ["#252d2b", "#3a4642", "#4a5a55", "#5c6e68", "#748680", "#93a8a0", "#b7c9c2", "#dbe6e2"] },
-      "grid-line": { "role": "neutral", "displayName": "Grid Line", "canonical": "rgba(76, 224, 150, .13)", "tonalRamp": ["rgba(76,224,150,.05)", "rgba(76,224,150,.08)", "rgba(76,224,150,.10)", "rgba(76,224,150,.13)", "rgba(76,224,150,.16)", "rgba(76,224,150,.2)", "rgba(76,224,150,.25)", "rgba(76,224,150,.3)"] },
-      "grid-line-strong": { "role": "neutral", "displayName": "Grid Line Strong", "canonical": "rgba(76, 224, 150, .3)", "tonalRamp": ["rgba(76,224,150,.16)", "rgba(76,224,150,.2)", "rgba(76,224,150,.24)", "rgba(76,224,150,.3)", "rgba(76,224,150,.4)", "rgba(76,224,150,.5)", "rgba(76,224,150,.65)", "rgba(76,224,150,.8)"] },
-      "border": { "role": "neutral", "displayName": "Border", "canonical": "rgba(76, 224, 150, .16)", "tonalRamp": ["rgba(76,224,150,.08)", "rgba(76,224,150,.12)", "rgba(76,224,150,.16)", "rgba(76,224,150,.2)", "rgba(76,224,150,.25)", "rgba(76,224,150,.3)", "rgba(76,224,150,.4)", "rgba(76,224,150,.5)"] }
+      "accent": {
+        "role": "primary",
+        "displayName": "Deep Navy",
+        "canonical": "#16213e",
+        "tonalRamp": ["#0b0f1d", "#141b32", "#16213e", "#1f2c53", "#324a7d", "#5c74a6", "#9aacce", "#dbe1ec"]
+      },
+      "bg": {
+        "role": "neutral",
+        "displayName": "Cream (gradient wash base)",
+        "canonical": "#f5f0e0",
+        "tonalRamp": ["#232220", "#3d3b37", "#615e57", "#8a867d", "#b7b2a6", "#d8d4c8", "#efece4", "#f5f0e0"],
+        "note": "Base tone for Hero, Nav, and project cards. Other sections use their own flat wash hex: ventures #f9eecd, intro #ffeebd, about #f8e6b4, experience #fbe6a7, projects #f9e29f, skills #fbe193."
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#17181a",
+        "tonalRamp": ["#0a0a0b", "#17181a", "#2b2d30", "#454749", "#6a6c6e", "#929496", "#c2c3c4", "#e9e9ea"]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Ink Soft",
+        "canonical": "#5b5d5f",
+        "tonalRamp": ["#1c1d1e", "#333435", "#5b5d5f", "#7a7c7e", "#9b9d9e", "#bcbdbe", "#dcdcdd", "#f0f0f0"]
+      },
+      "ink-faint": {
+        "role": "neutral",
+        "displayName": "Ink Faint",
+        "canonical": "#8b8d8e",
+        "tonalRamp": ["#2c2d2e", "#4a4b4c", "#6b6c6d", "#8b8d8e", "#a8aaab", "#c4c5c6", "#dfe0e0", "#f2f2f2"]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Line",
+        "canonical": "#dfdbd1",
+        "tonalRamp": ["#4a463b", "#726c5c", "#9a927c", "#bfb8a6", "#dfdbd1", "#eae7df", "#f3f1ec", "#faf9f6"]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "canonical": "#ffffff",
+        "tonalRamp": ["#1a1a1a", "#3d3d3d", "#666666", "#8f8f8f", "#b8b8b8", "#d6d6d6", "#eeeeee", "#ffffff"]
+      }
     },
     "typographyMeta": {
-      "headline": { "displayName": "Section Headline", "purpose": "Section titles (.section-title) — Ventures, Experience, Featured Projects, etc." },
-      "display": { "displayName": "Hero/Panel Title", "purpose": "Hero H1, contact-panel H2, card H3 titles." },
-      "body": { "displayName": "Body", "purpose": "Paragraph copy across About, venture, and project descriptions." },
-      "label": { "displayName": "Mono Label", "purpose": "Every structured/tabular string: nav links, readout fields, statuses, classifications, timestamps." }
+      "display": { "displayName": "Display", "purpose": "Hero name only — the single largest text on the page." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles (Ventures, About, Experience, Featured Projects, Technical Skills)." },
+      "pullquote": { "displayName": "Pull-quote / Role", "purpose": "The hero's italic role line — the system's one italic moment." },
+      "title": { "displayName": "Title", "purpose": "Card and log titles, contact/transmission headings, nav logo." },
+      "body": { "displayName": "Body", "purpose": "Paragraph copy across hero, about, ventures, log, projects, contact." },
+      "label": { "displayName": "Label", "purpose": "Nav links, timestamps, fact-list field names, footer, uppercase metadata." }
     },
     "shadows": [],
     "motion": [
-      { "name": "sweep-rotate", "value": "conic-gradient sweep, 9s linear infinite, rotate 360deg", "purpose": "The hero radar scope's continuous sweep — the system's one primary-viewport ambient motion." },
-      { "name": "lock-pulse", "value": "box-shadow ring expansion, 2.8s ease-out infinite", "purpose": "Contact-blip 'lock acquired' pulse, most prominent on the self blip." },
-      { "name": "reveal", "value": "opacity 0->1 + translateY(24px)->0, .6s ease, IntersectionObserver-triggered", "purpose": "Standard scroll-in reveal for all non-hero content blocks." },
-      { "name": "hover-lift", "value": "transform: translateY(-2px) to translateY(-4px) on hover", "purpose": "Buttons and cards lift slightly on hover instead of gaining shadow." }
+      { "name": "reveal-fade-rise", "value": "opacity .7s ease, transform .7s ease (translateY(18px) to 0)", "purpose": "Scroll-triggered entrance for section content via IntersectionObserver; the system's only motion signature." },
+      { "name": "media-desaturate", "value": "filter grayscale(1) contrast(1.05) brightness(1.02), transition filter .3s, filter:none on hover/focus-within", "purpose": "Keeps embedded YouTube demo thumbnails quiet inside the single-accent palette until engaged." }
     ],
     "breakpoints": [
-      { "name": "hero-stack", "value": "860px" },
-      { "name": "about-stack", "value": "860px" },
-      { "name": "transmission-stack", "value": "800px" },
-      { "name": "log-stack", "value": "700px" },
-      { "name": "nav-collapse", "value": "768px" }
+      { "name": "hamburger-nav", "value": "768px" },
+      { "name": "ventures-stack", "value": "760px" },
+      { "name": "two-col-collapse", "value": "800px" },
+      { "name": "log-stack", "value": "700px" }
     ]
   },
   "components": [
@@ -43,78 +73,85 @@
       "name": "Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Default CTA — transparent with phosphor border, used for non-conversion actions like 'View log'.",
-      "html": "<a href=\"#contact\" class=\"ds-btn ds-btn-primary\">Open channel</a>",
-      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; padding: 13px 20px; background: transparent; text-decoration: none; border: 1px solid; transition: all .25s; } .ds-btn-primary { color: #a8ffce; border-color: #4ce096; } .ds-btn-primary:hover, .ds-btn-primary:focus-visible { background: rgba(76,224,150,.1); transform: translateY(-2px); }"
+      "description": "The site's only filled element; used exactly twice (Get in touch, Email me).",
+      "html": "<a href=\"#contact\" class=\"ds-btn-primary\">Get in touch</a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 8px; font-family: 'Public Sans', sans-serif; font-size: 14px; letter-spacing: .02em; padding: 14px 28px; background: #16213e; color: #ffffff; text-decoration: none; border: 1px solid #16213e; transition: opacity .2s, transform .2s; } .ds-btn-primary:hover, .ds-btn-primary:focus-visible { opacity: .85; transform: translateY(-1px); }"
     },
     {
-      "name": "Amber Button",
+      "name": "Text Link Button",
       "kind": "button",
-      "refersTo": "button-amber",
-      "description": "The single primary-action button style, reserved for the site's one conversion CTA (Email me).",
-      "html": "<a href=\"mailto:ali@example.com\" class=\"ds-btn ds-btn-amber\">Email me</a>",
-      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; padding: 13px 20px; background: transparent; text-decoration: none; border: 1px solid; transition: all .25s; } .ds-btn-amber { color: #ffb020; border-color: #ffb020; } .ds-btn-amber:hover, .ds-btn-amber:focus-visible { background: rgba(255,176,32,.1); transform: translateY(-2px); }"
+      "refersTo": "button-text",
+      "description": "Secondary action: underlined ink text, no fill.",
+      "html": "<a href=\"#projects\" class=\"ds-btn-text\">View my work</a>",
+      "css": ".ds-btn-text { font-family: 'Public Sans', sans-serif; font-size: 14px; color: #17181a; text-decoration: none; border-bottom: 1px solid #17181a; padding-bottom: 2px; transition: opacity .2s; } .ds-btn-text:hover, .ds-btn-text:focus-visible { opacity: .6; }"
     },
     {
-      "name": "Ghost Button",
-      "kind": "button",
-      "refersTo": "button-ghost",
-      "description": "Secondary/tertiary action button, dim by default.",
-      "html": "<a href=\"#projects\" class=\"ds-btn ds-btn-ghost\">View log</a>",
-      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; padding: 13px 20px; background: transparent; text-decoration: none; border: 1px solid; transition: all .25s; } .ds-btn-ghost { color: #93a8a0; border-color: rgba(76,224,150,.16); } .ds-btn-ghost:hover, .ds-btn-ghost:focus-visible { color: #eafaf1; border-color: rgba(76,224,150,.3); }"
+      "name": "Section Rule",
+      "kind": "custom",
+      "refersTo": "kicker-rule",
+      "description": "40x1px ink hairline preceding every section title. Pure graphic mark, carries no text and is not a category/eyebrow label.",
+      "html": "<div class=\"ds-kicker-rule\"></div><h2 class=\"ds-section-title\">Ventures</h2>",
+      "css": ".ds-kicker-rule { width: 40px; height: 1px; background: #17181a; margin-bottom: 22px; } .ds-section-title { font-family: Spectral, Georgia, serif; font-weight: 500; font-size: clamp(30px, 4vw, 42px); color: #17181a; letter-spacing: -.01em; margin: 0; }"
     },
     {
-      "name": "Instrument Card",
+      "name": "Fact List Row",
+      "kind": "custom",
+      "refersTo": "fact-list",
+      "description": "Top-ruled, row-divided label/value pairs used once in About; the system's one data-pair pattern.",
+      "html": "<div class=\"ds-fact-list\"><div class=\"ds-fact-row\"><span class=\"ds-fact-label\">Role</span><span class=\"ds-fact-value\">AI Specialist, Founder</span></div></div>",
+      "css": ".ds-fact-list { border-top: 1px solid #dfdbd1; font-family: 'Public Sans', sans-serif; } .ds-fact-row { display: flex; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid #dfdbd1; font-size: 13.5px; } .ds-fact-label { color: #8b8d8e; text-transform: uppercase; letter-spacing: .05em; font-size: 11.5px; } .ds-fact-value { color: #17181a; text-align: right; }"
+    },
+    {
+      "name": "Project Card",
       "kind": "card",
-      "refersTo": "card",
-      "description": "The recurring bracket-cornered panel used for venture, file, and skill-category cards — mono head row, title, body, hairline border.",
-      "html": "<div class=\"ds-card\"><span class=\"ds-corner ds-corner-tl\"></span><span class=\"ds-corner ds-corner-br\"></span><div class=\"ds-card-head\">Class: Navigation</div><h3 class=\"ds-card-title\">Card Title</h3><p class=\"ds-card-body\">Supporting description text goes here.</p></div>",
-      "css": ".ds-card { position: relative; background: #0a1215; border: 1px solid rgba(76,224,150,.16); padding: 26px; transition: border-color .25s, transform .25s; } .ds-card:hover { border-color: rgba(76,224,150,.3); transform: translateY(-4px); } .ds-card-head { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: #6fd6ff; margin-bottom: 14px; } .ds-card-title { font-family: 'Titillium Web', sans-serif; color: #eafaf1; font-size: 19px; font-weight: 600; margin-bottom: 12px; } .ds-card-body { font-family: 'Titillium Web', sans-serif; font-size: 14px; color: #93a8a0; line-height: 1.65; } .ds-corner { position: absolute; width: 12px; height: 12px; border: 1.5px solid #4ce096; opacity: .5; } .ds-corner-tl { top: -1px; left: -1px; border-right: none; border-bottom: none; } .ds-corner-br { bottom: -1px; right: -1px; border-left: none; border-top: none; }"
+      "refersTo": "file-card",
+      "description": "Grid-seamed card with no owned border; the shared 1px background gap between grid cells draws the seam. Contains a desaturated video frame.",
+      "html": "<div class=\"ds-file-card\"><h3 class=\"ds-file-title\">Project Title</h3><p class=\"ds-file-copy\">Project description text.</p><div class=\"ds-video-frame\"><iframe src=\"about:blank\" title=\"Demo\"></iframe></div></div>",
+      "css": ".ds-file-card { background: #faf9f6; padding: 40px; display: flex; flex-direction: column; } .ds-file-title { font-family: Spectral, Georgia, serif; font-weight: 500; color: #17181a; font-size: 21px; margin-bottom: 14px; } .ds-file-copy { font-family: 'Public Sans', sans-serif; font-size: 14.5px; color: #5b5d5f; margin-bottom: 22px; } .ds-video-frame { position: relative; width: 100%; padding-bottom: 56.25%; border: 1px solid #dfdbd1; overflow: hidden; margin-bottom: 20px; } .ds-video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; filter: grayscale(1) contrast(1.05) brightness(1.02); transition: filter .3s; } .ds-video-frame:hover iframe, .ds-video-frame:focus-within iframe { filter: none; }"
     },
     {
-      "name": "Top Navigation",
+      "name": "Primary Nav",
       "kind": "nav",
       "refersTo": "nav",
-      "description": "Fixed, blurred, mono-label nav bar with lower-alpha hairline bottom border.",
-      "html": "<nav class=\"ds-nav\"><div class=\"ds-logo\"><span class=\"ds-logo-mark\">//</span> ALI IKRAM</div><ul class=\"ds-nav-list\"><li><a href=\"#about\">About</a></li><li><a href=\"#projects\">Projects</a></li><li><a href=\"#contact\">Contact</a></li></ul></nav>",
-      "css": ".ds-nav { position: fixed; top: 0; width: 100%; background: rgba(5,8,10,.88); backdrop-filter: blur(10px); padding: 18px 24px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(76,224,150,.16); } .ds-logo { font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600; color: #eafaf1; letter-spacing: .08em; display: flex; align-items: center; gap: 8px; } .ds-logo-mark { color: #4ce096; } .ds-nav-list { display: flex; list-style: none; gap: 28px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; } .ds-nav-list a { color: #93a8a0; text-decoration: none; transition: color .25s; } .ds-nav-list a:hover, .ds-nav-list a:focus-visible { color: #a8ffce; }"
-    },
-    {
-      "name": "Radar Scope",
-      "kind": "custom",
-      "refersTo": "none",
-      "description": "The hero's signature instrument: concentric rings, tick ring, rotating sweep, and contact blips with mono tag labels. Page-specific; not a generic reusable primitive.",
-      "html": "<div class=\"ds-scope\"><div class=\"ds-scope-ring ds-ring-1\"></div><div class=\"ds-scope-ring ds-ring-2\"></div><div class=\"ds-scope-ring ds-ring-3\"></div><div class=\"ds-scope-ring ds-ring-4\"></div><div class=\"ds-scope-sweep\"></div><div class=\"ds-blip ds-blip-self\"><span class=\"ds-blip-dot\"></span></div></div>",
-      "css": ".ds-scope { position: relative; width: 320px; aspect-ratio: 1/1; border-radius: 50%; background: radial-gradient(circle at center, rgba(76,224,150,.05), transparent 70%); overflow: hidden; } .ds-scope-ring { position: absolute; border: 1px solid rgba(76,224,150,.13); border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%,-50%); } .ds-ring-1 { width: 25%; height: 25%; } .ds-ring-2 { width: 50%; height: 50%; } .ds-ring-3 { width: 75%; height: 75%; } .ds-ring-4 { width: 100%; height: 100%; border-color: rgba(76,224,150,.3); } .ds-scope-sweep { position: absolute; inset: 0; border-radius: 50%; background: conic-gradient(from 0deg, rgba(76,224,150,.5), rgba(76,224,150,0) 24%, transparent 100%); animation: ds-sweep 9s linear infinite; opacity: .8; } @keyframes ds-sweep { to { transform: rotate(360deg); } } .ds-blip { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); } .ds-blip-dot { display: block; width: 14px; height: 14px; border-radius: 50%; background: #a8ffce; box-shadow: 0 0 14px #4ce096; animation: ds-pulse 2.8s ease-out infinite; } @keyframes ds-pulse { 0% { box-shadow: 0 0 0 0 rgba(111,214,255,.55); } 70% { box-shadow: 0 0 0 16px rgba(111,214,255,0); } 100% { box-shadow: 0 0 0 0 rgba(111,214,255,0); } }"
+      "description": "Fixed, translucent, blurred top bar with uppercase Public Sans links and a hamburger toggle below 768px (carried logic, unverified narrow-viewport render this session).",
+      "html": "<nav class=\"ds-nav\"><a href=\"#home\" class=\"ds-logo\">Ali Ikram</a><ul class=\"ds-nav-list\"><li><a href=\"#about\">About</a></li><li><a href=\"#contact\">Contact</a></li></ul></nav>",
+      "css": ".ds-nav { position: fixed; top: 0; width: 100%; background: rgba(250,249,246,.92); backdrop-filter: blur(8px); border-bottom: 1px solid #dfdbd1; padding: 24px 32px; display: flex; justify-content: space-between; align-items: center; font-family: 'Public Sans', sans-serif; } .ds-logo { font-family: Spectral, Georgia, serif; font-size: 20px; font-weight: 500; color: #17181a; text-decoration: none; } .ds-nav-list { display: flex; list-style: none; gap: 36px; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; margin: 0; padding: 0; } .ds-nav-list a { color: #5b5d5f; text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 2px; transition: color .2s; } .ds-nav-list a:hover, .ds-nav-list a:focus-visible { color: #17181a; border-color: #17181a; }"
     }
   ],
   "narrative": {
-    "northStar": "The Radar Scope",
-    "overview": "The site is an air-traffic-control instrument, not a résumé page. Ali, IRF Technologies, and Decom Robotics are contacts held on a live scope; his track record is logged telemetry, not prose bragging. The world is a near-black instrument ground lit by a single restrained phosphor-green (grid lines, sweep, lock-on pulses), with amber reserved for the one primary action (email) and a thin cyan used only for secondary classification tags. Every panel is bracket-framed like a HUD readout: corner ticks, hairline borders, monospaced field labels in small caps-by-convention uppercase. This deliberately refuses the dark-navy-plus-neon-gradient 'AI portfolio' default — there are no glows-for-glow's-sake, no gradient blobs, no card shadows; depth comes from grid density and border-brightness, not elevation. The pairing of Titillium Web (display/body) and IBM Plex Mono (every label, field, timestamp, and status tag) does the genre work: Titillium Web reads as confident, geometric, human; Plex Mono reads as instrument telemetry. The system never mixes them within one text role — mono is reserved for data-plane text, Titillium Web for narrative-plane text.",
+    "northStar": "The Editorial Brief",
+    "overview": "The site reads like a well-set executive dossier, not an app or an instrument panel: warm off-white paper, near-black ink, and a single deep-navy accent held in reserve for the one thing the visitor is asked to do. A large serif name and role open the page; one editorial paragraph follows; then a filled navy button and a quiet underlined text link, side by side, with nothing else competing for attention. This is a deliberate double refusal — of the generic dark-navy gradient 'AI portfolio' template, and of this project's own prior identity, a phosphor-green radar/ATC instrument scope. Neither survives in the built page.\n\nSpectral (serif) carries every display, heading, and pull-quote moment. Public Sans, the U.S. federal government's typeface, carries every structural and body string, chosen for its plain, institutional trust register rather than for warmth. Hierarchy is built from type scale, hairline rules, and whitespace, never from color or shadow.",
     "keyCharacteristics": [
-      "Near-black scope ground with a single phosphor-green system accent; amber and cyan are the only other hues, each with one job.",
-      "Bracket-cornered, hairline-bordered instrument panels everywhere — no shadows, no rounded corners except true circles (the scope, its blips, status dots).",
-      "Mono type carries every label/field/status; display type carries only names, headings, and body prose.",
-      "A live rotating radar sweep and pulsing lock-on blips are the site's one motion signature; everything else uses a plain scroll-reveal fade/rise."
+      "Warm off-white ground (#faf9f6), near-black ink, one deep-navy accent (#16213e) reserved for the primary action only.",
+      "Spectral for display/heading/pull-quote text, Public Sans for everything structural — never mixed within a single string.",
+      "Hairline rules instead of borders, cards, or shadows; whitespace and rule-lines carry hierarchy.",
+      "Zero border-radius except true circular list-bullet dots; zero box-shadow anywhere in the system.",
+      "Embedded YouTube demo thumbnails are held desaturated at rest and restored to color only on hover/focus, so they never compete with the palette.",
+      "The page closes on a deep-navy full-bleed band (Contact + footer), the system's one committed color field."
     ],
     "rules": [
-      { "name": "The One Signal Rule", "body": "Phosphor-green is the only color allowed to represent system/active state (status dots, 'Active' tags, lock-on pulses). Amber and cyan never substitute for it — amber means 'act now,' cyan means 'this is what kind of thing you're looking at.'", "section": "colors" },
-      { "name": "The No-Glow-Without-Cause Rule", "body": "Color glow (box-shadow with color, filter bloom) only appears on elements that are literally instrument lights: the scope dots, the lock-pulse animation. Text, panels, and buttons never get a decorative glow.", "section": "colors" },
-      { "name": "The Mono-Is-Data Rule", "body": "If a string is a value, status, timestamp, coordinate, or classification tag, it renders in IBM Plex Mono, uppercase, with letter-spacing. If it's a name, sentence, or heading, it renders in Titillium Web. Never mix the two within a single string.", "section": "typography" },
-      { "name": "The Flat-Instrument Rule", "body": "Panels sit directly on the scope ground with a hairline border; hover states brighten the border and/or lift the element with translateY(-2px to -4px), never add a shadow.", "section": "elevation" }
+      { "name": "The Two-Accent Rule", "body": "Navy signals trust and carries the primary action; garnet signals luxury and never appears as a large fill except on the navy band. A hover state, rule mark, or highlighted figure is always garnet; a primary action is always navy, or garnet-on-navy as its one inversion.", "section": "colors" },
+      { "name": "The Hairline-Not-Border Rule", "body": "Structure is drawn with 1px solid var(--line) rules (faint garnet on the navy band), not with card backgrounds, box-shadow, or heavier borders.", "section": "colors" },
+      { "name": "The Crisp-Not-Blurred Rule", "body": "Garnet hover/accent marks are a solid 1px ring, underline, or color change, never a blurred glow.", "section": "colors" },
+      { "name": "The Serif-Is-Voice Rule", "body": "If a string is a name, a section title, a card title, or the hero's role line, it renders in Spectral. If it is a paragraph, a label, a timestamp, or a navigation string, it renders in Public Sans.", "section": "typography" },
+      { "name": "The Flat Paper Rule", "body": "Nothing in this system lifts off the page. There is no card background distinct from the page background, no shadow, and no blur except the nav bar's backdrop-filter, which exists for legibility, not depth.", "section": "elevation" }
     ],
     "dos": [
-      "Do keep phosphor-green as the only color that signals system/active state; reserve amber for the single primary action and cyan for secondary classification tags only.",
-      "Do render every label, timestamp, coordinate, and status in IBM Plex Mono, uppercase, with letter-spacing; keep names/headings/prose in Titillium Web.",
-      "Do use hairline borders and border-brightness (not shadow) for elevation; hover states brighten borders and/or lift with translateY.",
-      "Do frame instrument-style panels with bracket corner marks (.bracket) and lead each card with a small mono 'head' row before the title, consistent with the existing card types.",
-      "Do keep corners sharp (0 radius) everywhere except true circular 'lit' elements (scope, blips, status dots)."
+      "Do keep navy for trust (primary actions, the closing band) and garnet for luxury (rule marks, hover states, proof figures) — never swap which job each accent does.",
+      "Do draw structure with 1px hairline rules instead of borders, card backgrounds, or shadows.",
+      "Do hold embedded video thumbnails at grayscale(1) contrast(1.05) brightness(1.02) and restore full color only on hover/focus-within.",
+      "Do keep corners sharp (0 radius) everywhere except the true circular log-entry bullet dot.",
+      "Do use an en dash for date ranges (\"2023 – 2024\"), not a comma or an em dash.",
+      "Do keep visible copy free of em dashes and of AI-writing tells — buzzwords, hedge phrases, formulaic constructions.",
+      "Do keep garnet accent marks crisp and solid, never a blurred glow."
     ],
     "donts": [
-      "Don't add drop shadows, glassmorphism, or gradient blobs — depth comes from grid density and border alpha only, per the Flat-Instrument Rule.",
-      "Don't introduce a second saturated accent color; the system deliberately runs on one dominant hue plus two single-purpose secondaries.",
-      "Don't use rounded corners on cards, buttons, or panels — radius is reserved for circular instrument elements only.",
-      "Don't reintroduce sequential sub-numbering (e.g. 'SYS-01,' 'FILE-02') as a card-header convention — this pattern was flagged and removed twice during this build's review; card head labels are non-sequential category/status codes (e.g. AI/ML, Class: Navigation), never an invented ordinal sequence."
+      "Don't add drop shadows, gradients, glassmorphism, or a secondary panel background.",
+      "Don't let garnet become a large fill on the paper ground, or navy appear as body text/decoration there — each accent keeps one job. Garnet only fills on the navy band.",
+      "Don't use rounded corners on cards, buttons, panels, or frames.",
+      "Don't reintroduce eyebrow, kicker-label, or category-tag text above titles — nine such tags were built, flagged in review, and removed entirely; this is a corrected defect, not a component.",
+      "Don't apply garnet .stat styling to a figure that isn't a real, sourced achievement."
     ]
   }
 }
+</content>

@@ -3,600 +3,318 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ali Ikram — AI Specialist &amp; Founder</title>
-<meta name="description" content="Ali Ikram — AI Specialist, founder of IRF Technologies and Decom Robotics. Production-grade AI, computer vision, and LLM systems for autonomous driving, edge deployment, and agentic automation.">
+<title>Ali Ikram | AI Specialist and Founder</title>
+<meta name="description" content="Ali Ikram is an AI Specialist and the founder of IRF Technologies and Decom Robotics. He builds production AI systems for computer vision, language models, and edge deployment.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Titillium+Web:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Public+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-        --bg: #05080a;
-        --bg-raised: #080f12;
-        --bg-panel: #0a1215;
-        --grid-line: rgba(76, 224, 150, .13);
-        --grid-line-strong: rgba(76, 224, 150, .3);
-        --phosphor: #4ce096;
-        --phosphor-bright: #a8ffce;
-        --amber: #ffb020;
-        --cyan: #6fd6ff;
-        --ink: #93a8a0;
-        --ink-dim: #5c6e68;
-        --ink-bright: #eafaf1;
-        --border: rgba(76, 224, 150, .16);
-        --font-display: 'Titillium Web', sans-serif;
-        --font-mono: 'IBM Plex Mono', monospace;
+        --bg: #f5f0e0;
+        --panel: #f2f0ea;
+        --ink: #17181a;
+        --ink-soft: #5b5d5f;
+        --ink-faint: #8b8d8e;
+        --line: #dfdbd1;
+        --accent: #16213e;
+        --accent-deep: #0e1626;
+        --garnet: #76290b;
+        --garnet-bright: #a8452a;
+        --on-navy: #eae6dc;
+        --white: #ffffff;
+        --font-serif: 'Spectral', Georgia, serif;
+        --font-sans: 'Public Sans', -apple-system, sans-serif;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-        font-family: var(--font-display);
+        font-family: var(--font-sans);
         background: var(--bg);
-        color: var(--ink);
+        color: var(--ink-soft);
         line-height: 1.65;
         overflow-x: hidden;
-        position: relative;
+        font-size: 16px;
     }
 
-    body::before {
-        content: '';
-        position: fixed;
-        inset: 0;
-        pointer-events: none;
-        z-index: 2000;
-        background: repeating-linear-gradient(
-            to bottom,
-            rgba(76, 224, 150, .025) 0px,
-            rgba(76, 224, 150, .025) 1px,
-            transparent 1px,
-            transparent 3px
-        );
-        mix-blend-mode: overlay;
-    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
 
-    .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
-
-    .mono { font-family: var(--font-mono); }
-
-    .bracket { position: relative; }
-    .bracket::before, .bracket::after {
-        content: '';
-        position: absolute;
-        width: 12px;
-        height: 12px;
-        border: 1.5px solid var(--phosphor);
-        opacity: .5;
-        pointer-events: none;
-    }
-    .bracket::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
-    .bracket::after { bottom: -1px; right: -1px; border-left: none; border-top: none; }
-
-    .section-title {
-        font-size: clamp(28px, 4vw, 42px);
-        font-weight: 600;
-        color: var(--ink-bright);
-        margin-bottom: 8px;
-        letter-spacing: -.01em;
-    }
-
-    .section-index {
-        font-family: var(--font-mono);
-        font-size: 12px;
-        color: var(--ink-dim);
-        letter-spacing: .1em;
-        margin-bottom: 48px;
-        display: block;
-    }
-
-    section { padding: 110px 0; position: relative; border-top: 1px solid var(--border); }
-    section#home { border-top: none; }
+    a { color: inherit; }
 
     /* Nav */
     nav {
         position: fixed;
         top: 0;
         width: 100%;
-        background: rgba(5, 8, 10, .88);
-        backdrop-filter: blur(10px);
+        background: rgba(245, 240, 224, .92);
+        backdrop-filter: blur(8px);
         z-index: 1000;
-        padding: 18px 0;
-        border-bottom: 1px solid var(--border);
+        padding: 24px 0;
+        border-bottom: 1px solid var(--line);
     }
 
     nav .container { display: flex; justify-content: space-between; align-items: center; }
 
     .logo {
-        font-family: var(--font-mono);
-        font-size: 15px;
-        font-weight: 600;
-        color: var(--ink-bright);
-        letter-spacing: .08em;
-        display: flex;
-        align-items: center;
-        gap: 8px;
+        font-family: var(--font-serif);
+        font-size: 20px;
+        font-weight: 500;
+        color: var(--ink);
+        letter-spacing: .01em;
+        text-decoration: none;
     }
-
-    .logo span { color: var(--phosphor); }
 
     nav ul {
         display: flex;
         list-style: none;
-        gap: 28px;
-        font-family: var(--font-mono);
-        font-size: 12px;
-        letter-spacing: .12em;
+        gap: 36px;
+        font-size: 13px;
+        letter-spacing: .06em;
         text-transform: uppercase;
     }
 
-    nav a {
-        color: var(--ink);
+    nav a.nav-link {
+        color: var(--ink-soft);
         text-decoration: none;
-        transition: color .25s;
-        position: relative;
+        transition: color .2s;
         padding-bottom: 2px;
+        border-bottom: 1px solid transparent;
     }
 
-    nav a:hover { color: var(--phosphor-bright); }
+    nav a.nav-link:hover { color: var(--garnet); border-color: var(--garnet); }
 
     .nav-toggle {
         display: none;
         flex-direction: column;
         justify-content: center;
         gap: 5px;
-        width: 30px;
-        height: 30px;
+        width: 28px;
+        height: 28px;
         background: none;
-        border: 1px solid var(--border);
+        border: none;
         cursor: pointer;
         padding: 0;
     }
-    .nav-toggle span { width: 16px; height: 1.5px; background: var(--phosphor); margin: 0 auto; }
+    .nav-toggle span { width: 20px; height: 1px; background: var(--ink); margin: 0 auto; }
 
-    /* ===== HERO / RADAR SCOPE ===== */
-    .hero {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        padding-top: 110px;
-        padding-bottom: 60px;
+    /* Section rhythm */
+    section { padding: 120px 0; border-top: 1px solid var(--line); }
+    section#home { border-top: none; padding-top: 200px; }
+
+    /* Warm gradient wash, deepening toward the closing navy band */
+    #ventures { background: #f9eecd; }
+    #intro { background: #ffeebd; --font-serif: 'DM Serif Display', Georgia, serif; --font-sans: 'Work Sans', -apple-system, sans-serif; }
+    #about { background: #f8e6b4; }
+    #experience { background: #fbe6a7; }
+    #projects { background: #f9e29f; }
+    #skills { background: #fbe193; }
+
+    .kicker-rule {
+        width: 40px;
+        height: 2px;
+        background: var(--garnet);
+        margin-bottom: 22px;
     }
 
-    .hero .container { width: 100%; }
-
-    .hero-instrument {
-        width: 100%;
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
-        border: 1px solid var(--grid-line-strong);
-        background: linear-gradient(180deg, rgba(76,224,150,.03), transparent 40%);
-        position: relative;
-    }
-
-    .hero-instrument::before,
-    .hero-instrument::after,
-    .hero-instrument .corner-br,
-    .hero-instrument .corner-bl {
-        content: '';
-        position: absolute;
-        width: 18px;
-        height: 18px;
-        border: 2px solid var(--phosphor);
-        opacity: .6;
-    }
-    .hero-instrument::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
-    .hero-instrument::after { top: -1px; right: -1px; border-left: none; border-bottom: none; }
-    .hero-instrument .corner-bl { bottom: -1px; left: -1px; border-right: none; border-top: none; }
-    .hero-instrument .corner-br { bottom: -1px; right: -1px; border-left: none; border-top: none; }
-
-    .scope-wrap {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 48px;
-    }
-
-    .scope {
-        position: relative;
-        width: min(100%, 560px);
-        aspect-ratio: 1 / 1;
-        border-radius: 50%;
-        background: radial-gradient(circle at center, rgba(76,224,150,.05), transparent 70%);
-        overflow: hidden;
-    }
-
-    .scope-rings, .scope-ticks { position: absolute; inset: 0; border-radius: 50%; }
-
-    .scope-ring {
-        position: absolute;
-        border: 1px solid var(--grid-line);
-        border-radius: 50%;
-        top: 50%; left: 50%;
-        transform: translate(-50%, -50%);
-    }
-    .ring-1 { width: 25%; height: 25%; }
-    .ring-2 { width: 50%; height: 50%; }
-    .ring-3 { width: 75%; height: 75%; }
-    .ring-4 { width: 100%; height: 100%; border-color: var(--grid-line-strong); }
-
-    .scope-crosshair {
-        position: absolute; inset: 0;
-        background:
-            linear-gradient(var(--grid-line) 1px, transparent 1px) center / 100% 1px no-repeat,
-            linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) center / 1px 100% no-repeat;
-    }
-
-    .scope-ticks {
-        background-image: repeating-conic-gradient(var(--grid-line-strong) 0deg 1deg, transparent 1deg 15deg);
-        -webkit-mask-image: radial-gradient(circle, transparent 97%, black 98%, black 100%);
-        mask-image: radial-gradient(circle, transparent 97%, black 98%, black 100%);
-    }
-
-    .scope-sweep {
-        position: absolute;
-        inset: 0;
-        border-radius: 50%;
-        background: conic-gradient(from 0deg, rgba(76,224,150,.5), rgba(76,224,150,0) 24%, transparent 100%);
-        animation: sweep-rotate 9s linear infinite;
-        opacity: .8;
-    }
-
-    @keyframes sweep-rotate { to { transform: rotate(360deg); } }
-
-    .contact-blip {
-        position: absolute;
-        transform: translate(-50%, -50%);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-decoration: none;
-        z-index: 5;
-    }
-
-    .contact-blip .dot {
-        width: 10px; height: 10px;
-        border-radius: 50%;
-        background: var(--cyan);
-        box-shadow: 0 0 10px var(--cyan);
-        animation: lock-pulse 2.8s ease-out infinite;
-    }
-
-    .contact-blip.self .dot {
-        width: 14px; height: 14px;
-        background: var(--phosphor-bright);
-        box-shadow: 0 0 14px var(--phosphor);
-    }
-
-    @keyframes lock-pulse {
-        0% { box-shadow: 0 0 0 0 rgba(111,214,255,.55); }
-        70% { box-shadow: 0 0 0 16px rgba(111,214,255,0); }
-        100% { box-shadow: 0 0 0 0 rgba(111,214,255,0); }
-    }
-
-    .contact-blip .tag {
-        margin-top: 8px;
-        font-family: var(--font-mono);
-        font-size: 10.5px;
-        letter-spacing: .08em;
+    .section-title {
+        font-family: var(--font-serif);
+        font-weight: 500;
+        font-size: clamp(30px, 4vw, 42px);
         color: var(--ink);
-        background: rgba(5,8,10,.85);
-        border: 1px solid var(--grid-line-strong);
-        padding: 3px 7px;
-        white-space: nowrap;
-        opacity: 0;
-        transform: translateY(-4px);
-        animation: tag-in .6s ease forwards;
-        transition: color .2s, border-color .2s;
+        margin-bottom: 12px;
+        letter-spacing: -.01em;
     }
 
-    .contact-blip:hover .tag { color: var(--phosphor-bright); border-color: var(--phosphor); }
-
-    @keyframes tag-in { to { opacity: 1; transform: translateY(0); } }
-
-    .blip-self { top: 50%; left: 50%; }
-    .blip-irf { top: 27%; left: 74%; }
-    .blip-decom { top: 76%; left: 26%; }
-    .blip-irf .tag { animation-delay: .4s; }
-    .blip-decom .tag { animation-delay: .7s; }
-
-    .readout-panel {
-        border-left: 1px solid var(--grid-line-strong);
-        padding: 44px 32px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 22px;
+    .section-note {
+        font-size: 14.5px;
+        color: var(--ink-faint);
+        margin-bottom: 56px;
+        max-width: 46ch;
     }
 
-    .readout-panel h1 {
-        font-size: clamp(30px, 3vw, 38px);
-        color: var(--ink-bright);
-        line-height: 1.15;
-        font-weight: 600;
+    /* Hero */
+    .hero { display: flex; align-items: flex-end; min-height: 92vh; padding-bottom: 90px; }
+    .hero-inner { max-width: 720px; }
+
+    .hero h1 {
+        font-family: var(--font-serif);
+        font-weight: 500;
+        font-size: clamp(48px, 7vw, 86px);
+        line-height: 1.02;
+        color: var(--ink);
+        margin-bottom: 18px;
+        letter-spacing: -.015em;
     }
 
-    .readout-panel .role {
-        font-family: var(--font-mono);
+    .hero .role {
+        font-family: var(--font-serif);
+        font-style: italic;
+        font-weight: 400;
+        font-size: clamp(20px, 2.4vw, 26px);
+        color: var(--ink-soft);
+        margin-bottom: 28px;
+    }
+
+    .hero p.lede {
+        font-size: 18px;
+        color: var(--ink-soft);
+        max-width: 56ch;
+        margin-bottom: 40px;
+    }
+
+    .hero-meta {
         font-size: 13px;
-        letter-spacing: .1em;
-        color: var(--phosphor);
+        letter-spacing: .08em;
+        color: var(--garnet);
+        font-weight: 600;
         text-transform: uppercase;
+        margin-top: 36px;
     }
 
-    .readout-fields {
-        font-family: var(--font-mono);
-        font-size: 12px;
-        display: grid;
-        grid-template-columns: auto 1fr;
-        gap: 6px 14px;
-        color: var(--ink-dim);
-        border-top: 1px solid var(--border);
-        border-bottom: 1px solid var(--border);
-        padding: 16px 0;
-    }
-    .readout-fields dt { color: var(--ink-dim); }
-    .readout-fields dd { color: var(--ink); }
-
-    .hero-lede { font-size: 15px; color: var(--ink); max-width: 46ch; }
-
-    .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
 
     .btn {
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        font-family: var(--font-mono);
-        font-size: 12px;
-        letter-spacing: .08em;
-        text-transform: uppercase;
-        padding: 13px 20px;
-        background: transparent;
-        color: var(--phosphor-bright);
-        border: 1px solid var(--phosphor);
+        font-size: 14px;
+        letter-spacing: .02em;
+        padding: 14px 28px;
+        background: var(--accent);
+        color: var(--white);
         text-decoration: none;
-        transition: all .25s;
+        transition: box-shadow .2s, transform .2s;
+        border: 1px solid var(--accent);
+        box-shadow: 0 0 0 0 var(--garnet);
     }
-    .btn:hover { background: rgba(76,224,150,.1); transform: translateY(-2px); }
-    .btn.amber { color: var(--amber); border-color: var(--amber); }
-    .btn.amber:hover { background: rgba(255,176,32,.1); }
-    .btn.ghost { color: var(--ink); border-color: var(--border); }
-    .btn.ghost:hover { color: var(--ink-bright); border-color: var(--grid-line-strong); }
+    .btn:hover { box-shadow: 0 0 0 1px var(--garnet); transform: translateY(-1px); }
+    .btn.on-navy { background: var(--garnet); border-color: var(--garnet); color: var(--on-navy); }
+    .btn.on-navy:hover { box-shadow: 0 0 0 1px var(--on-navy); }
 
-    @media (max-width: 860px) {
-        .hero-instrument { grid-template-columns: 1fr; }
-        .readout-panel { border-left: none; border-top: 1px solid var(--grid-line-strong); }
-        .blip-irf { top: 24%; left: 78%; }
-        .blip-decom { top: 78%; left: 22%; }
+    .btn-text {
+        font-size: 14px;
+        color: var(--ink);
+        text-decoration: none;
+        border-bottom: 1px solid var(--ink);
+        padding-bottom: 2px;
+        transition: color .2s, border-color .2s;
     }
+    .btn-text:hover { color: var(--garnet); border-color: var(--garnet); }
+    .btn-text.on-navy { color: var(--on-navy); border-color: rgba(234,230,220,.4); }
+    .btn-text.on-navy:hover { color: var(--garnet-bright); border-color: var(--garnet-bright); }
 
-    /* ===== VENTURES ===== */
-    .ventures-grid {
+    /* Ventures */
+    .ventures-split {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 24px;
+        grid-template-columns: 1fr 1px 1fr;
+        gap: 0;
+    }
+    .ventures-divider { background: var(--line); }
+    .venture-col { padding: 0 48px; }
+    .venture-col:first-child { padding-left: 0; }
+    .venture-col:last-child { padding-right: 0; }
+
+    .venture-col h3 { font-family: var(--font-serif); font-size: 26px; font-weight: 500; color: var(--ink); margin-top: 4px; margin-bottom: 14px; }
+    .venture-col p { font-size: 15.5px; color: var(--ink-soft); margin-bottom: 22px; }
+    .venture-link { font-size: 14px; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--ink-faint); padding-bottom: 2px; transition: color .2s, border-color .2s; }
+    .venture-link:hover { color: var(--garnet); border-color: var(--garnet); }
+
+    @media (max-width: 760px) {
+        .ventures-split { grid-template-columns: 1fr; gap: 48px; }
+        .ventures-divider { display: none; }
+        .venture-col { padding: 0; }
     }
 
-    .venture-card {
-        border: 1px solid var(--border);
-        background: var(--bg-panel);
-        padding: 28px;
-        text-decoration: none;
-        display: block;
-        transition: border-color .25s, transform .25s;
-        position: relative;
-    }
-    .venture-card:hover { border-color: var(--grid-line-strong); transform: translateY(-4px); }
-
-    .venture-head {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        font-family: var(--font-mono);
-        font-size: 11px;
-        letter-spacing: .1em;
-        color: var(--ink-dim);
-        margin-bottom: 18px;
-        text-transform: uppercase;
-    }
-    .venture-head .status { color: var(--phosphor); display: flex; align-items: center; gap: 6px; }
-    .venture-head .status::before {
-        content: ''; width: 6px; height: 6px; border-radius: 50%;
-        background: var(--phosphor); box-shadow: 0 0 6px var(--phosphor);
-    }
-
-    .venture-card h3 { color: var(--ink-bright); font-size: 22px; margin-bottom: 6px; }
-    .venture-class { font-family: var(--font-mono); font-size: 11.5px; color: var(--cyan); letter-spacing: .06em; margin-bottom: 14px; text-transform: uppercase; }
-    .venture-card p { font-size: 14.5px; color: var(--ink); margin-bottom: 20px; }
-    .venture-link { font-family: var(--font-mono); font-size: 12px; color: var(--phosphor-bright); display: inline-flex; align-items: center; gap: 6px; }
-    .venture-card:hover .venture-link { text-decoration: underline; }
-
-    /* ===== INTRO TRANSMISSION ===== */
-    .transmission { padding: 70px 0; }
-    .transmission .container { display: grid; grid-template-columns: minmax(0,1fr) minmax(280px, 460px); gap: 40px; align-items: center; }
-    .transmission-copy h2 { color: var(--ink-bright); font-size: 24px; margin-bottom: 10px; }
-    .transmission-copy p { font-size: 14.5px; max-width: 42ch; }
-    .video-frame {
-        position: relative;
-        width: 100%;
-        padding-bottom: 56.25%;
-        border: 1px solid var(--grid-line-strong);
-        overflow: hidden;
-    }
-    .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; filter: grayscale(.5) contrast(1.05) brightness(.9); transition: filter .3s; }
+    /* Intro video */
+    .transmission .container { display: grid; grid-template-columns: minmax(0,1fr) minmax(280px, 460px); gap: 48px; align-items: center; }
+    .transmission-copy h2 { font-family: var(--font-serif); font-weight: 500; font-size: 24px; color: var(--ink); margin-bottom: 10px; }
+    .transmission-copy p { font-size: 14.5px; max-width: 40ch; }
+    .video-frame { position: relative; width: 100%; padding-bottom: 56.25%; border: 1px solid var(--line); overflow: hidden; }
+    .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; filter: grayscale(1) contrast(1.05) brightness(1.02); transition: filter .3s; }
     .video-frame:hover iframe, .video-frame:focus-within iframe { filter: none; }
     @media (max-width: 800px) { .transmission .container { grid-template-columns: 1fr; } }
 
-    /* ===== ABOUT ===== */
-    .about-grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(240px, 320px); gap: 50px; }
-    .about-copy p { font-size: 16.5px; max-width: 68ch; margin-bottom: 22px; color: var(--ink); }
-    .about-copy p strong { color: var(--ink-bright); font-weight: 600; }
+    /* About */
+    .about-grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(220px, 280px); gap: 64px; }
+    .about-copy p { font-size: 17px; max-width: 62ch; margin-bottom: 22px; color: var(--ink-soft); }
+    .about-copy p strong { color: var(--ink); font-weight: 500; }
 
-    .profile-card {
-        border: 1px solid var(--border);
-        background: var(--bg-panel);
-        padding: 24px;
-        font-family: var(--font-mono);
-        font-size: 12px;
-        height: fit-content;
-    }
-    .profile-card .row { display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid var(--border); }
-    .profile-card .row:last-child { border-bottom: none; }
-    .profile-card .row span:first-child { color: var(--ink-dim); }
-    .profile-card .row span:last-child { color: var(--ink-bright); text-align: right; }
+    .fact-list { border-top: 1px solid var(--line); }
+    .fact-list .row { display: flex; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 13.5px; }
+    .fact-list .row span:first-child { color: var(--ink-faint); text-transform: uppercase; letter-spacing: .05em; font-size: 11.5px; }
+    .fact-list .row span:last-child { color: var(--ink); text-align: right; }
 
-    @media (max-width: 860px) { .about-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 800px) { .about-grid { grid-template-columns: 1fr; } }
 
-    /* ===== EXPERIENCE (flight log) ===== */
-    .log-list { border-top: 1px solid var(--border); }
+    /* Experience */
+    .log-list { border-top: 1px solid var(--line); }
     .log-entry {
         display: grid;
-        grid-template-columns: 150px 1fr;
-        gap: 30px;
-        padding: 36px 0;
-        border-bottom: 1px solid var(--border);
-        transition: background .25s;
+        grid-template-columns: 160px 1fr;
+        gap: 40px;
+        padding: 44px 0;
+        border-bottom: 1px solid var(--line);
     }
-    .log-entry:hover { background: rgba(76,224,150,.02); }
-
-    .log-time {
-        font-family: var(--font-mono);
-        font-size: 12px;
-        color: var(--ink-dim);
-        letter-spacing: .05em;
-        padding-top: 3px;
-    }
-    .log-time .active-tag {
-        display: inline-block; margin-top: 8px;
-        color: var(--phosphor); border: 1px solid var(--phosphor);
-        padding: 2px 6px; font-size: 10px; letter-spacing: .08em;
-    }
-
-    .log-title { color: var(--ink-bright); font-size: 20px; margin-bottom: 4px; }
-    .log-company { font-family: var(--font-mono); font-size: 12.5px; color: var(--cyan); letter-spacing: .04em; margin-bottom: 16px; text-transform: uppercase; }
-
+    .log-time { font-size: 13px; letter-spacing: .03em; color: var(--ink-faint); padding-top: 4px; text-transform: uppercase; }
+    .log-title { font-family: var(--font-serif); font-weight: 500; color: var(--ink); font-size: 21px; margin-bottom: 4px; }
+    .log-company { font-size: 13px; color: var(--ink-faint); letter-spacing: .03em; text-transform: uppercase; margin-bottom: 18px; }
     .log-entry ul { list-style: none; }
-    .log-entry li {
-        position: relative;
-        padding-left: 22px;
-        margin-bottom: 10px;
-        font-size: 14.5px;
-        color: var(--ink);
-    }
-    .log-entry li::before {
-        content: '›';
-        position: absolute; left: 0; top: -1px;
-        color: var(--phosphor);
-        font-family: var(--font-mono);
-        font-weight: 700;
-    }
+    .log-entry li { position: relative; padding-left: 18px; margin-bottom: 11px; font-size: 15px; color: var(--ink-soft); }
+    .log-entry li::before { content: ''; position: absolute; left: 0; top: 9px; width: 5px; height: 5px; background: var(--ink-faint); border-radius: 50%; }
+    .log-entry li .stat { color: var(--garnet); font-weight: 600; }
 
-    @media (max-width: 700px) {
-        .log-entry { grid-template-columns: 1fr; gap: 10px; }
-    }
+    @media (max-width: 700px) { .log-entry { grid-template-columns: 1fr; gap: 10px; } }
 
-    /* ===== PROJECTS (contact files) ===== */
-    .files-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 26px; }
+    /* Projects */
+    .files-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
 
-    .file-card {
-        background: var(--bg-panel);
-        border: 1px solid var(--border);
-        border-top: 2px solid var(--phosphor);
-        padding: 26px;
-        display: flex;
-        flex-direction: column;
-        transition: border-color .25s, transform .25s;
-    }
-    .file-card:hover { transform: translateY(-4px); border-color: var(--grid-line-strong); border-top-color: var(--phosphor); }
+    .file-card { background: var(--bg); padding: 40px; display: flex; flex-direction: column; }
 
-    .file-head { display: flex; justify-content: flex-end; align-items: baseline; font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 14px; }
-    .file-head .file-class { color: var(--cyan); }
+    .file-card h3 { font-family: var(--font-serif); font-weight: 500; color: var(--ink); font-size: 21px; margin-bottom: 14px; }
+    .file-card p { font-size: 14.5px; color: var(--ink-soft); flex-grow: 1; margin-bottom: 22px; }
 
-    .file-card h3 { color: var(--ink-bright); font-size: 19px; margin-bottom: 12px; min-height: 48px; }
-    .file-card p { font-size: 14px; color: var(--ink); flex-grow: 1; margin-bottom: 18px; }
-
-    .file-video { position: relative; width: 100%; padding-bottom: 56.25%; border: 1px solid var(--border); overflow: hidden; margin-bottom: 18px; }
-    .file-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; filter: grayscale(.5) contrast(1.05) brightness(.9); transition: filter .3s; }
+    .file-video { position: relative; width: 100%; padding-bottom: 56.25%; border: 1px solid var(--line); overflow: hidden; margin-bottom: 20px; }
+    .file-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; filter: grayscale(1) contrast(1.05) brightness(1.02); transition: filter .3s; }
     .file-video:hover iframe, .file-video:focus-within iframe { filter: none; }
 
-    .file-links { display: flex; gap: 10px; }
-    .file-link {
-        display: inline-flex; align-items: center; gap: 7px;
-        font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .04em;
-        padding: 8px 14px;
-        background: rgba(76,224,150,.06);
-        color: var(--phosphor-bright);
-        text-decoration: none;
-        border: 1px solid var(--border);
-        transition: all .25s;
-    }
-    .file-link:hover { background: rgba(76,224,150,.14); border-color: var(--grid-line-strong); }
+    .file-link { display: inline-flex; align-items: center; gap: 7px; font-size: 13.5px; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--ink-faint); padding-bottom: 2px; width: fit-content; transition: color .2s, border-color .2s; }
+    .file-link:hover { color: var(--garnet); border-color: var(--garnet); }
     .github-icon { width: 14px; height: 14px; }
 
-    /* ===== SKILLS (systems manifest) ===== */
-    .skills-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 22px; }
-    .skill-category { border: 1px solid var(--border); background: var(--bg-panel); padding: 22px; }
-    .skill-head {
-        display: flex; justify-content: space-between; align-items: baseline;
-        font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase;
-        color: var(--ink-dim); margin-bottom: 12px;
-    }
-    .skill-head .status { color: var(--phosphor); }
-    .skill-category h3 {
-        font-size: 16px; font-weight: 600;
-        color: var(--ink-bright); margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid var(--border);
-    }
+    /* Skills */
+    .skills-columns { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; }
+    .skill-category h3 { font-family: var(--font-serif); font-weight: 500; font-size: 17px; color: var(--ink); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
     .skill-category ul { list-style: none; }
-    .skill-category li {
-        font-family: var(--font-mono); font-size: 12.5px; color: var(--ink); padding: 5px 0;
-        display: flex; align-items: center; gap: 8px;
-    }
-    .skill-category li::before { content: '›'; color: var(--phosphor); font-weight: 700; }
+    .skill-category li { font-size: 14px; color: var(--ink-soft); padding: 5px 0; }
 
-    /* ===== CONTACT ===== */
-    .contact-panel {
-        border: 1px solid var(--grid-line-strong);
-        background: linear-gradient(180deg, rgba(76,224,150,.04), transparent 60%);
-        padding: 56px;
-        text-align: center;
-        max-width: 720px;
-        margin: 0 auto;
-        position: relative;
-    }
-    .contact-panel::before, .contact-panel::after {
-        content: ''; position: absolute; width: 16px; height: 16px; border: 2px solid var(--phosphor); opacity: .6;
-    }
-    .contact-panel::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
-    .contact-panel::after { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+    /* Contact — closing band */
+    #contact { background: var(--accent-deep); border-top: none; }
+    .contact-block { text-align: center; max-width: 620px; margin: 0 auto; }
+    .contact-block .kicker-rule { margin: 0 auto 22px; }
+    .contact-block h2 { font-family: var(--font-serif); font-weight: 500; font-size: 36px; color: var(--white); margin-bottom: 18px; }
+    .contact-block > p { font-size: 16px; margin: 0 auto 40px; max-width: 48ch; color: var(--on-navy); }
 
-    .contact-panel h2 { color: var(--ink-bright); font-size: 32px; margin-bottom: 16px; }
-    .contact-panel > p { font-size: 15.5px; max-width: 50ch; margin: 0 auto 34px; }
+    .contact-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 44px; }
 
-    .contact-links { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 36px; }
-
-    .comms-data { font-family: var(--font-mono); font-size: 12.5px; color: var(--ink-dim); display: flex; flex-direction: column; gap: 6px; }
-    .comms-data span { color: var(--ink); }
+    .meta-lines { font-size: 14px; color: rgba(234,230,220,.6); }
+    .meta-lines div { margin-bottom: 6px; }
 
     footer {
+        background: var(--accent-deep);
         text-align: center;
-        padding: 34px 0;
-        border-top: 1px solid var(--border);
-        font-family: var(--font-mono);
-        font-size: 11.5px;
-        color: var(--ink-dim);
-        letter-spacing: .04em;
-        display: flex; flex-direction: column; gap: 6px; align-items: center;
+        padding: 40px 0;
+        border-top: 1px solid rgba(118,41,11,.35);
+        font-size: 13px;
+        color: rgba(234,230,220,.5);
     }
-    footer .status { color: var(--phosphor); display: inline-flex; align-items: center; gap: 6px; }
-    footer .status::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--phosphor); box-shadow: 0 0 6px var(--phosphor); }
 
     /* Scroll reveal */
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
     .reveal.in { opacity: 1; transform: translateY(0); }
 
     @media (max-width: 768px) {
-        .hero h1, .readout-panel h1 { font-size: 30px; }
         .nav-toggle { display: flex; }
         nav ul {
             display: none;
@@ -606,91 +324,56 @@
             width: 100%;
             flex-direction: column;
             gap: 0;
-            background: rgba(5, 8, 10, .97);
-            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+            border-bottom: 1px solid var(--line);
         }
         nav ul.open { display: flex; }
-        nav ul li { border-top: 1px solid var(--border); }
-        nav ul a { display: block; padding: 16px 24px; }
-        section { padding: 70px 0; }
+        nav ul li { border-top: 1px solid var(--line); }
+        nav ul a { display: block; padding: 16px 32px; }
+        section { padding: 80px 0; }
+        section#home { padding-top: 160px; }
     }
 </style>
 </head>
 <body>
 <!--
-THESIS: Visitors are contacts being tracked and acquired, not readers of a marketing page — every credential renders as measured telemetry, refusing the dark-navy/neon-accent AI-portfolio default.
-OWN-WORLD: Near-black scope ground, single restrained phosphor-green accent (grid, sweep, lock-on), amber for action, thin cyan for secondary tracks; IBM Plex Mono for tabular data, Titillium Web for display type; polar grid, rotating sweep, bracket-framed instrument panels throughout.
-STORY: A visitor sees Ali acquiring lock at the center of a live scope, IRF Technologies and Decom Robotics tracked alongside him, then reads his track record as logged telemetry and decides to open a channel or follow a tracked venture.
-FIRST VIEWPORT: Full-bleed radar-scope instrument, sweep rotating, Ali locked at center, two venture blips at fixed bearings, integrated data-readout panel with role, location, status and two CTAs.
-FORM: Air-traffic / radar tracking scope, candidate 4 of 7 grounded structures, seed key d800dd3a.
+THESIS: An executive's personal site. Restraint and typographic craft do the persuading, not motion or spectacle. Refuses both the generic dark-navy AI-portfolio default and the prior radar-instrument concept.
+OWN-WORLD: Warm off-white ground, near-black ink, a single deep navy accent used only for the primary action. Spectral (serif, editorial, used at display and pull-quote sizes) paired with Public Sans (the US federal government's typeface, chosen for its plain institutional trust register) for everything structural. Hairline rules instead of borders and cards; whitespace instead of color for hierarchy.
+STORY: A visitor reads a clear, unhurried account of who Ali is, what he has shipped, and what he now runs, then reaches out or follows a venture.
+FIRST VIEWPORT: Large serif name and role, one editorial paragraph, a single filled navy action and a quiet text link. No graphic device competes with the type.
+FORM: Editorial executive minimalism, direction pinned directly by the user (not seed-assigned).
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md.
 -->
 
-<nav>
+<nav id="site-nav">
     <div class="container">
-        <div class="logo"><span>//</span> ALI IKRAM</div>
+        <a href="#home" class="logo">Ali Ikram</a>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navList">
             <span></span><span></span><span></span>
         </button>
         <ul id="navList">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#ventures">Ventures</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a class="nav-link" href="#about">About</a></li>
+            <li><a class="nav-link" href="#experience">Experience</a></li>
+            <li><a class="nav-link" href="#ventures">Ventures</a></li>
+            <li><a class="nav-link" href="#projects">Projects</a></li>
+            <li><a class="nav-link" href="#skills">Skills</a></li>
+            <li><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
     </div>
 </nav>
 
-<!-- HERO — radar scope -->
+<!-- HERO -->
 <section id="home" class="hero">
     <div class="container">
-        <div class="hero-instrument">
-            <span class="corner-bl"></span><span class="corner-br"></span>
-            <div class="scope-wrap">
-                <div class="scope">
-                    <div class="scope-rings">
-                        <div class="scope-ring ring-1"></div>
-                        <div class="scope-ring ring-2"></div>
-                        <div class="scope-ring ring-3"></div>
-                        <div class="scope-ring ring-4"></div>
-                    </div>
-                    <div class="scope-crosshair"></div>
-                    <div class="scope-ticks"></div>
-                    <div class="scope-sweep"></div>
-
-                    <a href="#contact" class="contact-blip self blip-self" aria-label="Ali Ikram — primary contact">
-                        <span class="dot"></span>
-                        <span class="tag">A. IKRAM · LOCKED</span>
-                    </a>
-                    <a href="https://irftechnologies.com/" target="_blank" rel="noopener" class="contact-blip blip-irf" aria-label="IRF Technologies">
-                        <span class="dot"></span>
-                        <span class="tag">IRF TECHNOLOGIES</span>
-                    </a>
-                    <a href="https://decomrobotics.com/" target="_blank" rel="noopener" class="contact-blip blip-decom" aria-label="Decom Robotics">
-                        <span class="dot"></span>
-                        <span class="tag">DECOM ROBOTICS</span>
-                    </a>
-                </div>
+        <div class="hero-inner">
+            <h1>Ali Ikram</h1>
+            <div class="role">AI Specialist and Founder</div>
+            <p class="lede">I design and ship production AI systems, including computer vision, large language models, and edge deployment, for autonomous driving and safety critical use. I now lead IRF Technologies and Decom Robotics.</p>
+            <div class="btn-row">
+                <a href="#contact" class="btn">Get in touch</a>
+                <a href="#projects" class="btn-text">View my work</a>
             </div>
-
-            <div class="readout-panel">
-                <h1>Ali Ikram</h1>
-                <div class="role">AI Specialist &amp; Founder</div>
-                <p class="hero-lede">I design and ship production AI — computer vision, LLM systems, and edge deployment — for autonomous driving, safety-critical, and enterprise use. Now building IRF Technologies and Decom Robotics.</p>
-
-                <dl class="readout-fields">
-                    <dt>BASE</dt><dd>33.6844°N, 73.0479°E — Islamabad, PK</dd>
-                    <dt>STATUS</dt><dd>Open to freelance &amp; consulting engagements</dd>
-                    <dt>DOMAINS</dt><dd>CV · LLM/RAG · Edge AI · Robotics</dd>
-                </dl>
-
-                <div class="cta-row">
-                    <a href="#contact" class="btn">Open channel</a>
-                    <a href="#projects" class="btn ghost">View log</a>
-                </div>
-            </div>
+            <div class="hero-meta">Islamabad, Pakistan</div>
         </div>
     </div>
 </section>
@@ -698,34 +381,32 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 <!-- VENTURES -->
 <section id="ventures">
     <div class="container">
+        <div class="kicker-rule reveal"></div>
         <h2 class="section-title reveal">Ventures</h2>
-        <span class="section-index reveal">Two companies I founded and operate, each with its own site — routed, not duplicated, here.</span>
+        <p class="section-note reveal">Two companies I founded and operate, each with its own site.</p>
 
-        <div class="ventures-grid">
-            <a href="https://irftechnologies.com/" target="_blank" rel="noopener" class="venture-card bracket reveal">
-                <div class="venture-head"><span class="status">Active</span></div>
+        <div class="ventures-split">
+            <div class="venture-col reveal">
                 <h3>IRF Technologies</h3>
-                <div class="venture-class">Class: Services / Agentic Automation</div>
-                <p>Services and agentic workflow automation for businesses — building AI systems that run real operations, not demos.</p>
-                <span class="venture-link">irftechnologies.com →</span>
-            </a>
-            <a href="https://decomrobotics.com/" target="_blank" rel="noopener" class="venture-card bracket reveal">
-                <div class="venture-head"><span class="status">Active</span></div>
+                <p>Services and agentic workflow automation for businesses. We build AI systems that run real operations, not demos.</p>
+                <a href="https://irftechnologies.com/" target="_blank" rel="noopener" class="venture-link">irftechnologies.com</a>
+            </div>
+            <div class="ventures-divider"></div>
+            <div class="venture-col reveal">
                 <h3>Decom Robotics</h3>
-                <div class="venture-class">Class: Robotics / Physical AI</div>
-                <p>Robotics and physical AI, built around our own product line — bringing AI off the screen and into the physical world.</p>
-                <span class="venture-link">decomrobotics.com →</span>
-            </a>
+                <p>Robotics and physical AI, built around our own product line. We bring AI off the screen and into the physical world.</p>
+                <a href="https://decomrobotics.com/" target="_blank" rel="noopener" class="venture-link">decomrobotics.com</a>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- INTRO TRANSMISSION -->
-<section class="transmission">
+<!-- INTRO VIDEO -->
+<section id="intro" class="transmission">
     <div class="container">
         <div class="transmission-copy reveal">
             <h2>Introduction</h2>
-            <p>A short video introduction — who I am, what I build, and how I can help.</p>
+            <p>A short video introduction: who I am, what I build, and how I can help.</p>
         </div>
         <div class="video-frame reveal">
             <iframe src="https://www.youtube.com/embed/31tNnBq8-Y8" title="Introduction Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -738,18 +419,17 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <div class="container">
         <div class="about-grid">
             <div class="about-copy">
+                <div class="kicker-rule reveal"></div>
                 <h2 class="section-title reveal">About</h2>
-                <span class="section-index reveal">&nbsp;</span>
-                <p class="reveal"><strong>AI Specialist with 4+ years of experience</strong> designing, deploying, and scaling AI-driven automation, computer vision, and large language model (LLM) solutions. Proven expertise leading cross-functional teams, optimizing algorithms for real-time systems, and deploying production-ready AI pipelines across cloud and edge platforms.</p>
-                <p class="reveal">I've delivered high-impact projects in autonomous driving, OCR, multilingual NLP, and anomaly detection — and now channel that experience into <strong>IRF Technologies</strong> and <strong>Decom Robotics</strong>, consulting startups and enterprises to put production AI systems into their workflows.</p>
+                <p class="reveal"><strong>AI Specialist with more than four years of experience</strong> designing, deploying, and scaling AI driven automation, computer vision, and large language model solutions. I have led cross functional teams, optimized algorithms for real time systems, and deployed production ready AI pipelines across cloud and edge platforms.</p>
+                <p class="reveal">I have delivered projects in autonomous driving, OCR, multilingual NLP, and anomaly detection, and I now channel that experience into <strong>IRF Technologies</strong> and <strong>Decom Robotics</strong>, consulting with startups and enterprises to put production AI systems into their workflows.</p>
             </div>
-            <div class="profile-card bracket reveal">
-                <div class="row"><span>DESIGNATION</span><span>A. Ikram</span></div>
-                <div class="row"><span>ROLE</span><span>AI Specialist / Founder</span></div>
-                <div class="row"><span>EXPERIENCE</span><span>4+ years</span></div>
-                <div class="row"><span>LOCATION</span><span>Islamabad, PK</span></div>
-                <div class="row"><span>FOCUS</span><span>CV · LLM · Edge AI</span></div>
-                <div class="row"><span>STATUS</span><span>Open</span></div>
+            <div class="fact-list reveal">
+                <div class="row"><span>Role</span><span>AI Specialist, Founder</span></div>
+                <div class="row"><span>Experience</span><span>4+ years</span></div>
+                <div class="row"><span>Location</span><span>Islamabad, PK</span></div>
+                <div class="row"><span>Focus</span><span>CV, LLM, Edge AI</span></div>
+                <div class="row"><span>Status</span><span>Open to work</span></div>
             </div>
         </div>
     </div>
@@ -758,70 +438,71 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 <!-- EXPERIENCE -->
 <section id="experience">
     <div class="container">
+        <div class="kicker-rule reveal"></div>
         <h2 class="section-title reveal">Experience</h2>
-        <span class="section-index reveal">Chronological record, most recent first.</span>
+        <p class="section-note reveal">Chronological, most recent first.</p>
 
         <div class="log-list">
-            <div class="log-entry bracket reveal">
-                <div class="log-time mono">2024 – PRESENT <span class="active-tag">ACTIVE</span></div>
+            <div class="log-entry reveal">
+                <div class="log-time">2024 – Present</div>
                 <div>
                     <div class="log-title">Sr. AI Engineer</div>
                     <div class="log-company">Intelligent Learning Machines (ILM)</div>
                     <ul>
-                        <li>Spearheaded simulator-based validation for autonomous driving algorithms, potentially reducing scenario testing costs by 30%</li>
-                        <li>Built digital twins for anomaly detection, achieving 75% detection precision in abnormal driving behaviors</li>
-                        <li>Developed a safe city algorithm that generates alerts based on gun-based events</li>
-                        <li>Developed a multilingual document parsing pipeline using PyTorch + TensorRT, enabling 3× faster edge deployment</li>
-                        <li>Integrated LLM-based contextual understanding for enterprise documents</li>
-                        <li>Deployed real-time AI on edge (NVIDIA Jetson) with inference latency under 100ms for safety-critical systems</li>
+                        <li>Spearheaded simulator based validation for autonomous driving algorithms, potentially reducing scenario testing costs by <span class="stat">30%</span></li>
+                        <li>Built digital twins for anomaly detection, achieving <span class="stat">75%</span> detection precision in abnormal driving behaviors</li>
+                        <li>Developed a safe city algorithm that generates alerts based on gun related events</li>
+                        <li>Developed a multilingual document parsing pipeline using PyTorch and TensorRT, enabling <span class="stat">3x</span> faster edge deployment</li>
+                        <li>Integrated LLM based contextual understanding for enterprise documents</li>
+                        <li>Deployed real time AI on edge hardware (NVIDIA Jetson) with inference latency under <span class="stat">100ms</span> for safety critical systems</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="log-entry bracket reveal">
-                <div class="log-time mono">2023 – 2024</div>
+            <div class="log-entry reveal">
+                <div class="log-time">2023 – 2024</div>
                 <div>
                     <div class="log-title">AI Algorithm Tech Lead</div>
                     <div class="log-company">99Technologies</div>
                     <ul>
-                        <li>Led a 3-member AI team delivering OCR pipelines with 95% accuracy, reducing manual BIOS configuration by 85% across clients</li>
+                        <li>Led a 3 member AI team delivering OCR pipelines with <span class="stat">95%</span> accuracy, reducing manual BIOS configuration by <span class="stat">85%</span> across clients</li>
                         <li>Mentored junior engineers in AI lifecycle management, boosting team productivity and code quality</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="log-entry bracket reveal">
-                <div class="log-time mono">2023 – 2024</div>
+            <div class="log-entry reveal">
+                <div class="log-time">2023 – 2024</div>
                 <div>
                     <div class="log-title">Consultant AI Engineer</div>
-                    <div class="log-company">ILM (Part-Time)</div>
+                    <div class="log-company">ILM, Part Time</div>
                     <ul>
-                        <li>Advised on video localization &amp; simulation algorithms for scenario-based testing in autonomous driving</li>
+                        <li>Advised on video localization and simulation algorithms for scenario based testing in autonomous driving</li>
                         <li>Provided AI consulting for startups, helping design MVPs in traffic analytics, OCR, and chatbot systems</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="log-entry bracket reveal">
-                <div class="log-time mono">2022 – 2023</div>
+            <div class="log-entry reveal">
+                <div class="log-time">2022 – 2023</div>
                 <div>
                     <div class="log-title">Machine Learning Engineer</div>
                     <div class="log-company">ILM</div>
                     <ul>
                         <li>Designed lane detection and centering algorithms, ensuring robustness in adverse conditions, aligned with ISO 21448 safety requirements</li>
-                        <li>Implemented mitigation algorithms for failure case detection, improving system resilience by 20%</li>
+                        <li>Implemented mitigation algorithms for failure case detection, improving system resilience by <span class="stat">20%</span></li>
                     </ul>
                 </div>
             </div>
 
-            <div class="log-entry bracket reveal">
-                <div class="log-time mono">2021 – 2022</div>
+            <div class="log-entry reveal">
+                <div class="log-time">2021 – 2022</div>
                 <div>
                     <div class="log-title">Computer Vision Engineer</div>
                     <div class="log-company">TeReSol</div>
                     <ul>
-                        <li>Developed thermal tracking system up to 3km, deployed on NVIDIA TK1-based embedded hardware</li>
-                        <li>Optimized vision pipeline to achieve real-time detection at 15 FPS on limited compute resources</li>
+                        <li>Developed a thermal tracking system with a range of up to <span class="stat">3km</span>, deployed on NVIDIA TK1 based embedded hardware</li>
+                        <li>Optimized the vision pipeline to achieve real time detection at <span class="stat">15 FPS</span> on limited compute resources</li>
                     </ul>
                 </div>
             </div>
@@ -832,87 +513,71 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 <!-- PROJECTS -->
 <section id="projects">
     <div class="container">
+        <div class="kicker-rule reveal"></div>
         <h2 class="section-title reveal">Featured Projects</h2>
-        <span class="section-index reveal">Seven tracked engagements — proof, not pitch.</span>
+        <p class="section-note reveal">Seven engagements, with links and demos.</p>
 
         <div class="files-grid">
-            <div class="file-card bracket reveal">
-                <div class="file-head"><span class="file-class">Class: Navigation</span></div>
+            <div id="project-1" class="file-card reveal">
                 <h3>Integrating Robot Physical Dimensions into Path Planning</h3>
-                <p>A hybrid robot-aware path planning system that integrates robot dimensions directly into navigation using an initial binary map. Traditional path-planning treats the robot as a unit point, ignoring its physical size and shape, which can cause collisions or inefficient routing. This method expands obstacle boundaries according to the robot's actual dimensions, so any standard path-planning algorithm inherently accounts for robot size — no algorithm changes or external sensors required.</p>
+                <p>A hybrid robot aware path planning system that integrates robot dimensions directly into navigation using an initial binary map. Traditional path planning treats the robot as a single point, ignoring its physical size and shape, which can cause collisions or inefficient routing. This method expands obstacle boundaries according to the robot's actual dimensions, so any standard path planning algorithm accounts for robot size without changes to the algorithm or added sensors.</p>
                 <div class="file-video"><iframe src="https://www.youtube.com/embed/Vkb06CYRB6s" title="Path Planning Demo" frameborder="0" allowfullscreen></iframe></div>
-                <div class="file-links">
-                    <a href="https://github.com/aliikram97/Integrating-Robot-Physical-Dimensions-into-Path-Planning" class="file-link" target="_blank">
-                        <svg class="github-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                        Access repository
-                    </a>
-                </div>
+                <a href="https://github.com/aliikram97/Integrating-Robot-Physical-Dimensions-into-Path-Planning" class="file-link" target="_blank">
+                    <svg class="github-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    View repository
+                </a>
             </div>
 
-            <div class="file-card bracket reveal">
-                <div class="file-head"><span class="file-class">Class: Audio / NLP</span></div>
-                <h3>Talk2TextTranslate — Transcription &amp; Translation Pipeline</h3>
-                <p>An audio transcription and translation pipeline built to process long recordings efficiently — converting speech to text and translating into multiple languages via Google's Speech Recognition, then Googletrans for translation. Built for multilingual communication, content localization, and accessibility, turning lengthy audio into readable, translated text with speed and reliability.</p>
+            <div id="project-2" class="file-card reveal">
+                <h3>Talk2TextTranslate, a Transcription and Translation Pipeline</h3>
+                <p>An audio transcription and translation pipeline built to process long recordings efficiently. It converts speech to text using Google's Speech Recognition service, then translates it into multiple languages with Googletrans. Built for multilingual communication, content localization, and accessibility.</p>
                 <div class="file-video"><iframe src="https://www.youtube.com/embed/o3ocww3zxcc" title="Talk2TextTranslate Demo" frameborder="0" allowfullscreen></iframe></div>
-                <div class="file-links">
-                    <a href="https://github.com/aliikram97/Talk2TextTranslate" class="file-link" target="_blank">
-                        <svg class="github-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                        Access repository
-                    </a>
-                </div>
+                <a href="https://github.com/aliikram97/Talk2TextTranslate" class="file-link" target="_blank">
+                    <svg class="github-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    View repository
+                </a>
             </div>
 
-            <div class="file-card bracket reveal">
-                <div class="file-head"><span class="file-class">Class: Vision / OCR</span></div>
+            <div id="project-3" class="file-card reveal">
                 <h3>Multilingual OCR System</h3>
-                <p>A local, AI-driven OCR and translation pipeline that extracts, translates, and summarizes text from images without cloud processing. Detects and extracts multilingual content with high precision, translates it into the user's preferred language, then generates an executive summary — ensuring data privacy, fast performance, and reliable multilingual support.</p>
+                <p>A local, AI driven OCR and translation pipeline that extracts, translates, and summarizes text from images without cloud processing. It detects multilingual content with high precision, translates it into the user's preferred language, and generates a short summary, all while keeping data on the device.</p>
                 <div class="file-video"><iframe src="https://www.youtube.com/embed/1wZiVdbtG30" title="Multilingual OCR Demo" frameborder="0" allowfullscreen></iframe></div>
-                <div class="file-links">
-                    <a href="https://github.com/aliikram97/multilingual-ocr-pipeline" class="file-link" target="_blank">
-                        <svg class="github-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                        Access repository
-                    </a>
-                </div>
+                <a href="https://github.com/aliikram97/multilingual-ocr-pipeline" class="file-link" target="_blank">
+                    <svg class="github-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    View repository
+                </a>
             </div>
 
-            <div class="file-card bracket reveal">
-                <div class="file-head"><span class="file-class">Class: Sensor Tracking</span></div>
+            <div id="project-4" class="file-card reveal">
                 <h3>Thermal Object Tracking</h3>
-                <p>A high-performance, AI-powered infrared tracking system for long-range thermal detection up to 3 kilometers — optimized for real-time recognition and motion tracking on embedded hardware like NVIDIA Jetson. A custom algorithm using proprietary occlusion-detection math maintains continuous tracking through dense thermal clutter, built for surveillance, defense, and industrial monitoring.</p>
+                <p>A high performance infrared tracking system for long range thermal detection up to three kilometers, optimized for real time recognition on embedded hardware such as NVIDIA Jetson. A custom occlusion detection algorithm maintains continuous tracking through dense thermal clutter, built for surveillance, defense, and industrial monitoring.</p>
                 <div class="file-video"><iframe src="https://www.youtube.com/embed/v5YV0uikqlg" title="Thermal Tracking Demo" frameborder="0" allowfullscreen></iframe></div>
-                <div class="file-links">
-                    <a href="https://github.com/aliikram97/tracking_pipeline" class="file-link" target="_blank">
-                        <svg class="github-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                        Access repository
-                    </a>
-                </div>
+                <a href="https://github.com/aliikram97/tracking_pipeline" class="file-link" target="_blank">
+                    <svg class="github-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    View repository
+                </a>
             </div>
 
-            <div class="file-card bracket reveal">
-                <div class="file-head"><span class="file-class">Class: Voice AI</span></div>
+            <div id="project-5" class="file-card reveal">
                 <h3>Voice Sales Agent</h3>
-                <p>An AI-powered voice agent that handles inbound calls, engages customers naturally, and manages the sales inquiry process end to end — listening, understanding intent via speech recognition and NLU, and responding in real time. Schedules appointments directly into the company calendar, automating follow-up booking without human intervention and cutting response times.</p>
+                <p>An AI voice agent that handles inbound calls, engages customers naturally, and manages the sales inquiry process end to end. It listens, understands intent through speech recognition and natural language understanding, and responds in real time. It also books appointments directly into the company calendar without human intervention.</p>
                 <div class="file-video"><iframe src="https://www.youtube.com/embed/WbV4NwhpMWI" title="Voice Sales Agent Demo" frameborder="0" allowfullscreen></iframe></div>
             </div>
 
-            <div class="file-card bracket reveal">
-                <div class="file-head"><span class="file-class">Class: Perception</span></div>
+            <div id="project-6" class="file-card reveal">
                 <h3>Adaptive Cruise Control</h3>
-                <p>A driver-assistance framework combining traffic sign recognition with adaptive cruise control. Detects, classifies, and interprets traffic signs in real time under varying weather and lighting, then dynamically adjusts vehicle speed and behavior to maintain safe distances and comply with road regulations — improving situational awareness and reducing human error.</p>
+                <p>A driver assistance framework combining traffic sign recognition with adaptive cruise control. It detects and interprets traffic signs in real time under varying weather and lighting, then adjusts vehicle speed and behavior to keep a safe distance and follow road regulations.</p>
                 <div class="file-video"><iframe src="https://www.youtube.com/embed/lqgHjVG0qaw" title="Adaptive Cruise Control Demo" frameborder="0" allowfullscreen></iframe></div>
             </div>
 
-            <div class="file-card bracket reveal">
-                <div class="file-head"><span class="file-class">Class: LLM / RAG</span></div>
-                <h3>RAG-Based Question Answering Bot (Local LLM)</h3>
-                <p>A fully local Retrieval-Augmented Generation QA system built with HuggingFace, LangChain, Gradio, and ChromaDB — running entirely offline with a locally hosted LLM for privacy and speed. Documents are embedded into a ChromaDB vector store for semantic search; retrieved context is passed to the LLM via LangChain for grounded answers, surfaced through a Gradio interface for real-time interaction.</p>
+            <div id="project-7" class="file-card reveal">
+                <h3>RAG Based Question Answering Bot, Local LLM</h3>
+                <p>A fully local retrieval augmented question answering system built with HuggingFace, LangChain, Gradio, and ChromaDB. It runs entirely offline with a locally hosted LLM for privacy and speed. Documents are embedded into a ChromaDB vector store, and a Gradio interface lets users ask questions and get grounded answers in real time.</p>
                 <div class="file-video"><iframe src="https://www.youtube.com/embed/WgtyV0VlCTA" title="RAG LLM Demo" frameborder="0" allowfullscreen></iframe></div>
-                <div class="file-links">
-                    <a href="https://github.com/aliikram97/simple_QA_chatbot" class="file-link" target="_blank">
-                        <svg class="github-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                        Access repository
-                    </a>
-                </div>
+                <a href="https://github.com/aliikram97/simple_QA_chatbot" class="file-link" target="_blank">
+                    <svg class="github-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    View repository
+                </a>
             </div>
         </div>
     </div>
@@ -921,37 +586,35 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 <!-- SKILLS -->
 <section id="skills">
     <div class="container">
+        <div class="kicker-rule reveal"></div>
         <h2 class="section-title reveal">Technical Skills</h2>
-        <span class="section-index reveal">&nbsp;</span>
+        <p class="section-note reveal">&nbsp;</p>
 
-        <div class="skills-container">
-            <div class="skill-category bracket reveal">
-                <div class="skill-head"><span>AI/ML</span><span class="status">Active</span></div>
-                <h3>AI &amp; Machine Learning</h3>
+        <div class="skills-columns">
+            <div class="skill-category reveal">
+                <h3>AI and Machine Learning</h3>
                 <ul>
                     <li>Deep Learning (CNNs, GANs, RL)</li>
-                    <li>Large Language Models (LLMs)</li>
+                    <li>Large Language Models</li>
                     <li>RAG Systems</li>
-                    <li>OCR &amp; Document Processing</li>
-                    <li>SLAM &amp; Autonomous Systems</li>
-                    <li>Object Detection &amp; Segmentation</li>
-                    <li>Stereo Vision &amp; Depth Estimation</li>
-                    <li>Tracking &amp; Camera Calibration</li>
+                    <li>OCR and Document Processing</li>
+                    <li>SLAM and Autonomous Systems</li>
+                    <li>Object Detection and Segmentation</li>
+                    <li>Stereo Vision and Depth Estimation</li>
+                    <li>Tracking and Camera Calibration</li>
                 </ul>
             </div>
-            <div class="skill-category bracket reveal">
-                <div class="skill-head"><span>SDK</span><span class="status">Active</span></div>
-                <h3>Frameworks &amp; Libraries</h3>
+            <div class="skill-category reveal">
+                <h3>Frameworks and Libraries</h3>
                 <ul>
                     <li>PyTorch</li>
                     <li>TensorFlow</li>
                     <li>OpenCV</li>
                     <li>Hugging Face</li>
-                    <li>Flask &amp; Flask-SocketIO</li>
+                    <li>Flask and Flask-SocketIO</li>
                 </ul>
             </div>
-            <div class="skill-category bracket reveal">
-                <div class="skill-head"><span>EDGE</span><span class="status">Active</span></div>
+            <div class="skill-category reveal">
                 <h3>Edge Deployment</h3>
                 <ul>
                     <li>TensorRT</li>
@@ -961,28 +624,25 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
                     <li>Docker</li>
                 </ul>
             </div>
-            <div class="skill-category bracket reveal">
-                <div class="skill-head"><span>CLOUD</span><span class="status">Active</span></div>
-                <h3>Cloud &amp; DevOps</h3>
+            <div class="skill-category reveal">
+                <h3>Cloud and DevOps</h3>
                 <ul>
                     <li>AWS (EC2, S3, SageMaker)</li>
-                    <li>AWS Lambda &amp; Bedrock</li>
+                    <li>AWS Lambda and Bedrock</li>
                     <li>Azure</li>
                     <li>Git</li>
                     <li>n8n Automation</li>
                 </ul>
             </div>
-            <div class="skill-category bracket reveal">
-                <div class="skill-head"><span>SIM</span><span class="status">Active</span></div>
-                <h3>Simulation &amp; Robotics</h3>
+            <div class="skill-category reveal">
+                <h3>Simulation and Robotics</h3>
                 <ul>
                     <li>ROS (Robot Operating System)</li>
                     <li>CARLA Simulator</li>
                     <li>Unreal Engine</li>
                 </ul>
             </div>
-            <div class="skill-category bracket reveal">
-                <div class="skill-head"><span>LANG</span><span class="status">Active</span></div>
+            <div class="skill-category reveal">
                 <h3>Programming Languages</h3>
                 <ul>
                     <li>Python</li>
@@ -999,27 +659,27 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 <!-- CONTACT -->
 <section id="contact">
     <div class="container">
-        <div class="contact-panel reveal">
-            <h2>Get In Touch</h2>
-            <p>Open to new opportunities and collaborations — freelance, consulting, or partnership. Reach out and I'll respond directly.</p>
+        <div class="contact-block reveal">
+            <div class="kicker-rule"></div>
+            <h2>Get in Touch</h2>
+            <p>Open to new opportunities and collaboration in freelance work, consulting, and partnerships. Reach out and I will respond directly.</p>
 
             <div class="contact-links">
-                <a href="mailto:aliikram97@gmail.com" class="btn amber">Email me</a>
-                <a href="https://linkedin.com/in/ali-i-5306b597" class="btn" target="_blank">LinkedIn</a>
-                <a href="https://www.upwork.com/freelancers/~01bb6024a47b19d619" class="btn" target="_blank">Upwork</a>
+                <a href="mailto:aliikram97@gmail.com" class="btn on-navy">Email me</a>
+                <a href="https://linkedin.com/in/ali-i-5306b597" class="btn-text on-navy" target="_blank">LinkedIn</a>
+                <a href="https://www.upwork.com/freelancers/~01bb6024a47b19d619" class="btn-text on-navy" target="_blank">Upwork</a>
             </div>
 
-            <div class="comms-data">
-                <div>COORDINATES <span>33.6844°N, 73.0479°E — Islamabad, Pakistan</span></div>
-                <div>COMMS <span>+92-335-5093011 · +92-303-0595669</span></div>
+            <div class="meta-lines">
+                <div>Islamabad, Pakistan</div>
+                <div>+92 335 5093011, +92 303 0595669</div>
             </div>
         </div>
     </div>
 </section>
 
-<footer>
-    <div class="status">System operational</div>
-    <div>© 2025 Ali Ikram. Built with passion for AI and innovation.</div>
+<footer id="site-footer">
+    <div class="container">© 2026 Ali Ikram</div>
 </footer>
 
 <script>

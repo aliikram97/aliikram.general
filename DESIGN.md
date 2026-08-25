@@ -1,203 +1,217 @@
 ---
 name: Ali Ikram — AI Specialist & Founder
-description: A radar/air-traffic-control instrument scope that tracks Ali Ikram, IRF Technologies, and Decom Robotics as live contacts, not a marketing page.
+description: An executive's personal site built on restraint and typographic craft — warm off-white paper, a serif editorial voice, and a single navy action.
 colors:
-  scope-ground: "#05080a"
-  panel-surface: "#0a1215"
-  phosphor: "#4ce096"
-  phosphor-bright: "#a8ffce"
-  amber: "#ffb020"
-  cyan: "#6fd6ff"
-  ink: "#93a8a0"
-  ink-dim: "#5c6e68"
-  ink-bright: "#eafaf1"
-  grid-line: "rgba(76, 224, 150, .13)"
-  grid-line-strong: "rgba(76, 224, 150, .3)"
-  border: "rgba(76, 224, 150, .16)"
+  bg: "#f5f0e0"
+  ventures-bg: "#f9eecd"
+  intro-bg: "#ffeebd"
+  about-bg: "#f8e6b4"
+  experience-bg: "#fbe6a7"
+  projects-bg: "#f9e29f"
+  skills-bg: "#fbe193"
+  ink: "#17181a"
+  ink-soft: "#5b5d5f"
+  ink-faint: "#8b8d8e"
+  line: "#dfdbd1"
+  accent: "#16213e"
+  accent-deep: "#0e1626"
+  garnet: "#76290b"
+  garnet-bright: "#a8452a"
+  on-navy: "#eae6dc"
+  white: "#ffffff"
 typography:
   display:
-    fontFamily: "Titillium Web, sans-serif"
-    fontSize: "clamp(30px, 3vw, 38px)"
-    fontWeight: 600
+    fontFamily: "Spectral, Georgia, serif"
+    fontSize: "clamp(48px, 7vw, 86px)"
+    fontWeight: 500
+    lineHeight: 1.02
+    letterSpacing: "-.015em"
+  headline:
+    fontFamily: "Spectral, Georgia, serif"
+    fontSize: "clamp(30px, 4vw, 42px)"
+    fontWeight: 500
     lineHeight: 1.15
     letterSpacing: "-.01em"
-  headline:
-    fontFamily: "Titillium Web, sans-serif"
-    fontSize: "clamp(28px, 4vw, 42px)"
-    fontWeight: 600
-    lineHeight: 1.2
-    letterSpacing: "-.01em"
   title:
-    fontFamily: "Titillium Web, sans-serif"
-    fontSize: "16px to 22px"
-    fontWeight: 600
-    lineHeight: 1.3
+    fontFamily: "Spectral, Georgia, serif"
+    fontSize: "17px to 26px"
+    fontWeight: 500
+    lineHeight: 1.25
+  pullquote:
+    fontFamily: "Spectral, Georgia, serif"
+    fontSize: "clamp(20px, 2.4vw, 26px)"
+    fontWeight: 400
+    fontStyle: "italic"
   body:
-    fontFamily: "Titillium Web, sans-serif"
-    fontSize: "14px to 16.5px"
+    fontFamily: "Public Sans, -apple-system, sans-serif"
+    fontSize: "14.5px to 18px"
     fontWeight: 400
     lineHeight: 1.65
   label:
-    fontFamily: "IBM Plex Mono, monospace"
-    fontSize: "10.5px to 13px"
+    fontFamily: "Public Sans, -apple-system, sans-serif"
+    fontSize: "11.5px to 13.5px"
     fontWeight: 400
-    letterSpacing: ".08em to .12em"
+    letterSpacing: ".03em to .06em"
 rounded:
   none: "0px"
   full: "50%"
 spacing:
-  xs: "6px"
-  sm: "12px"
-  md: "24px"
-  lg: "48px"
-  section: "110px"
+  xs: "10px"
+  sm: "18px"
+  md: "40px"
+  lg: "64px"
+  section: "120px"
 components:
   button-primary:
-    backgroundColor: "transparent"
-    textColor: "{colors.phosphor-bright}"
-    typography: "{typography.label}"
+    backgroundColor: "{colors.accent}"
+    textColor: "{colors.white}"
+    typography: "{typography.body}"
     rounded: "{rounded.none}"
-    padding: "13px 20px"
+    padding: "14px 28px"
   button-primary-hover:
-    backgroundColor: "rgba(76,224,150,.1)"
-    textColor: "{colors.phosphor-bright}"
-  button-amber:
-    backgroundColor: "transparent"
-    textColor: "{colors.amber}"
-    typography: "{typography.label}"
-    rounded: "{rounded.none}"
-    padding: "13px 20px"
-  button-ghost:
+    backgroundColor: "{colors.accent}"
+    textColor: "{colors.white}"
+  button-text:
     backgroundColor: "transparent"
     textColor: "{colors.ink}"
-    typography: "{typography.label}"
+    typography: "{typography.body}"
     rounded: "{rounded.none}"
-    padding: "13px 20px"
-  card:
-    backgroundColor: "{colors.panel-surface}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.none}"
-    padding: "22px to 28px"
+    padding: "0"
 ---
 
 # Design System: Ali Ikram — AI Specialist & Founder
 
 ## Overview
 
-**Creative North Star: "The Radar Scope"**
+**Creative North Star: "The Editorial Brief"**
 
-The site is an air-traffic-control instrument, not a résumé page. Ali, IRF Technologies, and Decom Robotics are contacts held on a live scope; his track record is logged telemetry, not prose bragging. The world is a near-black instrument ground lit by a single restrained phosphor-green (grid lines, sweep, lock-on pulses), with amber reserved for the one primary action (email) and a thin cyan used only for secondary classification tags. Every panel is bracket-framed like a HUD readout: corner ticks, hairline borders, monospaced field labels in small caps-by-convention uppercase. This deliberately refuses the dark-navy-plus-neon-gradient "AI portfolio" default — there are no glows-for-glow's-sake, no gradient blobs, no card shadows; depth comes from grid density and border-brightness, not elevation.
+The site reads like a well-set executive dossier, not an app or an instrument panel: warm off-white paper, near-black ink, and a single deep-navy accent held in reserve for the one thing the visitor is asked to do. A large serif name and role open the page; one editorial paragraph follows; then a filled navy button and a quiet underlined text link, side by side, with nothing else competing for attention. This is a deliberate double refusal — of the generic dark-navy gradient "AI portfolio" template, and of this project's own prior identity, a phosphor-green radar/ATC instrument scope (near-black ground, bracket-cornered panels, IBM Plex Mono labels everywhere). Neither survives in the built page; the current index.html carries no radar vocabulary, no glow, no bracket corners, no mono-labeled data plane.
 
-The pairing of Titillium Web (display/body) and IBM Plex Mono (every label, field, timestamp, and status tag) does the genre work: Titillium Web reads as confident, geometric, human; Plex Mono reads as instrument telemetry. The system never mixes them within one text role — mono is reserved for data-plane text, Titillium Web for narrative-plane text.
+Spectral (serif) carries every display, heading, and pull-quote moment — the hero name, section titles, card titles, the italic role line under the name. Public Sans, the U.S. federal government's typeface, carries every structural and body string — paragraphs, navigation, labels, buttons, facts — for its plain, institutional trust register rather than for warmth or personality. Hierarchy is built from type scale, hairline rules, and whitespace, never from color or shadow: hairline `1px solid` lines (`#dfdbd1`) stand in for every border, card, and divider the system would otherwise need, and generous section padding (120px between sections) does the work a panel or a card background would do elsewhere.
 
 **Key Characteristics:**
-- Near-black scope ground with a single phosphor-green system accent; amber and cyan are the only other hues, each with one job.
-- Bracket-cornered, hairline-bordered instrument panels everywhere — no shadows, no rounded corners except true circles (the scope, its blips, status dots).
-- Mono type carries every label/field/status; display type carries only names, headings, and body prose.
-- A live rotating radar sweep and pulsing lock-on blips are the site's one motion signature; everything else uses a plain scroll-reveal fade/rise.
+- A warm cream-to-gold gradient wash across sections (`#f5f0e0` → `#f9eecd` → `#ffeebd` → `#f8e6b4` → `#fbe6a7` → `#f9e29f` → `#fbe193`, one flat hex per section, no CSS gradients), near-black ink, deep-navy for trust (`#16213e`/`#0e1626`), deep garnet for luxury (`#76290b`/`#a8452a`) — a two-accent system atop a warming neutral ramp, not a single flat paper tone.
+- Spectral for display/heading/pull-quote text, Public Sans for everything structural — never mixed within a single string.
+- Hairline rules instead of borders, cards, or shadows; whitespace and rule-lines carry hierarchy.
+- Zero border-radius except true circular list-bullet dots; zero box-shadow anywhere in the system (garnet hover rings are crisp 1px outlines, not blurred glows).
+- Embedded YouTube demo thumbnails are held desaturated at rest and restored to color only on hover/focus, so they never compete with the palette.
+- The page closes on a deep-navy full-bleed band (Contact + footer) — the system's one "committed" color field, breaking the paper ground for a deliberate, richer closing moment.
 
 ## Colors
 
-A near-monochrome instrument palette: one dominant phosphor-green system accent, two single-purpose secondary hues, and a narrow ink range for text — never bright, saturated, or gradient-heavy.
+A near-monochrome paper palette carrying two reserved accents, each with one job: deep navy for trust (the primary action, the closing band), deep garnet for luxury (small repeated marks — rule lines, hover states, proof figures — never a fill except on the navy band).
 
 ### Primary
-- **Phosphor** (`#4ce096`): the system's one signature hue — grid lines, borders, sweep, bracket corners, status dots, li markers, active-state text. Used at full saturation only for small marks (dots, corners, `›` bullets); used as translucent tints (13%/16%/30% alpha) for grid lines and borders.
-- **Phosphor Bright** (`#a8ffce`): the "locked" state of phosphor — primary CTA text/border, the hero's self-blip, link-hover color. Reserved for things that are actively focused or being interacted with.
-
-### Secondary
-- **Amber** (`#ffb020`): the single action color, used only for the one primary conversion action (Email me). Never used decoratively; its rarity is what marks it as "the ask."
-- **Cyan** (`#6fd6ff`): secondary-track classification color — venture "Class:" labels, experience-log company names, contact-blip dot fill. Marks "identifying metadata about a tracked entity," distinct from phosphor's "system state."
+- **Deep Navy** (`#16213e`, deeper `#0e1626` for the closing band): trust color. Fills the primary button on the paper ground (`.btn` — "Get in touch") and the full-bleed Contact/footer band. Never used for body text or decoration on the paper ground.
+- **Garnet** (`#76290b`, brighter `#a8452a` for use on navy): luxury color. Never a large fill on the paper ground — only small, repeated marks: the `.kicker-rule` before every section title, the hero location line, hover states on nav links/text-links/underlined links, and highlighted proof figures (`.stat`) inside Experience bullets. On the navy band it inverts to a small fill: the "Email me" button (`.btn.on-navy`).
 
 ### Neutral
-- **Scope Ground** (`#05080a`): page background — the instrument's near-black chassis.
-- **Panel Surface** (`#0a1215`): background for raised instrument panels (venture cards, file cards, skill categories, profile card).
-- **Ink Bright** (`#eafaf1`): headings, h1/h2/h3, primary readout values.
-- **Ink** (`#93a8a0`): body copy, default text color.
-- **Ink Dim** (`#5c6e68`): secondary/mono labels, field names (`dt`), timestamps, section indices.
-- **Grid Line** (`rgba(76,224,150,.13)`) / **Grid Line Strong** (`rgba(76,224,150,.3)`): the two standard border/rule opacities, used consistently instead of ad hoc alphas.
-- **Border** (`rgba(76,224,150,.16)`): the default hairline border for cards, dividers, and section rules.
+- **Gradient wash**: each section carries its own flat background hex, warming as the page scrolls down toward the closing navy band: Hero/Nav `#f5f0e0`, Ventures `#f9eecd`, Introduction `#ffeebd`, About `#f8e6b4`, Experience `#fbe6a7`, Projects `#f9e29f`, Skills `#fbe193`. Project cards (`.file-card`) stay at the lightest tone (`#f5f0e0`, via `var(--bg)`) so they read as distinct objects against their section's deeper gold. This is a deliberate directional wash the user set section-by-section, not a CSS `linear-gradient` — each section is one flat, explicit color.
+- **Ink** (`#17181a`): headings, the logo, hero name, card titles, primary readout values (fact-list right-hand values).
+- **Ink Soft** (`#5b5d5f`): default body text color — paragraphs, ventures/about/log/skills copy, secondary button text.
+- **Ink Faint** (`#8b8d8e`): section notes, timestamps, uppercase field labels — the system's "quiet metadata" tone on the paper ground.
+- **Line** (`#dfdbd1`): every hairline rule, border, and divider on the paper ground — section-top rules, nav bottom border, card seams, fact-list rows, video-frame borders, skill-category underlines.
+- **On Navy** (`#eae6dc`): body text and secondary link color on the navy closing band — a warm off-white, not pure white, so the band reads as one considered surface rather than an inverted paper page.
+- **White** (`#ffffff`): text on the navy primary button (paper-ground context only).
 
 ### Named Rules
-**The One Signal Rule.** Phosphor-green is the only color allowed to represent system/active state (status dots, "Active" tags, lock-on pulses). Amber and cyan never substitute for it — amber means "act now," cyan means "this is what kind of thing you're looking at."
+**The Two-Accent Rule.** Navy signals trust and carries the primary action; garnet signals luxury and never appears as a large fill except on the navy band itself. The two never substitute for each other — a hover state, a rule mark, or a highlighted figure is always garnet; a primary action is always navy (or garnet-on-navy, its one inversion).
 
-**The No-Glow-Without-Cause Rule.** Color glow (`box-shadow` with color, `filter` bloom) only appears on elements that are literally instrument lights: the scope dots, the lock-pulse animation. Text, panels, and buttons never get a decorative glow.
+**The Hairline-Not-Border Rule.** Structure is drawn with `1px solid var(--line)` rules, not with card backgrounds, box-shadow, or heavier borders. A section opens with a rule-top; a card seam is a shared 1px line, not an owned border; a divider is a line, not a background change.
+
+**The Crisp-Not-Blurred Rule.** Where garnet marks a hover or focus state, it is a solid `box-shadow: 0 0 0 1px` ring or a solid underline/color change — never a blurred glow. Luxury reads through precision (a jeweler's edge), not through an ambient halo.
 
 ## Typography
 
-**Display Font:** Titillium Web (with sans-serif fallback)
-**Label/Mono Font:** IBM Plex Mono (with monospace fallback) — no separate body font; body prose also renders in Titillium Web.
+**Display Font:** Spectral (with Georgia, serif fallback)
+**Body Font:** Public Sans (with system-sans fallback)
 
-**Character:** Titillium Web carries every narrative and human-facing string (names, headings, prose); IBM Plex Mono carries every piece of structured/tabular data (labels, coordinates, statuses, timestamps, classifications). The split is strict and semantic, not decorative — it is what makes the "telemetry" read work.
+**Character:** Spectral is editorial and slightly literary — it carries the hero name, section titles, card and log titles, and the italic pull-quote role line under the hero name. Public Sans is plain and institutional by design choice (it is the U.S. federal government's typeface) — it carries navigation, body paragraphs, buttons, timestamps, and every uppercase label. The split is strict: a heading or title never renders in Public Sans, and body/structural text never renders in Spectral.
+
+**One deliberate exception:** the Introduction section (`#intro`) overrides both families locally — DM Serif Display for its `h2` ("Introduction"), Work Sans for its body copy — a section-scoped variant the user chose directly, not a system-wide pairing change. It does not extend past that section.
 
 ### Hierarchy
-- **Headline** (600, `clamp(28px, 4vw, 42px)`, tight tracking `-.01em`): section titles (`.section-title`) — "Ventures," "Experience," "Featured Projects."
-- **Display/Title** (600, `clamp(30px, 3vw, 38px)` down to 19–22px): hero H1, contact-panel H2, card H3 titles (venture, file, skill-category, log-entry).
-- **Body** (400, 14px–16.5px, line-height 1.65): paragraph copy in About, venture cards, project descriptions; About-copy caps at 68ch, hero lede at 46ch, transmission copy at 42ch.
-- **Label** (400, 10.5px–13px, letter-spacing .04em–.12em, uppercase where used): every mono field — nav links, `.role`, `.readout-fields`, venture-head status, file-class, skill-head, footer status, section-index subheads.
+- **Display** (500, `clamp(48px, 7vw, 86px)`, line-height 1.02, letter-spacing `-.015em`): the hero `<h1>` only — "Ali Ikram."
+- **Headline** (500, `clamp(30px, 4vw, 42px)`, letter-spacing `-.01em`): `.section-title` — Ventures, About, Experience, Featured Projects, Technical Skills.
+- **Pull-quote** (400 italic, `clamp(20px, 2.4vw, 26px)`): the hero `.role` line ("AI Specialist and Founder") — the system's one italic moment.
+- **Title** (500, 17px–26px): venture-column h3 (26px), log/file-card h3 (21px), contact h2 (36px), transmission h2 (24px), skill-category h3 (17px), the nav logo (20px).
+- **Body** (400, 14.5px–18px, line-height 1.65): hero lede (18px, capped 56ch), about copy (17px, capped 62ch), venture/log/contact copy (15–16px), section-note and card copy (14.5px).
+- **Label** (400, 11.5px–13.5px, letter-spacing .03em–.06em, uppercase where used): nav links, hero location line, log timestamps and company names, fact-list field names, footer.
 
 ### Named Rules
-**The Mono-Is-Data Rule.** If a string is a value, status, timestamp, coordinate, or classification tag, it renders in IBM Plex Mono, uppercase, with letter-spacing. If it's a name, sentence, or heading, it renders in Titillium Web. Never mix the two within a single string.
+**The Serif-Is-Voice Rule.** If a string is a name, a section title, a card title, or the hero's role line, it renders in Spectral. If it is a paragraph, a label, a timestamp, or a navigation string, it renders in Public Sans. The two families never appear within the same text node.
 
 ## Layout
 
-The page is a single-column stack of full-bleed `<section>` blocks (`padding: 110px 0`, `70px 0` under 768px), each opening with a hairline `border-top` that acts as the only vertical section divider — there are no background-color section breaks. Content is capped by a shared `.container` (`max-width: 1240px`, `24px` side padding).
+The page is a single-column stack of full-bleed `<section>` blocks (`padding: 120px 0`, `80px 0` under 768px), each opening with a hairline `border-top` as its only vertical divider — there is no background-color section break anywhere. Content is capped by a shared `.container` (`max-width: 1100px`, `32px` side padding).
 
-The hero breaks the single-column rule: `.hero-instrument` is a two-up grid (`minmax(0,1fr) minmax(280px,360px)`) — circular scope on the left, mono readout panel on the right — collapsing to one column under 860px (readout panel moves below the scope, blip positions re-tuned for the narrower scope). Ventures, files, and skills sections use `repeat(auto-fit, minmax(Npx, 1fr))` card grids (320px/360px/250px minimums) that reflow to single-column at narrow widths without an explicit breakpoint. About and the intro-transmission section use asymmetric two-column grids (copy + panel/video) that collapse to one column at 860px/800px respectively. The experience log uses a fixed `150px 1fr` timestamp-then-content grid, collapsing to one column at 700px.
+The hero breaks the section-padding rule: `min-height: 92vh`, content flex-aligned to the bottom, capped at `max-width: 720px` — a large block of type sitting low in an otherwise empty viewport, with no competing graphic device. Ventures uses a three-column grid (`1fr 1px 1fr`) where the center column is a literal 1px vertical divider line, collapsing to a single stacked column (divider hidden) under 760px. The intro-video and About sections use asymmetric two-column grids (copy + video/facts), collapsing to one column at 800px. The experience log uses a fixed `160px 1fr` timestamp-then-content grid, collapsing to one column at 700px. Projects and Skills use `repeat(auto-fit, minmax(Npx, 1fr))` grids (360px / 220px minimums) that reflow without an explicit breakpoint; the Projects grid has no card border of its own — cards butt directly against a shared `1px` gap filled with `var(--line)`, so the grid itself draws every card seam.
 
-Nav switches from a horizontal mono link row to a hamburger-toggled full-width dropdown at 768px (`.nav-toggle` becomes visible, `nav ul` becomes an absolutely-positioned panel with `.open` class toggled by JS). **This mobile breakpoint behavior is coded but not visually verified** — browser automation in this build session could not resize the viewport to confirm the collapsed layout renders correctly; treat the 860px/768px/700px rules as unverified until checked in a real narrow viewport.
+Nav switches from a horizontal Public Sans link row to a hamburger-toggled full-width dropdown at 768px (`.nav-toggle` becomes visible, `nav ul` becomes an absolutely-positioned panel toggled by a JS `.open` class). This logic is carried over unchanged from the site's prior world; only color and type were restyled for this pass. **It is coded but not visually confirmed in a narrow viewport this session** — browser automation could not resize the window on this machine — so treat the 760px/768px/800px/700px collapse rules as a known, unverified gap rather than confirmed system behavior.
 
-Spacing is not on a strict 8pt grid but clusters around a small set of reused values: `12px`/`14px` (mono field gaps, small internal padding), `22px`–`28px` (card internal padding, grid gaps), `48px`+ (panel padding, hero scope padding), `110px` (section rhythm).
+Spacing clusters around a small reused set rather than a strict 8pt grid: `10px`–`18px` (label gaps, row padding), `40px`–`48px` (grid gaps, venture-column padding), `64px` (about-grid gap), `120px` (section rhythm).
 
 ## Elevation & Depth
 
-Flat by design — there is no `box-shadow` anywhere in the system except the two literal instrument-light effects (blip glow, lock-pulse ring). Depth and hierarchy are conveyed entirely through border brightness (`--border` → `--grid-line` → `--grid-line-strong`) and background-layer contrast (`--bg` vs `--bg-panel`), never through shadow or blur elevation.
+Flat with no exceptions: there is no `box-shadow` anywhere in the system. Sections carry their own flat background hex (the gradient wash, see Colors), but within any given section every surface still sits directly on that section's ground with no secondary panel lift — project cards are the one deliberate exception, sitting at the lightest wash tone against their section's deeper gold so they read as distinct objects. Hierarchy and separation are otherwise conveyed entirely by hairline rules (`var(--line)`) and whitespace.
 
 ### Named Rules
-**The Flat-Instrument Rule.** Panels sit directly on the scope ground with a hairline border; hover states brighten the border and/or lift the element with `translateY(-2px to -4px)`, never add a shadow.
+**The Flat Paper Rule.** Nothing in this system lifts off the page. There is no card background distinct from the page background, no shadow, and no blur except the nav bar's `backdrop-filter: blur(8px)` behind its translucent scroll bar, which exists for legibility under scrolled content, not for depth.
 
 ## Shapes
 
-Sharp rectangles everywhere (`border-radius: 0` is the implicit default — no radius token is ever applied to cards, buttons, or panels). The one exception is true circles: the radar scope itself, contact blips, and status-indicator dots all use `border-radius: 50%`, reserved strictly for "things that are lit up on the instrument," never for cards or buttons.
+Sharp rectangles by default (`border-radius` is never applied to any card, button, panel, or frame). The one exception is true circles: the small 5px bullet dot before each experience-log list item (`border-radius: 50%`) is the system's only rounded mark, reserved for that single decorative use.
 
-Bracket-corner framing (`.bracket`, plus the hero's own corner pseudo-elements) is the system's signature device: two opposing L-shaped corner marks (1.5–2px phosphor border, partial opacity) laid over a hairline-bordered rectangle, used on cards, the hero instrument, and the contact panel to read as an "instrument panel" rather than a plain box.
+The recurring hairline rule — a 40px × 1px ink-colored line preceding every section title (`.kicker-rule`) — is the system's signature graphic device. It is a pure rule mark with no text and no label riding on it; it is not a category tag, status badge, or eyebrow, and should not be confused with one.
 
 ## Components
 
 ### Buttons
-- **Shape:** sharp rectangle, no radius, 1px solid border, mono label text, uppercase, letter-spacing `.08em`.
-- **Primary** (`.btn`): transparent background, phosphor border, phosphor-bright text, `padding: 13px 20px`.
-- **Amber** (`.btn.amber`): same shape, amber border/text — reserved for the single primary conversion CTA (Email me).
-- **Ghost** (`.btn.ghost`): dim `--ink` text, `--border`-color border — used for secondary actions (View log).
-- **Hover:** background tints to a 10% alpha of the button's own color; primary/amber also lift `translateY(-2px)`.
+- **Shape:** sharp rectangle, no radius.
+- **Primary** (`.btn`): filled navy background and matching 1px navy border, white text, `padding: 14px 28px`, 14px Public Sans. Used on the paper ground for "Get in touch."
+- **Primary, on-navy** (`.btn.on-navy`): the primary button's one inversion — filled garnet background, deep-navy text, used only inside the Contact closing band ("Email me").
+- **Text** (`.btn-text`): no fill, ink-colored text with a 1px ink underline (border-bottom), 14px, garnet on hover. Used for every secondary action on the paper ground — "View my work," and every `.venture-link`/`.file-link`.
+- **Text, on-navy** (`.btn-text.on-navy`): warm off-white text with a faint translucent underline, brightening to `--garnet-bright` on hover — used only inside the Contact band (LinkedIn, Upwork).
+- **Hover:** primary button gains a crisp `0 0 0 1px` garnet ring (paper ground) or off-white ring (navy band) and lifts `translateY(-1px)`; text links change color/underline to garnet, never opacity. Nothing changes shape or gains a shadow.
 
 ### Cards / Containers
-- **Corner Style:** sharp (0 radius); bracket corner marks on most card types (venture, file, skill-category, profile-card, experience log-entry).
-- **Background:** `--bg-panel` (#0a1215) on `--bg` (#05080a) — a one-step tonal lift, no shadow.
-- **Border:** 1px `--border`, brightening to `--grid-line-strong` on hover; file-cards additionally carry a 2px phosphor top border as a signature accent.
-- **Internal Padding:** 22px–28px.
-- **Header convention:** every card type opens with a small mono "head" row (class/status/category label, right- or space-between-aligned, uppercase, `--ink-dim` or `--cyan`) before the title — this is the system's recurring "instrument readout header" pattern, not a one-off.
+- **Corner Style:** sharp (0 radius) throughout.
+- **Background:** project cards hold the lightest wash tone (`#f5f0e0`, via `var(--bg)`) regardless of their section's deeper gold ground — the one place in the system a card intentionally differs from its section background.
+- **Border:** project cards carry no border of their own; the `.files-grid` background is line-colored with a 1px gap, so the grid draws a shared hairline seam between cards instead of each card owning a border.
+- **Internal Padding:** 40px (file-card), 48px (venture-column).
+- **Video frame:** `padding-bottom: 56.25%` (16:9), 1px line-colored border, embedded YouTube iframe held at `filter: grayscale(1) contrast(1.05) brightness(1.02)` at rest, reverting to `filter: none` on hover/focus-within — the loud stock thumbnails stay quiet inside the single-navy palette until a visitor actually engages.
 
 ### Navigation
-- **Style:** fixed top bar, translucent blurred scope-ground background (`rgba(5,8,10,.88)`, `backdrop-filter: blur(10px)`), hairline bottom border.
-- **Typography:** mono, 12px, uppercase, `.12em` tracking.
-- **States:** default `--ink`, hover `--phosphor-bright`.
-- **Mobile:** below 768px, links collapse behind a hamburger (`.nav-toggle`) into a full-width dropdown panel; unverified in a real narrow viewport this session (see Layout).
+- **Style:** fixed top bar, translucent cream background (`rgba(245,240,224,.92)`, `backdrop-filter: blur(8px)`), 1px line-colored bottom border.
+- **Typography:** Public Sans, 13px, uppercase, `.06em` tracking.
+- **States:** default ink-soft, hover ink with an ink underline.
+- **Mobile:** below 768px, links collapse behind a hamburger into a full-width dropdown panel with per-item top rules; carried-over logic, unverified in a real narrow viewport this session (see Layout).
 
-### The Radar Scope (signature component)
-The hero's circular instrument: four concentric ring guides, a crosshair, a 15°-stepped tick ring (masked to a thin annulus), and a continuously rotating conic-gradient sweep (`9s linear infinite`) as the sole primary-viewport motion. Three "contact blips" sit at fixed bearings — Ali at center (larger, phosphor-bright dot with a `lock-pulse` ring animation), IRF and Decom Robotics at fixed off-center coordinates (cyan dots, no pulse) — each with a mono tag label that fades/slides in on load. This is the one non-reusable, page-specific device in the system; it should not be miniaturized or reused as a generic decorative background.
+### Fact List (signature component)
+The About section's right-hand column: a top-ruled, row-divided list (`1px solid var(--line)` top and per-row bottom) pairing a small uppercase Public Sans label (11.5px, ink-faint, left) with its value (13.5px, ink, right, right-aligned). This label/value row pattern is the system's one recurring "data pair" device and appears only here — it is not replicated as a card-header convention elsewhere in the system.
+
+### Proof Figures (`.stat`)
+Inside Experience bullet points, the specific achievement figure (a percentage, multiplier, latency, range, or frame rate — e.g. "30%," "3x," "100ms") is wrapped in `<span class="stat">` and rendered in garnet, 600 weight, against the surrounding ink-soft sentence. This is the system's device for making proof scannable without a card, badge, or icon: the eye catches the number, the sentence supplies the claim it backs. Only the figure itself is garnet — never the surrounding sentence, and never applied to a figure that isn't a real, sourced result.
+
+### Closing Band (Contact + Footer)
+The only place the page leaves the paper ground: `#contact` and `footer` both sit on `var(--accent-deep)` (`#0e1626`), running as one continuous dark band to the bottom of the page. Inside it: a garnet `.kicker-rule`, white `<h2>`, `--on-navy` body copy, the garnet-filled `.btn.on-navy` primary action, `.btn-text.on-navy` secondary links, and `--on-navy` at reduced opacity for the meta lines (location, phone) and footer copyright. The footer's top border is a faint garnet line (`rgba(118,41,11,.3)`) rather than the paper-ground `--line` gray, so the band reads as one considered dark surface, not a light-system border pasted onto a dark background.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** keep phosphor-green as the only color that signals system/active state; reserve amber for the single primary action and cyan for secondary classification tags only.
-- **Do** render every label, timestamp, coordinate, and status in IBM Plex Mono, uppercase, with letter-spacing; keep names/headings/prose in Titillium Web.
-- **Do** use hairline borders and border-brightness (not shadow) for elevation; hover states brighten borders and/or lift with `translateY`.
-- **Do** frame instrument-style panels with bracket corner marks (`.bracket`) and lead each card with a small mono "head" row before the title, consistent with the existing card types.
-- **Do** keep corners sharp (0 radius) everywhere except true circular "lit" elements (scope, blips, status dots).
+- **Do** keep navy for trust (primary actions, the closing band) and garnet for luxury (rule marks, hover states, proof figures) — never swap which job each accent does.
+- **Do** draw structure with 1px hairline rules (`var(--line)` on paper, faint garnet on the navy band) instead of borders, card backgrounds, or shadows — per the Hairline-Not-Border and Flat Paper Rules.
+- **Do** hold embedded video thumbnails at `grayscale(1) contrast(1.05) brightness(1.02)` and restore full color only on hover/focus-within, so stock demo footage never fights the palette.
+- **Do** keep corners sharp (0 radius) everywhere except the true circular log-entry bullet dot.
+- **Do** use an en dash for date ranges ("2023 – 2024"), not a comma or an em dash; this is standard range typography already in use throughout Experience.
+- **Do** keep visible copy free of em dashes and of AI-writing tells — buzzwords, hedge phrases, formulaic constructions — as a standing content constraint for any future copy edits on this site, confirmed clean at the last review.
+- **Do** keep garnet hover/accent marks crisp and solid (a 1px ring, a color change, an underline) per the Crisp-Not-Blurred Rule — never a blurred glow.
 
 ### Don't:
-- **Don't** add drop shadows, glassmorphism, or gradient blobs — depth comes from grid density and border alpha only, per the Flat-Instrument Rule.
-- **Don't** introduce a second saturated accent color; the system deliberately runs on one dominant hue plus two single-purpose secondaries.
-- **Don't** use rounded corners on cards, buttons, or panels — radius is reserved for circular instrument elements only.
-- **Don't** reintroduce sequential sub-numbering (e.g. "SYS-01," "FILE-02") as a card-header convention — this pattern was flagged and removed twice during this build's review; card head labels are non-sequential category/status codes (e.g. `AI/ML`, `Class: Navigation`), never an invented ordinal sequence.
+- **Don't** add drop shadows, CSS `gradient()` functions, glassmorphism, or a secondary panel background — the system is flat by design. The section-to-section color wash is a sequence of flat hexes, not a rendered gradient; don't blend it into one with a CSS gradient.
+- **Don't** extend the Introduction section's DM Serif Display / Work Sans pairing to any other section — it is a scoped, one-section exception, not a system-wide pairing change.
+- **Don't** let garnet become a large fill on the paper ground, and don't let navy appear as body text or decoration there either — each accent's one job (trust-action / luxury-accent) is what keeps two colors from reading as clutter. Garnet only fills on the navy band (`.btn.on-navy`).
+- **Don't** use rounded corners on cards, buttons, panels, or frames — radius is reserved for the one circular list-bullet mark.
+- **Don't** reintroduce eyebrow, kicker-label, or category-tag text (e.g. a "venture-tag" or "file-tag" line above a title) — nine such tags were built, flagged as a banned kicker-label pattern in review, and removed entirely rather than relabeled; project and venture titles carry their own meaning without a tag riding above them. This is a defect the build carried and corrected, not a component to reintroduce.
+- **Don't** apply `.stat` garnet styling to a figure that isn't a real, sourced achievement — it's a proof device, not decoration.
 </content>
