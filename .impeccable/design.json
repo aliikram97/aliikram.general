@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-25T00:00:00Z",
+  "title": "Design System: Ali Ikram — AI Specialist & Founder",
+  "extensions": {
+    "colorMeta": {
+      "phosphor": { "role": "primary", "displayName": "Phosphor", "canonical": "#4ce096", "tonalRamp": ["#0a1f14", "#123a24", "#1c5636", "#2c7d4f", "#4ce096", "#7ceab5", "#a8ffce", "#d6ffe8"] },
+      "phosphor-bright": { "role": "primary", "displayName": "Phosphor Bright", "canonical": "#a8ffce", "tonalRamp": ["#123a24", "#1c5636", "#2c7d4f", "#4ce096", "#7ceab5", "#a8ffce", "#c9ffe0", "#eafff2"] },
+      "amber": { "role": "secondary", "displayName": "Amber", "canonical": "#ffb020", "tonalRamp": ["#3a2400", "#5c3900", "#8a5700", "#c07d00", "#ffb020", "#ffc65c", "#ffdb96", "#ffedc9"] },
+      "cyan": { "role": "secondary", "displayName": "Cyan", "canonical": "#6fd6ff", "tonalRamp": ["#00303f", "#00495c", "#02688a", "#1c93bd", "#6fd6ff", "#96e2ff", "#c0eeff", "#e5f9ff"] },
+      "scope-ground": { "role": "neutral", "displayName": "Scope Ground", "canonical": "#05080a", "tonalRamp": ["#020304", "#05080a", "#080f12", "#0a1215", "#101c1f", "#1a2a2e", "#2c3f42", "#8f9c9a"] },
+      "panel-surface": { "role": "neutral", "displayName": "Panel Surface", "canonical": "#0a1215", "tonalRamp": ["#05080a", "#080f12", "#0a1215", "#101c1f", "#1a2a2e", "#2c3f42", "#4a5c5c", "#8f9c9a"] },
+      "ink-bright": { "role": "neutral", "displayName": "Ink Bright", "canonical": "#eafaf1", "tonalRamp": ["#5c6e68", "#93a8a0", "#b7c9c2", "#cfe0d9", "#eafaf1", "#f2fbf6", "#f8fdfb", "#ffffff"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#93a8a0", "tonalRamp": ["#3a4642", "#5c6e68", "#748680", "#93a8a0", "#aebdb7", "#c8d3ce", "#e0e8e5", "#f4f7f6"] },
+      "ink-dim": { "role": "neutral", "displayName": "Ink Dim", "canonical": "#5c6e68", "tonalRamp": ["#252d2b", "#3a4642", "#4a5a55", "#5c6e68", "#748680", "#93a8a0", "#b7c9c2", "#dbe6e2"] },
+      "grid-line": { "role": "neutral", "displayName": "Grid Line", "canonical": "rgba(76, 224, 150, .13)", "tonalRamp": ["rgba(76,224,150,.05)", "rgba(76,224,150,.08)", "rgba(76,224,150,.10)", "rgba(76,224,150,.13)", "rgba(76,224,150,.16)", "rgba(76,224,150,.2)", "rgba(76,224,150,.25)", "rgba(76,224,150,.3)"] },
+      "grid-line-strong": { "role": "neutral", "displayName": "Grid Line Strong", "canonical": "rgba(76, 224, 150, .3)", "tonalRamp": ["rgba(76,224,150,.16)", "rgba(76,224,150,.2)", "rgba(76,224,150,.24)", "rgba(76,224,150,.3)", "rgba(76,224,150,.4)", "rgba(76,224,150,.5)", "rgba(76,224,150,.65)", "rgba(76,224,150,.8)"] },
+      "border": { "role": "neutral", "displayName": "Border", "canonical": "rgba(76, 224, 150, .16)", "tonalRamp": ["rgba(76,224,150,.08)", "rgba(76,224,150,.12)", "rgba(76,224,150,.16)", "rgba(76,224,150,.2)", "rgba(76,224,150,.25)", "rgba(76,224,150,.3)", "rgba(76,224,150,.4)", "rgba(76,224,150,.5)"] }
+    },
+    "typographyMeta": {
+      "headline": { "displayName": "Section Headline", "purpose": "Section titles (.section-title) — Ventures, Experience, Featured Projects, etc." },
+      "display": { "displayName": "Hero/Panel Title", "purpose": "Hero H1, contact-panel H2, card H3 titles." },
+      "body": { "displayName": "Body", "purpose": "Paragraph copy across About, venture, and project descriptions." },
+      "label": { "displayName": "Mono Label", "purpose": "Every structured/tabular string: nav links, readout fields, statuses, classifications, timestamps." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "sweep-rotate", "value": "conic-gradient sweep, 9s linear infinite, rotate 360deg", "purpose": "The hero radar scope's continuous sweep — the system's one primary-viewport ambient motion." },
+      { "name": "lock-pulse", "value": "box-shadow ring expansion, 2.8s ease-out infinite", "purpose": "Contact-blip 'lock acquired' pulse, most prominent on the self blip." },
+      { "name": "reveal", "value": "opacity 0->1 + translateY(24px)->0, .6s ease, IntersectionObserver-triggered", "purpose": "Standard scroll-in reveal for all non-hero content blocks." },
+      { "name": "hover-lift", "value": "transform: translateY(-2px) to translateY(-4px) on hover", "purpose": "Buttons and cards lift slightly on hover instead of gaining shadow." }
+    ],
+    "breakpoints": [
+      { "name": "hero-stack", "value": "860px" },
+      { "name": "about-stack", "value": "860px" },
+      { "name": "transmission-stack", "value": "800px" },
+      { "name": "log-stack", "value": "700px" },
+      { "name": "nav-collapse", "value": "768px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Default CTA — transparent with phosphor border, used for non-conversion actions like 'View log'.",
+      "html": "<a href=\"#contact\" class=\"ds-btn ds-btn-primary\">Open channel</a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; padding: 13px 20px; background: transparent; text-decoration: none; border: 1px solid; transition: all .25s; } .ds-btn-primary { color: #a8ffce; border-color: #4ce096; } .ds-btn-primary:hover, .ds-btn-primary:focus-visible { background: rgba(76,224,150,.1); transform: translateY(-2px); }"
+    },
+    {
+      "name": "Amber Button",
+      "kind": "button",
+      "refersTo": "button-amber",
+      "description": "The single primary-action button style, reserved for the site's one conversion CTA (Email me).",
+      "html": "<a href=\"mailto:ali@example.com\" class=\"ds-btn ds-btn-amber\">Email me</a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; padding: 13px 20px; background: transparent; text-decoration: none; border: 1px solid; transition: all .25s; } .ds-btn-amber { color: #ffb020; border-color: #ffb020; } .ds-btn-amber:hover, .ds-btn-amber:focus-visible { background: rgba(255,176,32,.1); transform: translateY(-2px); }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary/tertiary action button, dim by default.",
+      "html": "<a href=\"#projects\" class=\"ds-btn ds-btn-ghost\">View log</a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; padding: 13px 20px; background: transparent; text-decoration: none; border: 1px solid; transition: all .25s; } .ds-btn-ghost { color: #93a8a0; border-color: rgba(76,224,150,.16); } .ds-btn-ghost:hover, .ds-btn-ghost:focus-visible { color: #eafaf1; border-color: rgba(76,224,150,.3); }"
+    },
+    {
+      "name": "Instrument Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "The recurring bracket-cornered panel used for venture, file, and skill-category cards — mono head row, title, body, hairline border.",
+      "html": "<div class=\"ds-card\"><span class=\"ds-corner ds-corner-tl\"></span><span class=\"ds-corner ds-corner-br\"></span><div class=\"ds-card-head\">Class: Navigation</div><h3 class=\"ds-card-title\">Card Title</h3><p class=\"ds-card-body\">Supporting description text goes here.</p></div>",
+      "css": ".ds-card { position: relative; background: #0a1215; border: 1px solid rgba(76,224,150,.16); padding: 26px; transition: border-color .25s, transform .25s; } .ds-card:hover { border-color: rgba(76,224,150,.3); transform: translateY(-4px); } .ds-card-head { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: #6fd6ff; margin-bottom: 14px; } .ds-card-title { font-family: 'Titillium Web', sans-serif; color: #eafaf1; font-size: 19px; font-weight: 600; margin-bottom: 12px; } .ds-card-body { font-family: 'Titillium Web', sans-serif; font-size: 14px; color: #93a8a0; line-height: 1.65; } .ds-corner { position: absolute; width: 12px; height: 12px; border: 1.5px solid #4ce096; opacity: .5; } .ds-corner-tl { top: -1px; left: -1px; border-right: none; border-bottom: none; } .ds-corner-br { bottom: -1px; right: -1px; border-left: none; border-top: none; }"
+    },
+    {
+      "name": "Top Navigation",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Fixed, blurred, mono-label nav bar with lower-alpha hairline bottom border.",
+      "html": "<nav class=\"ds-nav\"><div class=\"ds-logo\"><span class=\"ds-logo-mark\">//</span> ALI IKRAM</div><ul class=\"ds-nav-list\"><li><a href=\"#about\">About</a></li><li><a href=\"#projects\">Projects</a></li><li><a href=\"#contact\">Contact</a></li></ul></nav>",
+      "css": ".ds-nav { position: fixed; top: 0; width: 100%; background: rgba(5,8,10,.88); backdrop-filter: blur(10px); padding: 18px 24px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(76,224,150,.16); } .ds-logo { font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600; color: #eafaf1; letter-spacing: .08em; display: flex; align-items: center; gap: 8px; } .ds-logo-mark { color: #4ce096; } .ds-nav-list { display: flex; list-style: none; gap: 28px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; } .ds-nav-list a { color: #93a8a0; text-decoration: none; transition: color .25s; } .ds-nav-list a:hover, .ds-nav-list a:focus-visible { color: #a8ffce; }"
+    },
+    {
+      "name": "Radar Scope",
+      "kind": "custom",
+      "refersTo": "none",
+      "description": "The hero's signature instrument: concentric rings, tick ring, rotating sweep, and contact blips with mono tag labels. Page-specific; not a generic reusable primitive.",
+      "html": "<div class=\"ds-scope\"><div class=\"ds-scope-ring ds-ring-1\"></div><div class=\"ds-scope-ring ds-ring-2\"></div><div class=\"ds-scope-ring ds-ring-3\"></div><div class=\"ds-scope-ring ds-ring-4\"></div><div class=\"ds-scope-sweep\"></div><div class=\"ds-blip ds-blip-self\"><span class=\"ds-blip-dot\"></span></div></div>",
+      "css": ".ds-scope { position: relative; width: 320px; aspect-ratio: 1/1; border-radius: 50%; background: radial-gradient(circle at center, rgba(76,224,150,.05), transparent 70%); overflow: hidden; } .ds-scope-ring { position: absolute; border: 1px solid rgba(76,224,150,.13); border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%,-50%); } .ds-ring-1 { width: 25%; height: 25%; } .ds-ring-2 { width: 50%; height: 50%; } .ds-ring-3 { width: 75%; height: 75%; } .ds-ring-4 { width: 100%; height: 100%; border-color: rgba(76,224,150,.3); } .ds-scope-sweep { position: absolute; inset: 0; border-radius: 50%; background: conic-gradient(from 0deg, rgba(76,224,150,.5), rgba(76,224,150,0) 24%, transparent 100%); animation: ds-sweep 9s linear infinite; opacity: .8; } @keyframes ds-sweep { to { transform: rotate(360deg); } } .ds-blip { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); } .ds-blip-dot { display: block; width: 14px; height: 14px; border-radius: 50%; background: #a8ffce; box-shadow: 0 0 14px #4ce096; animation: ds-pulse 2.8s ease-out infinite; } @keyframes ds-pulse { 0% { box-shadow: 0 0 0 0 rgba(111,214,255,.55); } 70% { box-shadow: 0 0 0 16px rgba(111,214,255,0); } 100% { box-shadow: 0 0 0 0 rgba(111,214,255,0); } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Radar Scope",
+    "overview": "The site is an air-traffic-control instrument, not a résumé page. Ali, IRF Technologies, and Decom Robotics are contacts held on a live scope; his track record is logged telemetry, not prose bragging. The world is a near-black instrument ground lit by a single restrained phosphor-green (grid lines, sweep, lock-on pulses), with amber reserved for the one primary action (email) and a thin cyan used only for secondary classification tags. Every panel is bracket-framed like a HUD readout: corner ticks, hairline borders, monospaced field labels in small caps-by-convention uppercase. This deliberately refuses the dark-navy-plus-neon-gradient 'AI portfolio' default — there are no glows-for-glow's-sake, no gradient blobs, no card shadows; depth comes from grid density and border-brightness, not elevation. The pairing of Titillium Web (display/body) and IBM Plex Mono (every label, field, timestamp, and status tag) does the genre work: Titillium Web reads as confident, geometric, human; Plex Mono reads as instrument telemetry. The system never mixes them within one text role — mono is reserved for data-plane text, Titillium Web for narrative-plane text.",
+    "keyCharacteristics": [
+      "Near-black scope ground with a single phosphor-green system accent; amber and cyan are the only other hues, each with one job.",
+      "Bracket-cornered, hairline-bordered instrument panels everywhere — no shadows, no rounded corners except true circles (the scope, its blips, status dots).",
+      "Mono type carries every label/field/status; display type carries only names, headings, and body prose.",
+      "A live rotating radar sweep and pulsing lock-on blips are the site's one motion signature; everything else uses a plain scroll-reveal fade/rise."
+    ],
+    "rules": [
+      { "name": "The One Signal Rule", "body": "Phosphor-green is the only color allowed to represent system/active state (status dots, 'Active' tags, lock-on pulses). Amber and cyan never substitute for it — amber means 'act now,' cyan means 'this is what kind of thing you're looking at.'", "section": "colors" },
+      { "name": "The No-Glow-Without-Cause Rule", "body": "Color glow (box-shadow with color, filter bloom) only appears on elements that are literally instrument lights: the scope dots, the lock-pulse animation. Text, panels, and buttons never get a decorative glow.", "section": "colors" },
+      { "name": "The Mono-Is-Data Rule", "body": "If a string is a value, status, timestamp, coordinate, or classification tag, it renders in IBM Plex Mono, uppercase, with letter-spacing. If it's a name, sentence, or heading, it renders in Titillium Web. Never mix the two within a single string.", "section": "typography" },
+      { "name": "The Flat-Instrument Rule", "body": "Panels sit directly on the scope ground with a hairline border; hover states brighten the border and/or lift the element with translateY(-2px to -4px), never add a shadow.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep phosphor-green as the only color that signals system/active state; reserve amber for the single primary action and cyan for secondary classification tags only.",
+      "Do render every label, timestamp, coordinate, and status in IBM Plex Mono, uppercase, with letter-spacing; keep names/headings/prose in Titillium Web.",
+      "Do use hairline borders and border-brightness (not shadow) for elevation; hover states brighten borders and/or lift with translateY.",
+      "Do frame instrument-style panels with bracket corner marks (.bracket) and lead each card with a small mono 'head' row before the title, consistent with the existing card types.",
+      "Do keep corners sharp (0 radius) everywhere except true circular 'lit' elements (scope, blips, status dots)."
+    ],
+    "donts": [
+      "Don't add drop shadows, glassmorphism, or gradient blobs — depth comes from grid density and border alpha only, per the Flat-Instrument Rule.",
+      "Don't introduce a second saturated accent color; the system deliberately runs on one dominant hue plus two single-purpose secondaries.",
+      "Don't use rounded corners on cards, buttons, or panels — radius is reserved for circular instrument elements only.",
+      "Don't reintroduce sequential sub-numbering (e.g. 'SYS-01,' 'FILE-02') as a card-header convention — this pattern was flagged and removed twice during this build's review; card head labels are non-sequential category/status codes (e.g. AI/ML, Class: Navigation), never an invented ordinal sequence."
+    ]
+  }
+}

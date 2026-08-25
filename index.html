@@ -1,910 +1,1055 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ali Ikram - AI Specialist & Tech Lead</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ali Ikram — AI Specialist &amp; Founder</title>
+<meta name="description" content="Ali Ikram — AI Specialist, founder of IRF Technologies and Decom Robotics. Production-grade AI, computer vision, and LLM systems for autonomous driving, edge deployment, and agentic automation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Titillium+Web:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-         :root {
-    --primary: #3d5a1f;
-    --secondary: #1a1f0f;
-    --dark: #000000;
-    --darker: #000000;
-    --light: #ffffff;
-    --gray: #a8b89b;
-    --accent: #a0ff00;
-}
+    :root {
+        --bg: #05080a;
+        --bg-raised: #080f12;
+        --bg-panel: #0a1215;
+        --grid-line: rgba(76, 224, 150, .13);
+        --grid-line-strong: rgba(76, 224, 150, .3);
+        --phosphor: #4ce096;
+        --phosphor-bright: #a8ffce;
+        --amber: #ffb020;
+        --cyan: #6fd6ff;
+        --ink: #93a8a0;
+        --ink-dim: #5c6e68;
+        --ink-bright: #eafaf1;
+        --border: rgba(76, 224, 150, .16);
+        --font-display: 'Titillium Web', sans-serif;
+        --font-mono: 'IBM Plex Mono', monospace;
+    }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: var(--darker);
-            color: var(--gray);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+    html { scroll-behavior: smooth; }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+    body {
+        font-family: var(--font-display);
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.65;
+        overflow-x: hidden;
+        position: relative;
+    }
 
-        /* Navigation */
-        nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    padding: 20px 0;
-    border-bottom: 1px solid rgba(160, 255, 0, 0.1);
-}
+    body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 2000;
+        background: repeating-linear-gradient(
+            to bottom,
+            rgba(76, 224, 150, .025) 0px,
+            rgba(76, 224, 150, .025) 1px,
+            transparent 1px,
+            transparent 3px
+        );
+        mix-blend-mode: overlay;
+    }
 
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--accent);
-        }
+    .mono { font-family: var(--font-mono); }
 
+    .bracket { position: relative; }
+    .bracket::before, .bracket::after {
+        content: '';
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border: 1.5px solid var(--phosphor);
+        opacity: .5;
+        pointer-events: none;
+    }
+    .bracket::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+    .bracket::after { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+
+    .section-title {
+        font-size: clamp(28px, 4vw, 42px);
+        font-weight: 600;
+        color: var(--ink-bright);
+        margin-bottom: 8px;
+        letter-spacing: -.01em;
+    }
+
+    .section-index {
+        font-family: var(--font-mono);
+        font-size: 12px;
+        color: var(--ink-dim);
+        letter-spacing: .1em;
+        margin-bottom: 48px;
+        display: block;
+    }
+
+    section { padding: 110px 0; position: relative; border-top: 1px solid var(--border); }
+    section#home { border-top: none; }
+
+    /* Nav */
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(5, 8, 10, .88);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        padding: 18px 0;
+        border-bottom: 1px solid var(--border);
+    }
+
+    nav .container { display: flex; justify-content: space-between; align-items: center; }
+
+    .logo {
+        font-family: var(--font-mono);
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--ink-bright);
+        letter-spacing: .08em;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .logo span { color: var(--phosphor); }
+
+    nav ul {
+        display: flex;
+        list-style: none;
+        gap: 28px;
+        font-family: var(--font-mono);
+        font-size: 12px;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+    }
+
+    nav a {
+        color: var(--ink);
+        text-decoration: none;
+        transition: color .25s;
+        position: relative;
+        padding-bottom: 2px;
+    }
+
+    nav a:hover { color: var(--phosphor-bright); }
+
+    .nav-toggle {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 30px;
+        height: 30px;
+        background: none;
+        border: 1px solid var(--border);
+        cursor: pointer;
+        padding: 0;
+    }
+    .nav-toggle span { width: 16px; height: 1.5px; background: var(--phosphor); margin: 0 auto; }
+
+    /* ===== HERO / RADAR SCOPE ===== */
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding-top: 110px;
+        padding-bottom: 60px;
+    }
+
+    .hero .container { width: 100%; }
+
+    .hero-instrument {
+        width: 100%;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+        border: 1px solid var(--grid-line-strong);
+        background: linear-gradient(180deg, rgba(76,224,150,.03), transparent 40%);
+        position: relative;
+    }
+
+    .hero-instrument::before,
+    .hero-instrument::after,
+    .hero-instrument .corner-br,
+    .hero-instrument .corner-bl {
+        content: '';
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        border: 2px solid var(--phosphor);
+        opacity: .6;
+    }
+    .hero-instrument::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+    .hero-instrument::after { top: -1px; right: -1px; border-left: none; border-bottom: none; }
+    .hero-instrument .corner-bl { bottom: -1px; left: -1px; border-right: none; border-top: none; }
+    .hero-instrument .corner-br { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+
+    .scope-wrap {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 48px;
+    }
+
+    .scope {
+        position: relative;
+        width: min(100%, 560px);
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        background: radial-gradient(circle at center, rgba(76,224,150,.05), transparent 70%);
+        overflow: hidden;
+    }
+
+    .scope-rings, .scope-ticks { position: absolute; inset: 0; border-radius: 50%; }
+
+    .scope-ring {
+        position: absolute;
+        border: 1px solid var(--grid-line);
+        border-radius: 50%;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .ring-1 { width: 25%; height: 25%; }
+    .ring-2 { width: 50%; height: 50%; }
+    .ring-3 { width: 75%; height: 75%; }
+    .ring-4 { width: 100%; height: 100%; border-color: var(--grid-line-strong); }
+
+    .scope-crosshair {
+        position: absolute; inset: 0;
+        background:
+            linear-gradient(var(--grid-line) 1px, transparent 1px) center / 100% 1px no-repeat,
+            linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) center / 1px 100% no-repeat;
+    }
+
+    .scope-ticks {
+        background-image: repeating-conic-gradient(var(--grid-line-strong) 0deg 1deg, transparent 1deg 15deg);
+        -webkit-mask-image: radial-gradient(circle, transparent 97%, black 98%, black 100%);
+        mask-image: radial-gradient(circle, transparent 97%, black 98%, black 100%);
+    }
+
+    .scope-sweep {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        background: conic-gradient(from 0deg, rgba(76,224,150,.5), rgba(76,224,150,0) 24%, transparent 100%);
+        animation: sweep-rotate 9s linear infinite;
+        opacity: .8;
+    }
+
+    @keyframes sweep-rotate { to { transform: rotate(360deg); } }
+
+    .contact-blip {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        z-index: 5;
+    }
+
+    .contact-blip .dot {
+        width: 10px; height: 10px;
+        border-radius: 50%;
+        background: var(--cyan);
+        box-shadow: 0 0 10px var(--cyan);
+        animation: lock-pulse 2.8s ease-out infinite;
+    }
+
+    .contact-blip.self .dot {
+        width: 14px; height: 14px;
+        background: var(--phosphor-bright);
+        box-shadow: 0 0 14px var(--phosphor);
+    }
+
+    @keyframes lock-pulse {
+        0% { box-shadow: 0 0 0 0 rgba(111,214,255,.55); }
+        70% { box-shadow: 0 0 0 16px rgba(111,214,255,0); }
+        100% { box-shadow: 0 0 0 0 rgba(111,214,255,0); }
+    }
+
+    .contact-blip .tag {
+        margin-top: 8px;
+        font-family: var(--font-mono);
+        font-size: 10.5px;
+        letter-spacing: .08em;
+        color: var(--ink);
+        background: rgba(5,8,10,.85);
+        border: 1px solid var(--grid-line-strong);
+        padding: 3px 7px;
+        white-space: nowrap;
+        opacity: 0;
+        transform: translateY(-4px);
+        animation: tag-in .6s ease forwards;
+        transition: color .2s, border-color .2s;
+    }
+
+    .contact-blip:hover .tag { color: var(--phosphor-bright); border-color: var(--phosphor); }
+
+    @keyframes tag-in { to { opacity: 1; transform: translateY(0); } }
+
+    .blip-self { top: 50%; left: 50%; }
+    .blip-irf { top: 27%; left: 74%; }
+    .blip-decom { top: 76%; left: 26%; }
+    .blip-irf .tag { animation-delay: .4s; }
+    .blip-decom .tag { animation-delay: .7s; }
+
+    .readout-panel {
+        border-left: 1px solid var(--grid-line-strong);
+        padding: 44px 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 22px;
+    }
+
+    .readout-panel h1 {
+        font-size: clamp(30px, 3vw, 38px);
+        color: var(--ink-bright);
+        line-height: 1.15;
+        font-weight: 600;
+    }
+
+    .readout-panel .role {
+        font-family: var(--font-mono);
+        font-size: 13px;
+        letter-spacing: .1em;
+        color: var(--phosphor);
+        text-transform: uppercase;
+    }
+
+    .readout-fields {
+        font-family: var(--font-mono);
+        font-size: 12px;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 6px 14px;
+        color: var(--ink-dim);
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        padding: 16px 0;
+    }
+    .readout-fields dt { color: var(--ink-dim); }
+    .readout-fields dd { color: var(--ink); }
+
+    .hero-lede { font-size: 15px; color: var(--ink); max-width: 46ch; }
+
+    .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: var(--font-mono);
+        font-size: 12px;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        padding: 13px 20px;
+        background: transparent;
+        color: var(--phosphor-bright);
+        border: 1px solid var(--phosphor);
+        text-decoration: none;
+        transition: all .25s;
+    }
+    .btn:hover { background: rgba(76,224,150,.1); transform: translateY(-2px); }
+    .btn.amber { color: var(--amber); border-color: var(--amber); }
+    .btn.amber:hover { background: rgba(255,176,32,.1); }
+    .btn.ghost { color: var(--ink); border-color: var(--border); }
+    .btn.ghost:hover { color: var(--ink-bright); border-color: var(--grid-line-strong); }
+
+    @media (max-width: 860px) {
+        .hero-instrument { grid-template-columns: 1fr; }
+        .readout-panel { border-left: none; border-top: 1px solid var(--grid-line-strong); }
+        .blip-irf { top: 24%; left: 78%; }
+        .blip-decom { top: 78%; left: 22%; }
+    }
+
+    /* ===== VENTURES ===== */
+    .ventures-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 24px;
+    }
+
+    .venture-card {
+        border: 1px solid var(--border);
+        background: var(--bg-panel);
+        padding: 28px;
+        text-decoration: none;
+        display: block;
+        transition: border-color .25s, transform .25s;
+        position: relative;
+    }
+    .venture-card:hover { border-color: var(--grid-line-strong); transform: translateY(-4px); }
+
+    .venture-head {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .1em;
+        color: var(--ink-dim);
+        margin-bottom: 18px;
+        text-transform: uppercase;
+    }
+    .venture-head .status { color: var(--phosphor); display: flex; align-items: center; gap: 6px; }
+    .venture-head .status::before {
+        content: ''; width: 6px; height: 6px; border-radius: 50%;
+        background: var(--phosphor); box-shadow: 0 0 6px var(--phosphor);
+    }
+
+    .venture-card h3 { color: var(--ink-bright); font-size: 22px; margin-bottom: 6px; }
+    .venture-class { font-family: var(--font-mono); font-size: 11.5px; color: var(--cyan); letter-spacing: .06em; margin-bottom: 14px; text-transform: uppercase; }
+    .venture-card p { font-size: 14.5px; color: var(--ink); margin-bottom: 20px; }
+    .venture-link { font-family: var(--font-mono); font-size: 12px; color: var(--phosphor-bright); display: inline-flex; align-items: center; gap: 6px; }
+    .venture-card:hover .venture-link { text-decoration: underline; }
+
+    /* ===== INTRO TRANSMISSION ===== */
+    .transmission { padding: 70px 0; }
+    .transmission .container { display: grid; grid-template-columns: minmax(0,1fr) minmax(280px, 460px); gap: 40px; align-items: center; }
+    .transmission-copy h2 { color: var(--ink-bright); font-size: 24px; margin-bottom: 10px; }
+    .transmission-copy p { font-size: 14.5px; max-width: 42ch; }
+    .video-frame {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+        border: 1px solid var(--grid-line-strong);
+        overflow: hidden;
+    }
+    .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; filter: grayscale(.5) contrast(1.05) brightness(.9); transition: filter .3s; }
+    .video-frame:hover iframe, .video-frame:focus-within iframe { filter: none; }
+    @media (max-width: 800px) { .transmission .container { grid-template-columns: 1fr; } }
+
+    /* ===== ABOUT ===== */
+    .about-grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(240px, 320px); gap: 50px; }
+    .about-copy p { font-size: 16.5px; max-width: 68ch; margin-bottom: 22px; color: var(--ink); }
+    .about-copy p strong { color: var(--ink-bright); font-weight: 600; }
+
+    .profile-card {
+        border: 1px solid var(--border);
+        background: var(--bg-panel);
+        padding: 24px;
+        font-family: var(--font-mono);
+        font-size: 12px;
+        height: fit-content;
+    }
+    .profile-card .row { display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid var(--border); }
+    .profile-card .row:last-child { border-bottom: none; }
+    .profile-card .row span:first-child { color: var(--ink-dim); }
+    .profile-card .row span:last-child { color: var(--ink-bright); text-align: right; }
+
+    @media (max-width: 860px) { .about-grid { grid-template-columns: 1fr; } }
+
+    /* ===== EXPERIENCE (flight log) ===== */
+    .log-list { border-top: 1px solid var(--border); }
+    .log-entry {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        gap: 30px;
+        padding: 36px 0;
+        border-bottom: 1px solid var(--border);
+        transition: background .25s;
+    }
+    .log-entry:hover { background: rgba(76,224,150,.02); }
+
+    .log-time {
+        font-family: var(--font-mono);
+        font-size: 12px;
+        color: var(--ink-dim);
+        letter-spacing: .05em;
+        padding-top: 3px;
+    }
+    .log-time .active-tag {
+        display: inline-block; margin-top: 8px;
+        color: var(--phosphor); border: 1px solid var(--phosphor);
+        padding: 2px 6px; font-size: 10px; letter-spacing: .08em;
+    }
+
+    .log-title { color: var(--ink-bright); font-size: 20px; margin-bottom: 4px; }
+    .log-company { font-family: var(--font-mono); font-size: 12.5px; color: var(--cyan); letter-spacing: .04em; margin-bottom: 16px; text-transform: uppercase; }
+
+    .log-entry ul { list-style: none; }
+    .log-entry li {
+        position: relative;
+        padding-left: 22px;
+        margin-bottom: 10px;
+        font-size: 14.5px;
+        color: var(--ink);
+    }
+    .log-entry li::before {
+        content: '›';
+        position: absolute; left: 0; top: -1px;
+        color: var(--phosphor);
+        font-family: var(--font-mono);
+        font-weight: 700;
+    }
+
+    @media (max-width: 700px) {
+        .log-entry { grid-template-columns: 1fr; gap: 10px; }
+    }
+
+    /* ===== PROJECTS (contact files) ===== */
+    .files-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 26px; }
+
+    .file-card {
+        background: var(--bg-panel);
+        border: 1px solid var(--border);
+        border-top: 2px solid var(--phosphor);
+        padding: 26px;
+        display: flex;
+        flex-direction: column;
+        transition: border-color .25s, transform .25s;
+    }
+    .file-card:hover { transform: translateY(-4px); border-color: var(--grid-line-strong); border-top-color: var(--phosphor); }
+
+    .file-head { display: flex; justify-content: flex-end; align-items: baseline; font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 14px; }
+    .file-head .file-class { color: var(--cyan); }
+
+    .file-card h3 { color: var(--ink-bright); font-size: 19px; margin-bottom: 12px; min-height: 48px; }
+    .file-card p { font-size: 14px; color: var(--ink); flex-grow: 1; margin-bottom: 18px; }
+
+    .file-video { position: relative; width: 100%; padding-bottom: 56.25%; border: 1px solid var(--border); overflow: hidden; margin-bottom: 18px; }
+    .file-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; filter: grayscale(.5) contrast(1.05) brightness(.9); transition: filter .3s; }
+    .file-video:hover iframe, .file-video:focus-within iframe { filter: none; }
+
+    .file-links { display: flex; gap: 10px; }
+    .file-link {
+        display: inline-flex; align-items: center; gap: 7px;
+        font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .04em;
+        padding: 8px 14px;
+        background: rgba(76,224,150,.06);
+        color: var(--phosphor-bright);
+        text-decoration: none;
+        border: 1px solid var(--border);
+        transition: all .25s;
+    }
+    .file-link:hover { background: rgba(76,224,150,.14); border-color: var(--grid-line-strong); }
+    .github-icon { width: 14px; height: 14px; }
+
+    /* ===== SKILLS (systems manifest) ===== */
+    .skills-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 22px; }
+    .skill-category { border: 1px solid var(--border); background: var(--bg-panel); padding: 22px; }
+    .skill-head {
+        display: flex; justify-content: space-between; align-items: baseline;
+        font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase;
+        color: var(--ink-dim); margin-bottom: 12px;
+    }
+    .skill-head .status { color: var(--phosphor); }
+    .skill-category h3 {
+        font-size: 16px; font-weight: 600;
+        color: var(--ink-bright); margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid var(--border);
+    }
+    .skill-category ul { list-style: none; }
+    .skill-category li {
+        font-family: var(--font-mono); font-size: 12.5px; color: var(--ink); padding: 5px 0;
+        display: flex; align-items: center; gap: 8px;
+    }
+    .skill-category li::before { content: '›'; color: var(--phosphor); font-weight: 700; }
+
+    /* ===== CONTACT ===== */
+    .contact-panel {
+        border: 1px solid var(--grid-line-strong);
+        background: linear-gradient(180deg, rgba(76,224,150,.04), transparent 60%);
+        padding: 56px;
+        text-align: center;
+        max-width: 720px;
+        margin: 0 auto;
+        position: relative;
+    }
+    .contact-panel::before, .contact-panel::after {
+        content: ''; position: absolute; width: 16px; height: 16px; border: 2px solid var(--phosphor); opacity: .6;
+    }
+    .contact-panel::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+    .contact-panel::after { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+
+    .contact-panel h2 { color: var(--ink-bright); font-size: 32px; margin-bottom: 16px; }
+    .contact-panel > p { font-size: 15.5px; max-width: 50ch; margin: 0 auto 34px; }
+
+    .contact-links { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 36px; }
+
+    .comms-data { font-family: var(--font-mono); font-size: 12.5px; color: var(--ink-dim); display: flex; flex-direction: column; gap: 6px; }
+    .comms-data span { color: var(--ink); }
+
+    footer {
+        text-align: center;
+        padding: 34px 0;
+        border-top: 1px solid var(--border);
+        font-family: var(--font-mono);
+        font-size: 11.5px;
+        color: var(--ink-dim);
+        letter-spacing: .04em;
+        display: flex; flex-direction: column; gap: 6px; align-items: center;
+    }
+    footer .status { color: var(--phosphor); display: inline-flex; align-items: center; gap: 6px; }
+    footer .status::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--phosphor); box-shadow: 0 0 6px var(--phosphor); }
+
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 768px) {
+        .hero h1, .readout-panel h1 { font-size: 30px; }
+        .nav-toggle { display: flex; }
         nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        nav a {
-            color: var(--gray);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--accent);
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 80px;
-            position: relative;
-        }
-
-        .hero-content {
-            max-width: 800px;
-        }
-
-        .hero-subtitle {
-            color: var(--accent);
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 {
-            font-size: 64px;
-            color: var(--light);
-            margin-bottom: 20px;
-            line-height: 1.1;
-        }
-
-        .hero h2 {
-            font-size: 48px;
-            color: var(--gray);
-            margin-bottom: 30px;
-        }
-
-        .hero p {
-            font-size: 18px;
-            max-width: 600px;
-            margin-bottom: 40px;
-        }
-
-        /* Video Placeholder */
-        .video-placeholder {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%;
-            background: linear-gradient(135deg, rgba(0, 102, 255, 0.1), rgba(100, 255, 218, 0.1));
-            border-radius: 12px;
-            overflow: hidden;
-            border: 2px solid rgba(100, 255, 218, 0.2);
-            cursor: pointer;
-            transition: transform 0.3s, border-color 0.3s;
-        }
-
-        .video-placeholder:hover {
-            transform: scale(1.02);
-            border-color: var(--accent);
-        }
-
-        .video-placeholder-content {
+            display: none;
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-        }
-
-        .play-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: rgba(100, 255, 218, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            border: 2px solid var(--accent);
-        }
-
-        .play-icon::after {
-            content: '';
-            width: 0;
-            height: 0;
-            border-left: 20px solid var(--accent);
-            border-top: 12px solid transparent;
-            border-bottom: 12px solid transparent;
-            margin-left: 5px;
-        }
-
-        .video-label {
-            color: var(--accent);
-            font-size: 16px;
-        }
-
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            padding: 15px 35px;
-            background: transparent;
-            color: var(--accent);
-            border: 2px solid var(--accent);
-            border-radius: 5px;
-            text-decoration: none;
-            transition: all 0.3s;
-            margin-right: 15px;
-        }
-
-        .btn:hover {
-            background: rgba(100, 255, 218, 0.1);
-            transform: translateY(-2px);
-        }
-
-        /* Section Styles */
-        section {
-            padding: 100px 0;
-        }
-
-        .section-title {
-            font-size: 42px;
-            color: var(--light);
-            margin-bottom: 50px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
+            top: 100%;
             left: 0;
             width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent), transparent);
-        }
-
-        /* Experience */
-        .experience-item {
-            margin-bottom: 50px;
-            padding: 30px;
-            background: rgba(100, 255, 218, 0.03);
-            border-left: 3px solid var(--accent);
-            border-radius: 5px;
-            transition: transform 0.3s, background 0.3s;
-        }
-
-        .experience-item:hover {
-            transform: translateX(10px);
-            background: rgba(100, 255, 218, 0.05);
-        }
-
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-        }
-
-        .experience-title {
-            color: var(--light);
-            font-size: 24px;
-            margin-bottom: 5px;
-        }
-
-        .experience-company {
-            color: var(--accent);
-            font-size: 18px;
-        }
-
-        .experience-date {
-            color: var(--gray);
-            font-size: 14px;
-        }
-
-        .experience-item ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .experience-item li {
-            padding-left: 25px;
-            position: relative;
-            margin-bottom: 10px;
-        }
-
-        .experience-item li::before {
-            content: '▹';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-        }
-
-        /* Projects Grid */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .project-card {
-            background: rgba(100, 255, 218, 0.03);
-            padding: 30px;
-            border-radius: 10px;
-            border: 1px solid rgba(100, 255, 218, 0.1);
-            transition: transform 0.3s, border-color 0.3s;
-            display: flex;
             flex-direction: column;
-            height: 100%;
+            gap: 0;
+            background: rgba(5, 8, 10, .97);
+            border-bottom: 1px solid var(--border);
         }
-
-        .intro-video-section {
-    padding: 100px 0;
-}
-
-.video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    height: 0;
-    overflow: hidden;
-    border-radius: 12px;
-    border: 2px solid rgba(100, 255, 218, 0.2);
-}
-
-.video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-}
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent);
-        }
-
-        .project-card h3 {
-            color: var(--light);
-            font-size: 20px;
-            margin-bottom: 15px;
-            min-height: 60px;
-        }
-
-        .project-card p {
-            flex-grow: 1;
-            margin-bottom: 20px;
-        }
-
-        .project-video {
-            margin: 20px 0;
-            aspect-ratio: 16/9;
-        }
-
-        .project-video video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            background: rgba(100, 255, 218, 0.1);
-            color: var(--accent);
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 14px;
-            transition: all 0.3s;
-            border: 1px solid rgba(100, 255, 218, 0.2);
-        }
-
-        .project-link:hover {
-            background: rgba(100, 255, 218, 0.2);
-            transform: translateY(-2px);
-        }
-
-        .github-icon {
-            width: 16px;
-            height: 16px;
-        }
-
-        /* Skills */
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .skill-category {
-            background: rgba(100, 255, 218, 0.03);
-            padding: 25px;
-            border-radius: 10px;
-            border: 1px solid rgba(100, 255, 218, 0.1);
-        }
-
-        .skill-category h3 {
-            color: var(--accent);
-            margin-bottom: 15px;
-            font-size: 18px;
-        }
-
-        .skill-category ul {
-            list-style: none;
-        }
-
-        .skill-category li {
-            padding: 5px 0;
-            color: var(--gray);
-        }
-
-        /* Contact */
-        .contact-content {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .contact-content h2 {
-            color: var(--light);
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-
-        .contact-content p {
-            margin-bottom: 40px;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 30px 0;
-            border-top: 1px solid rgba(100, 255, 218, 0.1);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 42px;
-            }
-
-            .hero h2 {
-                font-size: 32px;
-            }
-
-            nav ul {
-                display: none;
-            }
-
-            .experience-header {
-                flex-direction: column;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in {
-            animation: fadeInUp 0.8s ease-out;
-        }
-    </style>
+        nav ul.open { display: flex; }
+        nav ul li { border-top: 1px solid var(--border); }
+        nav ul a { display: block; padding: 16px 24px; }
+        section { padding: 70px 0; }
+    }
+</style>
 </head>
 <body>
-    <!-- Navigation -->
-     <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <div class="logo">Ali Ikram</div>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+<!--
+THESIS: Visitors are contacts being tracked and acquired, not readers of a marketing page — every credential renders as measured telemetry, refusing the dark-navy/neon-accent AI-portfolio default.
+OWN-WORLD: Near-black scope ground, single restrained phosphor-green accent (grid, sweep, lock-on), amber for action, thin cyan for secondary tracks; IBM Plex Mono for tabular data, Titillium Web for display type; polar grid, rotating sweep, bracket-framed instrument panels throughout.
+STORY: A visitor sees Ali acquiring lock at the center of a live scope, IRF Technologies and Decom Robotics tracked alongside him, then reads his track record as logged telemetry and decides to open a channel or follow a tracked venture.
+FIRST VIEWPORT: Full-bleed radar-scope instrument, sweep rotating, Ali locked at center, two venture blips at fixed bearings, integrated data-readout panel with role, location, status and two CTAs.
+FORM: Air-traffic / radar tracking scope, candidate 4 of 7 grounded structures, seed key d800dd3a.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md.
+-->
 
-    <!-- Introduction Video Section -->
-    <section class="intro-video-section">
+<nav>
     <div class="container">
-        <h2 class="section-title">Introduction</h2>
-        <div class="video-wrapper">
-            <iframe 
-                src="https://www.youtube.com/embed/31tNnBq8-Y8" 
-                title="Introduction Video" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-            </iframe>
+        <div class="logo"><span>//</span> ALI IKRAM</div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navList">
+            <span></span><span></span><span></span>
+        </button>
+        <ul id="navList">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#ventures">Ventures</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- HERO — radar scope -->
+<section id="home" class="hero">
+    <div class="container">
+        <div class="hero-instrument">
+            <span class="corner-bl"></span><span class="corner-br"></span>
+            <div class="scope-wrap">
+                <div class="scope">
+                    <div class="scope-rings">
+                        <div class="scope-ring ring-1"></div>
+                        <div class="scope-ring ring-2"></div>
+                        <div class="scope-ring ring-3"></div>
+                        <div class="scope-ring ring-4"></div>
+                    </div>
+                    <div class="scope-crosshair"></div>
+                    <div class="scope-ticks"></div>
+                    <div class="scope-sweep"></div>
+
+                    <a href="#contact" class="contact-blip self blip-self" aria-label="Ali Ikram — primary contact">
+                        <span class="dot"></span>
+                        <span class="tag">A. IKRAM · LOCKED</span>
+                    </a>
+                    <a href="https://irftechnologies.com/" target="_blank" rel="noopener" class="contact-blip blip-irf" aria-label="IRF Technologies">
+                        <span class="dot"></span>
+                        <span class="tag">IRF TECHNOLOGIES</span>
+                    </a>
+                    <a href="https://decomrobotics.com/" target="_blank" rel="noopener" class="contact-blip blip-decom" aria-label="Decom Robotics">
+                        <span class="dot"></span>
+                        <span class="tag">DECOM ROBOTICS</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="readout-panel">
+                <h1>Ali Ikram</h1>
+                <div class="role">AI Specialist &amp; Founder</div>
+                <p class="hero-lede">I design and ship production AI — computer vision, LLM systems, and edge deployment — for autonomous driving, safety-critical, and enterprise use. Now building IRF Technologies and Decom Robotics.</p>
+
+                <dl class="readout-fields">
+                    <dt>BASE</dt><dd>33.6844°N, 73.0479°E — Islamabad, PK</dd>
+                    <dt>STATUS</dt><dd>Open to freelance &amp; consulting engagements</dd>
+                    <dt>DOMAINS</dt><dd>CV · LLM/RAG · Edge AI · Robotics</dd>
+                </dl>
+
+                <div class="cta-row">
+                    <a href="#contact" class="btn">Open channel</a>
+                    <a href="#projects" class="btn ghost">View log</a>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <p style="max-width: 800px; font-size: 18px; margin-bottom: 30px;">
-                AI Specialist with 4+ years of experience designing, deploying, and scaling AI-driven automation, computer vision, and large language model (LLM) solutions. Proven expertise in leading cross-functional teams, optimizing algorithms for real-time systems, and deploying production-ready AI pipelines across cloud and edge platforms.
-            </p>
-            <p style="max-width: 800px; font-size: 18px;">
-                I've delivered high-impact projects in autonomous driving, OCR, multilingual NLP, and anomaly detection. I'm adept at bridging research and business value by consulting startups and enterprises to integrate cutting-edge AI into their workflows.
-            </p>
+<!-- VENTURES -->
+<section id="ventures">
+    <div class="container">
+        <h2 class="section-title reveal">Ventures</h2>
+        <span class="section-index reveal">Two companies I founded and operate, each with its own site — routed, not duplicated, here.</span>
+
+        <div class="ventures-grid">
+            <a href="https://irftechnologies.com/" target="_blank" rel="noopener" class="venture-card bracket reveal">
+                <div class="venture-head"><span class="status">Active</span></div>
+                <h3>IRF Technologies</h3>
+                <div class="venture-class">Class: Services / Agentic Automation</div>
+                <p>Services and agentic workflow automation for businesses — building AI systems that run real operations, not demos.</p>
+                <span class="venture-link">irftechnologies.com →</span>
+            </a>
+            <a href="https://decomrobotics.com/" target="_blank" rel="noopener" class="venture-card bracket reveal">
+                <div class="venture-head"><span class="status">Active</span></div>
+                <h3>Decom Robotics</h3>
+                <div class="venture-class">Class: Robotics / Physical AI</div>
+                <p>Robotics and physical AI, built around our own product line — bringing AI off the screen and into the physical world.</p>
+                <span class="venture-link">decomrobotics.com →</span>
+            </a>
         </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience">
-        <div class="container">
-            <h2 class="section-title">Experience</h2>
-
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div>
-                        <div class="experience-title">Sr. AI Engineer</div>
-                        <div class="experience-company">Intelligent Learning Machines (ILM)</div>
-                    </div>
-                    <div class="experience-date">2024 – Present</div>
-                </div>
-                <ul>
-                    <li>Spearheaded simulator-based validation for autonomous driving algorithms, potentially reducing scenario testing costs by 30%</li>
-                    <li>Built digital twins for anomaly detection, achieving 75% detection precision in abnormal driving behaviors</li>
-                    <li>Developed a safe city algorithm that generates alerts based on gun-based events</li>
-                    <li>Developed a multilingual document parsing pipeline using PyTorch + TensorRT, enabling 3× faster edge deployment</li>
-                    <li>Integrated LLM-based contextual understanding for enterprise documents</li>
-                    <li>Deployed real-time AI on edge (NVIDIA Jetson) with inference latency under 100ms for safety-critical systems</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div>
-                        <div class="experience-title">AI Algorithm Tech Lead</div>
-                        <div class="experience-company">99Technologies</div>
-                    </div>
-                    <div class="experience-date">2023 – 2024</div>
-                </div>
-                <ul>
-                    <li>Led a 3-member AI team delivering OCR pipelines with 95% accuracy, reducing manual BIOS configuration by 85% across clients</li>
-                    <li>Mentored junior engineers in AI lifecycle management, boosting team productivity and code quality</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div>
-                        <div class="experience-title">Consultant AI Engineer</div>
-                        <div class="experience-company">ILM (Part-Time)</div>
-                    </div>
-                    <div class="experience-date">2023 – 2024</div>
-                </div>
-                <ul>
-                    <li>Advised on video localization & simulation algorithms for scenario-based testing in autonomous driving</li>
-                    <li>Provided AI consulting for startups, helping design MVPs in traffic analytics, OCR, and chatbot systems</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div>
-                        <div class="experience-title">Machine Learning Engineer</div>
-                        <div class="experience-company">ILM</div>
-                    </div>
-                    <div class="experience-date">2022 – 2023</div>
-                </div>
-                <ul>
-                    <li>Designed lane detection and centering algorithms, ensuring robustness in adverse conditions, aligned with ISO 21448 safety requirements</li>
-                    <li>Implemented mitigation algorithms for failure case detection, improving system resilience by 20%</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div>
-                        <div class="experience-title">Computer Vision Engineer</div>
-                        <div class="experience-company">TeReSol</div>
-                    </div>
-                    <div class="experience-date">2021 – 2022</div>
-                </div>
-                <ul>
-                    <li>Developed thermal tracking system up to 3km, deployed on NVIDIA TK1-based embedded hardware</li>
-                    <li>Optimized vision pipeline to achieve real-time detection at 15 FPS on limited compute resources</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>Integrating Robot Physical Dimensions into Path Planning</h3>
-                    </p>Hybrid Robot-Aware Path Planning System introduces an innovative approach that integrates robot dimensions 
-                        directly into the navigation process using an initial binary map. Traditional path-planning algorithms 
-                        often treat the robot as a unit point within the Cartesian coordinate system, ignoring its physical size 
-                        and shape, which can lead to collisions or inefficient routing. Our proposed method modifies the available
-                         trajectories by expanding obstacle boundaries in the binary map according to the robot’s actual dimensions. 
-                         This enables any standard path-planning algorithm to inherently account for robot size without requiring 
-                         changes to the algorithm itself or the addition of external sensors, ensuring safer and more realistic navigation.</p>
-                    <div class="project-video" style="position: relative; width: 100%; padding-bottom: 56.25%; border-radius: 8px; overflow: hidden;">
-                        <iframe 
-                            src="https://www.youtube.com/embed/Vkb06CYRB6s" 
-                            title="RAG LLM Demo"
-                            frameborder="0"
-                            allowfullscreen
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-                        </iframe>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/aliikram97/Integrating-Robot-Physical-Dimensions-into-Path-Planning" class="project-link" target="_blank">
-                            <svg class="github-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                            GitHub
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>TalToTextTranslate a translation and transcription pipeline</h3>
-                    <p>Audio Transcription and Translation Pipeline is an intelligent system designed to efficiently process long audio 
-                        recordings by converting speech into text and translating it into multiple languages. The pipeline utilizes
-                        Google’s Speech Recognition service, providing support for all languages recognized by Google, ensuring broad 
-                        accessibility and accuracy across diverse accents and dialects. Once the audio is transcribed, the text is
-                         seamlessly translated using the Googletrans library into any desired target language. This end-to-end solution 
-                         is ideal for multilingual communication, content localization, and accessibility applications, enabling users 
-                         to easily convert lengthy audio materials into readable, translated text while maintaining clarity, speed, and 
-                         reliability.
-                    </p>
-                    <div class="project-video" style="position: relative; width: 100%; padding-bottom: 56.25%; border-radius: 8px; overflow: hidden;">
-                        <iframe 
-                            src="https://www.youtube.com/embed/o3ocww3zxcc" 
-                            title="RAG LLM Demo"
-                            frameborder="0"
-                            allowfullscreen
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-                        </iframe>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/aliikram97/Talk2TextTranslate" class="project-link" target="_blank">
-                            <svg class="github-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                            GitHub
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>Multilingual OCR System</h3>
-                    <p>Multilingual OCR and Translation Pipeline is an advanced AI-driven system developed to extract, translate, 
-                        and summarize text from images locally without relying on cloud processing. The pipeline enables users to 
-                        upload or capture an image containing text in multiple languages, automatically detecting and extracting 
-                        the content with high precision using Optical Character Recognition (OCR). Once extracted, the text is 
-                        seamlessly translated into the user’s preferred language, followed by the generation of an executive summary 
-                        that highlights the key insights and context. This end-to-end local solution ensures data privacy, 
-                        fast performance, and reliable multilingual support for both professional and personal document processing.
-                    </p>
-                    <div class="project-video" style="position: relative; width: 100%; padding-bottom: 56.25%; border-radius: 8px; overflow: hidden;">
-                        <iframe 
-                            src="https://www.youtube.com/embed/1wZiVdbtG30" 
-                            title="RAG LLM Demo"
-                            frameborder="0"
-                            allowfullscreen
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-                        </iframe>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/aliikram97/multilingual-ocr-pipeline" class="project-link" target="_blank">
-                            <svg class="github-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                            GitHub
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>Thermal Object Tracking</h3>
-                    <p>Infrared Object Tracking System is a high-performance, AI-powered solution designed for long-range thermal 
-                        detection up to 3 kilometers. It is optimized for real-time object recognition and motion tracking on embedded 
-                        hardware such as NVIDIA Jetson devices. The system employs a custom-designed algorithm that uses proprietary 
-                        mathematical equations for occlusion detection, allowing it to maintain continuous tracking even when the target 
-                        is partially hidden or passing through dense thermal clutter. This advanced approach ensures exceptional robustness, 
-                        accuracy, and speed, making it suitable for surveillance, defense, and industrial monitoring applications where 
-                        reliability and low-latency detection are mission-critical.</p>
-                    <div class="project-video" style="position: relative; width: 100%; padding-bottom: 56.25%; border-radius: 8px; overflow: hidden;">
-                        <iframe 
-                            src="https://www.youtube.com/embed/v5YV0uikqlg" 
-                            title="RAG LLM Demo"
-                            frameborder="0"
-                            allowfullscreen
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-                        </iframe>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/aliikram97/tracking_pipeline" class="project-link" target="_blank">
-                            <svg class="github-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                            GitHub
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>Voice Sales Agent</h3>
-                    <p>The Voice Sales Agent is an intelligent, AI-powered system designed to handle inbound calls, engage with 
-                        customers naturally, and manage the entire sales inquiry process. It listens to callers, understands their 
-                        needs using speech recognition and natural language understanding, and provides relevant responses or solutions 
-                        in real time.
-
-Beyond answering queries, the agent can schedule appointments or meetings by integrating seamlessly with the company’s calendar system, ensuring that leads and clients are automatically booked for follow-ups without human intervention. This automation streamlines customer interaction, reduces response times, and boosts overall efficiency in sales operations.</p>
-                    <div class="project-video" style="position: relative; width: 100%; padding-bottom: 56.25%; border-radius: 8px; overflow: hidden;">
-                        <iframe 
-                            src="https://www.youtube.com/embed/WbV4NwhpMWI" 
-                            title="RAG LLM Demo"
-                            frameborder="0"
-                            allowfullscreen
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-                        </iframe>
-                    </div>
-                    <!-- <div class="project-links">
-                        <a href="https://github.com/yourusername/safe-city" class="project-link" target="_blank">
-                            <svg class="github-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                            GitHub
-                        </a>
-                    </div> -->
-                </div>
-
-                <div class="project-card">
-                    <h3>Adaptive Cruise Control</h3>
-                    <p>Traffic Sign Recognition and Adaptive Cruise Control System is an intelligent driver-assistance framework designed to enhance autonomous vehicle safety and decision-making. The system employs computer vision techniques and deep learning models to detect, classify, and interpret traffic signs in real time under varying weather and lighting conditions. Detected signs are then used to dynamically adjust the vehicle's speed and behavior through an adaptive cruise control module, ensuring compliance with road regulations and maintaining safe distances from surrounding vehicles. This integrated approach improves situational awareness, reduces human error, and contributes to the development of fully autonomous driving technologies with enhanced responsiveness and reliability on modern roads.</p>
-                    <div class="project-video" style="position: relative; width: 100%; padding-bottom: 56.25%; border-radius: 8px; overflow: hidden;">
-                        <iframe 
-                            src="https://www.youtube.com/embed/lqgHjVG0qaw" 
-                            title="Adaptive Cruise Control Demo"
-                            frameborder="0"
-                            allowfullscreen
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-                        </iframe>
-                    </div>
-                </div>
-
-                <div class="project-card">
-    <h3>RAG-Based Question Answering Bot (Local LLM)</h3>
-    <p>
-        This project showcases a fully local Retrieval-Augmented Generation (RAG) based Question Answering system built using HuggingFace, LangChain, Gradio, and ChromaDB.
-        The bot runs entirely offline with a locally hosted LLM, ensuring data privacy and fast responses without relying on external APIs.
-        Documents are embedded and stored in a ChromaDB vector database, enabling efficient semantic search and context retrieval.
-        The retrieved information is then passed to the LLM via LangChain, allowing the model to generate highly accurate, context-grounded answers.
-        A Gradio interface provides an intuitive frontend where users can upload documents, ask questions, and interact with the assistant in real time.
-    </p>
-
-    <div class="project-video" style="position: relative; width: 100%; padding-bottom: 56.25%; border-radius: 8px; overflow: hidden;">
-        <iframe 
-            src="https://www.youtube.com/embed/WgtyV0VlCTA" 
-            title="RAG LLM Demo"
-            frameborder="0"
-            allowfullscreen
-            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-        </iframe>
     </div>
-    <div class="project-links">
-                        <a href="https://github.com/aliikram97/simple_QA_chatbot" class="project-link" target="_blank">
-                            <svg class="github-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                            GitHub
-                        </a>
-                    </div>
-</div>
+</section>
 
+<!-- INTRO TRANSMISSION -->
+<section class="transmission">
+    <div class="container">
+        <div class="transmission-copy reveal">
+            <h2>Introduction</h2>
+            <p>A short video introduction — who I am, what I build, and how I can help.</p>
+        </div>
+        <div class="video-frame reveal">
+            <iframe src="https://www.youtube.com/embed/31tNnBq8-Y8" title="Introduction Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-copy">
+                <h2 class="section-title reveal">About</h2>
+                <span class="section-index reveal">&nbsp;</span>
+                <p class="reveal"><strong>AI Specialist with 4+ years of experience</strong> designing, deploying, and scaling AI-driven automation, computer vision, and large language model (LLM) solutions. Proven expertise leading cross-functional teams, optimizing algorithms for real-time systems, and deploying production-ready AI pipelines across cloud and edge platforms.</p>
+                <p class="reveal">I've delivered high-impact projects in autonomous driving, OCR, multilingual NLP, and anomaly detection — and now channel that experience into <strong>IRF Technologies</strong> and <strong>Decom Robotics</strong>, consulting startups and enterprises to put production AI systems into their workflows.</p>
+            </div>
+            <div class="profile-card bracket reveal">
+                <div class="row"><span>DESIGNATION</span><span>A. Ikram</span></div>
+                <div class="row"><span>ROLE</span><span>AI Specialist / Founder</span></div>
+                <div class="row"><span>EXPERIENCE</span><span>4+ years</span></div>
+                <div class="row"><span>LOCATION</span><span>Islamabad, PK</span></div>
+                <div class="row"><span>FOCUS</span><span>CV · LLM · Edge AI</span></div>
+                <div class="row"><span>STATUS</span><span>Open</span></div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
-            
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>AI & Machine Learning</h3>
-                    <ul>
-                        <li>Deep Learning (CNNs, GANs, RL)</li>
-                        <li>Large Language Models (LLMs)</li>
-                        <li>RAG Systems</li>
-                        <li>OCR & Document Processing</li>
-                        <li>SLAM & Autonomous Systems</li>
-                        <li>Object Detection & Segmentation</li>
-                        <li>Stereo Vision & Depth Estimation</li>
-                        <li>Tracking & Camera Calibration</li>
-                    </ul>
-                </div>
+<!-- EXPERIENCE -->
+<section id="experience">
+    <div class="container">
+        <h2 class="section-title reveal">Experience</h2>
+        <span class="section-index reveal">Chronological record, most recent first.</span>
 
-                <div class="skill-category">
-                    <h3>Frameworks & Libraries</h3>
+        <div class="log-list">
+            <div class="log-entry bracket reveal">
+                <div class="log-time mono">2024 – PRESENT <span class="active-tag">ACTIVE</span></div>
+                <div>
+                    <div class="log-title">Sr. AI Engineer</div>
+                    <div class="log-company">Intelligent Learning Machines (ILM)</div>
                     <ul>
-                        <li>PyTorch</li>
-                        <li>TensorFlow</li>
-                        <li>OpenCV</li>
-                        <li>Hugging Face</li>
-                        <li>Flask & Flask-SocketIO</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Edge Deployment</h3>
-                    <ul>
-                        <li>TensorRT</li>
-                        <li>ONNX</li>
-                        <li>OpenVINO</li>
-                        <li>NVIDIA Jetson</li>
-                        <li>Docker</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Cloud & DevOps</h3>
-                    <ul>
-                        <li>AWS (EC2, S3, SageMaker)</li>
-                        <li>AWS Lambda & Bedrock</li>
-                        <li>Azure</li>
-                        <li>Git</li>
-                        <li>n8n Automation</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Simulation & Robotics</h3>
-                    <ul>
-                        <li>ROS (Robot Operating System)</li>
-                        <li>CARLA Simulator</li>
-                        <li>Unreal Engine</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Programming Languages</h3>
-                    <ul>
-                        <li>Python</li>
-                        <li>C++</li>
-                        <li>MATLAB</li>
-                        <li>Verilog</li>
-                        <li>TypeScript</li>
+                        <li>Spearheaded simulator-based validation for autonomous driving algorithms, potentially reducing scenario testing costs by 30%</li>
+                        <li>Built digital twins for anomaly detection, achieving 75% detection precision in abnormal driving behaviors</li>
+                        <li>Developed a safe city algorithm that generates alerts based on gun-based events</li>
+                        <li>Developed a multilingual document parsing pipeline using PyTorch + TensorRT, enabling 3× faster edge deployment</li>
+                        <li>Integrated LLM-based contextual understanding for enterprise documents</li>
+                        <li>Deployed real-time AI on edge (NVIDIA Jetson) with inference latency under 100ms for safety-critical systems</li>
                     </ul>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <div class="contact-content">
-                <h2 class="section-title" style="display: block; text-align: center;">Get In Touch</h2>
-                <p>I'm currently open to new opportunities and collaborations. Whether you have a question or just want to say hi, feel free to reach out!</p>
-                
-                <div class="contact-links">
-                    <a href="mailto:aliikram97@gmail.com" class="btn">Email Me</a>
-                    <a href="https://linkedin.com/in/ali-i-5306b597" class="btn" target="_blank">LinkedIn</a>
-                    <a href="https://www.upwork.com/freelancers/~01bb6024a47b19d619" class="btn" target="_blank">UpWork</a>
+            <div class="log-entry bracket reveal">
+                <div class="log-time mono">2023 – 2024</div>
+                <div>
+                    <div class="log-title">AI Algorithm Tech Lead</div>
+                    <div class="log-company">99Technologies</div>
+                    <ul>
+                        <li>Led a 3-member AI team delivering OCR pipelines with 95% accuracy, reducing manual BIOS configuration by 85% across clients</li>
+                        <li>Mentored junior engineers in AI lifecycle management, boosting team productivity and code quality</li>
+                    </ul>
                 </div>
+            </div>
 
-                <div style="margin-top: 40px;">
-                    <p style="color: var(--gray); margin-bottom: 10px;">📍 Islamabad, Pakistan</p>
-                    <p style="color: var(--gray);">📞 +92-335-5093011 | +92-303-0595669</p>
+            <div class="log-entry bracket reveal">
+                <div class="log-time mono">2023 – 2024</div>
+                <div>
+                    <div class="log-title">Consultant AI Engineer</div>
+                    <div class="log-company">ILM (Part-Time)</div>
+                    <ul>
+                        <li>Advised on video localization &amp; simulation algorithms for scenario-based testing in autonomous driving</li>
+                        <li>Provided AI consulting for startups, helping design MVPs in traffic analytics, OCR, and chatbot systems</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="log-entry bracket reveal">
+                <div class="log-time mono">2022 – 2023</div>
+                <div>
+                    <div class="log-title">Machine Learning Engineer</div>
+                    <div class="log-company">ILM</div>
+                    <ul>
+                        <li>Designed lane detection and centering algorithms, ensuring robustness in adverse conditions, aligned with ISO 21448 safety requirements</li>
+                        <li>Implemented mitigation algorithms for failure case detection, improving system resilience by 20%</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="log-entry bracket reveal">
+                <div class="log-time mono">2021 – 2022</div>
+                <div>
+                    <div class="log-title">Computer Vision Engineer</div>
+                    <div class="log-company">TeReSol</div>
+                    <ul>
+                        <li>Developed thermal tracking system up to 3km, deployed on NVIDIA TK1-based embedded hardware</li>
+                        <li>Optimized vision pipeline to achieve real-time detection at 15 FPS on limited compute resources</li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>© 2025 Ali Ikram. Built with passion for AI and innovation.</p>
+<!-- PROJECTS -->
+<section id="projects">
+    <div class="container">
+        <h2 class="section-title reveal">Featured Projects</h2>
+        <span class="section-index reveal">Seven tracked engagements — proof, not pitch.</span>
+
+        <div class="files-grid">
+            <div class="file-card bracket reveal">
+                <div class="file-head"><span class="file-class">Class: Navigation</span></div>
+                <h3>Integrating Robot Physical Dimensions into Path Planning</h3>
+                <p>A hybrid robot-aware path planning system that integrates robot dimensions directly into navigation using an initial binary map. Traditional path-planning treats the robot as a unit point, ignoring its physical size and shape, which can cause collisions or inefficient routing. This method expands obstacle boundaries according to the robot's actual dimensions, so any standard path-planning algorithm inherently accounts for robot size — no algorithm changes or external sensors required.</p>
+                <div class="file-video"><iframe src="https://www.youtube.com/embed/Vkb06CYRB6s" title="Path Planning Demo" frameborder="0" allowfullscreen></iframe></div>
+                <div class="file-links">
+                    <a href="https://github.com/aliikram97/Integrating-Robot-Physical-Dimensions-into-Path-Planning" class="file-link" target="_blank">
+                        <svg class="github-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        Access repository
+                    </a>
+                </div>
+            </div>
+
+            <div class="file-card bracket reveal">
+                <div class="file-head"><span class="file-class">Class: Audio / NLP</span></div>
+                <h3>Talk2TextTranslate — Transcription &amp; Translation Pipeline</h3>
+                <p>An audio transcription and translation pipeline built to process long recordings efficiently — converting speech to text and translating into multiple languages via Google's Speech Recognition, then Googletrans for translation. Built for multilingual communication, content localization, and accessibility, turning lengthy audio into readable, translated text with speed and reliability.</p>
+                <div class="file-video"><iframe src="https://www.youtube.com/embed/o3ocww3zxcc" title="Talk2TextTranslate Demo" frameborder="0" allowfullscreen></iframe></div>
+                <div class="file-links">
+                    <a href="https://github.com/aliikram97/Talk2TextTranslate" class="file-link" target="_blank">
+                        <svg class="github-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        Access repository
+                    </a>
+                </div>
+            </div>
+
+            <div class="file-card bracket reveal">
+                <div class="file-head"><span class="file-class">Class: Vision / OCR</span></div>
+                <h3>Multilingual OCR System</h3>
+                <p>A local, AI-driven OCR and translation pipeline that extracts, translates, and summarizes text from images without cloud processing. Detects and extracts multilingual content with high precision, translates it into the user's preferred language, then generates an executive summary — ensuring data privacy, fast performance, and reliable multilingual support.</p>
+                <div class="file-video"><iframe src="https://www.youtube.com/embed/1wZiVdbtG30" title="Multilingual OCR Demo" frameborder="0" allowfullscreen></iframe></div>
+                <div class="file-links">
+                    <a href="https://github.com/aliikram97/multilingual-ocr-pipeline" class="file-link" target="_blank">
+                        <svg class="github-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        Access repository
+                    </a>
+                </div>
+            </div>
+
+            <div class="file-card bracket reveal">
+                <div class="file-head"><span class="file-class">Class: Sensor Tracking</span></div>
+                <h3>Thermal Object Tracking</h3>
+                <p>A high-performance, AI-powered infrared tracking system for long-range thermal detection up to 3 kilometers — optimized for real-time recognition and motion tracking on embedded hardware like NVIDIA Jetson. A custom algorithm using proprietary occlusion-detection math maintains continuous tracking through dense thermal clutter, built for surveillance, defense, and industrial monitoring.</p>
+                <div class="file-video"><iframe src="https://www.youtube.com/embed/v5YV0uikqlg" title="Thermal Tracking Demo" frameborder="0" allowfullscreen></iframe></div>
+                <div class="file-links">
+                    <a href="https://github.com/aliikram97/tracking_pipeline" class="file-link" target="_blank">
+                        <svg class="github-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        Access repository
+                    </a>
+                </div>
+            </div>
+
+            <div class="file-card bracket reveal">
+                <div class="file-head"><span class="file-class">Class: Voice AI</span></div>
+                <h3>Voice Sales Agent</h3>
+                <p>An AI-powered voice agent that handles inbound calls, engages customers naturally, and manages the sales inquiry process end to end — listening, understanding intent via speech recognition and NLU, and responding in real time. Schedules appointments directly into the company calendar, automating follow-up booking without human intervention and cutting response times.</p>
+                <div class="file-video"><iframe src="https://www.youtube.com/embed/WbV4NwhpMWI" title="Voice Sales Agent Demo" frameborder="0" allowfullscreen></iframe></div>
+            </div>
+
+            <div class="file-card bracket reveal">
+                <div class="file-head"><span class="file-class">Class: Perception</span></div>
+                <h3>Adaptive Cruise Control</h3>
+                <p>A driver-assistance framework combining traffic sign recognition with adaptive cruise control. Detects, classifies, and interprets traffic signs in real time under varying weather and lighting, then dynamically adjusts vehicle speed and behavior to maintain safe distances and comply with road regulations — improving situational awareness and reducing human error.</p>
+                <div class="file-video"><iframe src="https://www.youtube.com/embed/lqgHjVG0qaw" title="Adaptive Cruise Control Demo" frameborder="0" allowfullscreen></iframe></div>
+            </div>
+
+            <div class="file-card bracket reveal">
+                <div class="file-head"><span class="file-class">Class: LLM / RAG</span></div>
+                <h3>RAG-Based Question Answering Bot (Local LLM)</h3>
+                <p>A fully local Retrieval-Augmented Generation QA system built with HuggingFace, LangChain, Gradio, and ChromaDB — running entirely offline with a locally hosted LLM for privacy and speed. Documents are embedded into a ChromaDB vector store for semantic search; retrieved context is passed to the LLM via LangChain for grounded answers, surfaced through a Gradio interface for real-time interaction.</p>
+                <div class="file-video"><iframe src="https://www.youtube.com/embed/WgtyV0VlCTA" title="RAG LLM Demo" frameborder="0" allowfullscreen></iframe></div>
+                <div class="file-links">
+                    <a href="https://github.com/aliikram97/simple_QA_chatbot" class="file-link" target="_blank">
+                        <svg class="github-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        Access repository
+                    </a>
+                </div>
+            </div>
         </div>
-    </footer>
+    </div>
+</section>
 
-    <script>
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
+<!-- SKILLS -->
+<section id="skills">
+    <div class="container">
+        <h2 class="section-title reveal">Technical Skills</h2>
+        <span class="section-index reveal">&nbsp;</span>
+
+        <div class="skills-container">
+            <div class="skill-category bracket reveal">
+                <div class="skill-head"><span>AI/ML</span><span class="status">Active</span></div>
+                <h3>AI &amp; Machine Learning</h3>
+                <ul>
+                    <li>Deep Learning (CNNs, GANs, RL)</li>
+                    <li>Large Language Models (LLMs)</li>
+                    <li>RAG Systems</li>
+                    <li>OCR &amp; Document Processing</li>
+                    <li>SLAM &amp; Autonomous Systems</li>
+                    <li>Object Detection &amp; Segmentation</li>
+                    <li>Stereo Vision &amp; Depth Estimation</li>
+                    <li>Tracking &amp; Camera Calibration</li>
+                </ul>
+            </div>
+            <div class="skill-category bracket reveal">
+                <div class="skill-head"><span>SDK</span><span class="status">Active</span></div>
+                <h3>Frameworks &amp; Libraries</h3>
+                <ul>
+                    <li>PyTorch</li>
+                    <li>TensorFlow</li>
+                    <li>OpenCV</li>
+                    <li>Hugging Face</li>
+                    <li>Flask &amp; Flask-SocketIO</li>
+                </ul>
+            </div>
+            <div class="skill-category bracket reveal">
+                <div class="skill-head"><span>EDGE</span><span class="status">Active</span></div>
+                <h3>Edge Deployment</h3>
+                <ul>
+                    <li>TensorRT</li>
+                    <li>ONNX</li>
+                    <li>OpenVINO</li>
+                    <li>NVIDIA Jetson</li>
+                    <li>Docker</li>
+                </ul>
+            </div>
+            <div class="skill-category bracket reveal">
+                <div class="skill-head"><span>CLOUD</span><span class="status">Active</span></div>
+                <h3>Cloud &amp; DevOps</h3>
+                <ul>
+                    <li>AWS (EC2, S3, SageMaker)</li>
+                    <li>AWS Lambda &amp; Bedrock</li>
+                    <li>Azure</li>
+                    <li>Git</li>
+                    <li>n8n Automation</li>
+                </ul>
+            </div>
+            <div class="skill-category bracket reveal">
+                <div class="skill-head"><span>SIM</span><span class="status">Active</span></div>
+                <h3>Simulation &amp; Robotics</h3>
+                <ul>
+                    <li>ROS (Robot Operating System)</li>
+                    <li>CARLA Simulator</li>
+                    <li>Unreal Engine</li>
+                </ul>
+            </div>
+            <div class="skill-category bracket reveal">
+                <div class="skill-head"><span>LANG</span><span class="status">Active</span></div>
+                <h3>Programming Languages</h3>
+                <ul>
+                    <li>Python</li>
+                    <li>C++</li>
+                    <li>MATLAB</li>
+                    <li>Verilog</li>
+                    <li>TypeScript</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <div class="container">
+        <div class="contact-panel reveal">
+            <h2>Get In Touch</h2>
+            <p>Open to new opportunities and collaborations — freelance, consulting, or partnership. Reach out and I'll respond directly.</p>
+
+            <div class="contact-links">
+                <a href="mailto:aliikram97@gmail.com" class="btn amber">Email me</a>
+                <a href="https://linkedin.com/in/ali-i-5306b597" class="btn" target="_blank">LinkedIn</a>
+                <a href="https://www.upwork.com/freelancers/~01bb6024a47b19d619" class="btn" target="_blank">Upwork</a>
+            </div>
+
+            <div class="comms-data">
+                <div>COORDINATES <span>33.6844°N, 73.0479°E — Islamabad, Pakistan</span></div>
+                <div>COMMS <span>+92-335-5093011 · +92-303-0595669</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="status">System operational</div>
+    <div>© 2025 Ali Ikram. Built with passion for AI and innovation.</div>
+</footer>
+
+<script>
+    const navToggle = document.getElementById('navToggle');
+    const navList = document.getElementById('navList');
+    navToggle.addEventListener('click', () => {
+        const open = navList.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', open);
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            navList.classList.remove('open');
+            navToggle.setAttribute('aria-expanded', 'false');
         });
+    });
 
-        // Fade in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.experience-item, .project-card, .skill-category').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in');
+                observer.unobserve(entry.target);
+            }
         });
-    </script>
+    }, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
