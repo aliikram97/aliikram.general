@@ -52,6 +52,16 @@ typography:
     fontSize: "11.5px to 13.5px"
     fontWeight: 400
     letterSpacing: ".03em to .06em"
+  intro-heading:
+    fontFamily: "DM Serif Display, Georgia, serif"
+    fontSize: "24px"
+    fontWeight: 400
+    note: "Scoped exception for #intro's h2 only, user-confirmed. Not part of the system-wide Spectral/Public Sans pairing."
+  intro-body:
+    fontFamily: "Work Sans, -apple-system, sans-serif"
+    fontSize: "14.5px"
+    fontWeight: 400
+    note: "Scoped exception for #intro's body copy only, user-confirmed. Not part of the system-wide Spectral/Public Sans pairing."
 rounded:
   none: "0px"
   full: "50%"
